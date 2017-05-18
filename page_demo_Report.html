@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-05-16 22:20:01</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:19.256000</p>
-<p class='attribute'><strong>Status:</strong> Pass 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-05-18 14:00:14</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:04.462000</p>
+<p class='attribute'><strong>Status:</strong> Error 1</p>
 
 <p class='description'>系统测试</p>
 </div>
@@ -221,36 +221,54 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>testcase.testLoginPage.TestloginPage</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>testLogin</div></td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>testLogin</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
 
-    <div id='div_pt1.1' class="popup_window">
+    <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1: 打开劳动改造首页： http://localhost:7001
-选择 劳动改造系统图标
-输入 用户名 999999
-输入 用户密码 000000
-点击 登陆 按钮
-验证标题
+ft1.1: Traceback (most recent call last):
+  File "D:\Test\POM_LDGZ\testcase\testLoginPage.py", line 15, in setUp
+    self.driver =webdriver.Chrome()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 67, in __init__
+    desired_capabilities=desired_capabilities)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 91, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 173, in start_session
+    'desiredCapabilities': desired_capabilities,
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 231, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 395, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 426, in _request
+    resp = self._conn.getresponse()
+  File "C:\Python27\lib\httplib.py", line 1136, in getresponse
+    response.begin()
+  File "C:\Python27\lib\httplib.py", line 453, in begin
+    version, status, reason = self._read_status()
+  File "C:\Python27\lib\httplib.py", line 409, in _read_status
+    line = self.fp.readline(_MAXLINE + 1)
+  File "C:\Python27\lib\socket.py", line 480, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 10054] 
 
 
         </pre>
@@ -263,9 +281,9 @@ pt1.1: 打开劳动改造首页： http://localhost:7001
 <tr id='total_row'>
     <td>Total</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
