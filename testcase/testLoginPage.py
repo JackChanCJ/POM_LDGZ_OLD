@@ -16,7 +16,7 @@ class TestloginPage(unittest.TestCase):
     def testLogin(self):
         driver = self.driver
         # 百度网址
-        url = u"http://localhost:7001"
+        url = u"http://192.168.10.201:7001"
         # 期望验证的标题
         assert_title = u"全国监狱信息化管理平台V3.0"
         # print assert_title

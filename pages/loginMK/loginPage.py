@@ -8,10 +8,10 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 class LoginPage(Page):
-    ldgz_icon = u"//img[@src='images/ldgz.png']"     #劳动改造图标
-    username_input = u"//*[@id='user']"     #用户名 输入框
-    password_input = u"//*[@id='password']"     #用户密码 输入框
-    login_btn = u"//*[@class='login_btn_login']"      #登录 按钮
+    ldgz_icon = u"//img[@src='images/ldgz.png']"     # 劳动改造   图标
+    username_input = u"//*[@id='user']"     # 用户名   输入框
+    password_input = u"//*[@id='password']"     # 用户密码   输入框
+    login_btn = u"//*[@class='login_btn_login']"      # 登录   按钮
 
     def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
         Page.__init__(self, driver, base_url)

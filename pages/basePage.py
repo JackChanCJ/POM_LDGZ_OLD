@@ -50,7 +50,7 @@ class Page(object):
                     if ym_element.text == ymmc:
                         ym_element.click()
 
-    def random_choice_drop_down_dbox(self, loc):
+    def random_select_box(self, loc):
         # c_ele下拉框元素
         c_ele = self.driver.find_element_by_xpath(loc)
         c_ele.click()
@@ -59,9 +59,10 @@ class Page(object):
         srand = random.Random().choice(ret)
         Select(c_ele).select_by_value(srand.get_attribute("value"))
 
-    def choice_drop_down_box(self, loc, text):
+    def select_box(self, loc, text):
         self.driver.find_element_by_xpath(loc).click()
         Select(self.driver.find_element_by_xpath(loc)).select_by_visible_text(text)
+
 
 
 
