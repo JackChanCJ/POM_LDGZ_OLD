@@ -18,7 +18,10 @@ class Page(object):
         self.timeout = 30
 
     def input_text(self, loc, text):
-        self.driver.find_element_by_xpath(loc).send_keys(text)
+        try:
+            self.driver.find_element_by_xpath(loc).send_keys(text)
+        except AttributeError:
+            print u"找不到元素"
 
     def choose_xt(self, loc):
         self.driver.find_element_by_xpath(loc).click()

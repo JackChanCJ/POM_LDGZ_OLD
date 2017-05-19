@@ -9,16 +9,16 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 class LdxmPage(Page):
+
     mkmc = u"劳动项目与计划管理"
     ymmc = u"劳动项目"
     xm_btn = u"//a[text()='新增项目']"              # 新增项目    按钮
     ht_btn = u"//a[text()='新增合同']"              # 新增合同    按钮
 
-
     # 劳动项目
     # 生产单位信息
-    xmlx_selection_box = u"//select[@id='xmlx']"                    # 项目类型   下拉选择框
-    xmmc_selection_box = u"//select[@id='selectXmmc']"              # 项目名称   下拉选择框
+    xmlx_selection_box = u"//select[@id='xmlx']"                   # 项目类型   下拉选择框
+    xmmc_selection_box = u"//select[@id='selectXmmc']"             # 项目名称   下拉选择框
     dwmc_input = u"//input[@name='lgXmXmzr.xmscdwmc']"             # 单位名称   文本输入框
     xmfzr_input = u"//input[@name='lgXmXmzr.xmfzr']"               # 项目负责人   文本输入框
     xmfzrlxdh_input = u"//input[@name='lgXmXmzr.xmfzrlxdh']"       # 项目负责人联系电话   文本输入框
@@ -61,9 +61,9 @@ class LdxmPage(Page):
     xmpg_textarea = u"//textarea[@name='lgXmXmzr.xmpg']"                # 项目评估    文本区域
     pgry_textarea = u"//textarea[@name='lgXmXmzr.pgr']"                # 评估人员    文本区域
     bz_textarea = u"//textarea[@name='lgXmXmzr.bz']"                # 备注    文本区域
-
+    # 劳动项目详情页按钮
     bc_btn = u"//input[@value='保 存']"                # 保存    按钮
-    qx_btn = u"//input[@value='取 消 ']"                # 保存    按钮
+    qx_btn = u"//input[@value='取 消 ']"               # 取消    按钮
 
 
     def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
@@ -172,8 +172,8 @@ class LdxmPage(Page):
         self.input_text(self.bz_textarea, bz)
 
         print u"点击 保存 按钮: "
-        self.click(self, bc_btn)
-        print u"保存后，等待5秒"
+        self.click(self.bc_btn)
+        print u"保存后，等待5秒！"
         sleep(5)
 
     def click_create_ht_btn(self):
