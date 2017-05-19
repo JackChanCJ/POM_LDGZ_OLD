@@ -25,6 +25,7 @@ class Page(object):
 
     def click(self, loc):
         self.driver.find_element_by_xpath(loc).click()
+
     # driver.title不需要括号
     def get_title(self):
         self.driver.title
