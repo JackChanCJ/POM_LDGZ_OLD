@@ -24,14 +24,14 @@ class LoginPage(Page):
         print u"选择 劳动改造系统图标"
         self.choose_xt(self.ldgz_icon)
 
-    def input_username(self, text="999999"):
-        print u"输入 用户名", text
-        self.input_text(self.username_input, text)
+    def input_username(self, username="999999"):
+        print u"输入 用户名", username
+        self.input_text(self.username_input, username)
         sleep(2)
 
-    def input_password(self, text="000000"):
-        print u"输入 用户密码", text
-        self.input_text(self.password_input, text)
+    def input_password(self, password="000000"):
+        print u"输入 用户密码", password
+        self.input_text(self.password_input, password)
         sleep(2)
 
     def click_login_btn(self):

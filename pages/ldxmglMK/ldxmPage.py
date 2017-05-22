@@ -61,6 +61,7 @@ class LdxmPage(Page):
     xmpg_textarea = u"//textarea[@name='lgXmXmzr.xmpg']"                # 项目评估    文本区域
     pgry_textarea = u"//textarea[@name='lgXmXmzr.pgr']"                # 评估人员    文本区域
     bz_textarea = u"//textarea[@name='lgXmXmzr.bz']"                # 备注    文本区域
+
     # 劳动项目详情页按钮
     bc_btn = u"//input[@value='保 存']"                # 保存    按钮
     qx_btn = u"//input[@value='取 消 ']"               # 取消    按钮
@@ -171,6 +172,7 @@ class LdxmPage(Page):
         print u"输入 备注: ", bz
         self.input_text(self.bz_textarea, bz)
 
+        # 新增项目页面按钮
         print u"点击 保存 按钮: "
         self.click(self.bc_btn)
         print u"保存后，等待5秒！"
