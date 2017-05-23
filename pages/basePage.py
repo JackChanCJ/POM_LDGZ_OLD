@@ -63,19 +63,3 @@ class Page(object):
         self.driver.find_element_by_xpath(loc).click()
         Select(self.driver.find_element_by_xpath(loc)).select_by_visible_text(text)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

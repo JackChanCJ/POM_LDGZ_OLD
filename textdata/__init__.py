@@ -3,7 +3,6 @@ __author__ = 'JACK_CHAN'
 
 import sys
 import xlrd
-from pages.basePage import Page
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -16,11 +15,11 @@ def open_excel(file='file.xls'):
     except Exception,e:
         print str(e)
 
-def excel_table_byname(file='file.xls',colnameindex=0,by_name=u'Sheet1'):
+def excel_table_byname(file='file.xls',colname=0,by_name=u'Sheet1'):
     data = open_excel(file)
     table = data.sheet_by_name(by_name)
     nrows = table.nrows #行数
-    colnames = table.row_values(colnameindex) #某一行数据
+    colnames = table.row_values(colname) #某一行数据
     list = []
     for rownum in range(1,nrows):
         row = table.row_values(rownum)
@@ -38,3 +37,7 @@ def main():
 
 if __name__=="__main__":
     main()
+
+
+
+

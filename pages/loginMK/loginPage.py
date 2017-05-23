@@ -3,8 +3,11 @@ __author__ = 'JACK_CHAN'
 
 import sys
 import xlrd
-from pages.basePage import Page
+import textdata
 from time import sleep
+from pages.basePage import Page
+
+
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
@@ -15,10 +18,20 @@ class LoginPage(Page):
     login_btn = u"//*[@class='login_btn_login']"      # 登录   按钮
 
     # 读取xls中的值
-    data = xlrd.open_workbook(u'D:\Test\POM_LDGZ_OLD\\textdata\登录管理.xls')
+    data = xlrd.open_workbook(u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xls')
     table = data.sheet_by_name(u"登录")
     username = table.row(1)[0].value
     password = table.col(1)[1].value
+    username = textdata.excel_table_byname(
+            file=u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xls',
+            clonameindex = 0,
+            by_name=u'登录'
+    )
+    password = textdata.excel_table_byname(
+            file=u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xls',
+            clonameindex = 1,
+            by_name=u'登录'
+    )
 
 
     def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
@@ -48,3 +61,14 @@ class LoginPage(Page):
         print u"点击 登陆 按钮"
         self.click(self.login_btn)
         sleep(5)
+
+
+
+
+
+
+
+
+
+
+
