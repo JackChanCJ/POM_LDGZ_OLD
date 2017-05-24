@@ -6,7 +6,7 @@ import xlrd
 import textdata
 from time import sleep
 from pages.basePage import Page
-
+from xlrd.sheet import Sheet
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -16,23 +16,25 @@ class LoginPage(Page):
     username_input = u"//*[@id='user']"     # 用户名   输入框
     password_input = u"//*[@id='password']"     # 用户密码   输入框
     login_btn = u"//*[@class='login_btn_login']"      # 登录   按钮
+    logout_btn = u"//div[@onclick='doLogout(\'ldgz\')']"                #注销    按钮
 
     # 读取xls中的值
-    data = xlrd.open_workbook(u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xls')
-    table = data.sheet_by_name(u"登录")
-    username = table.row(1)[0].value
-    password = table.col(1)[1].value
+    # data = xlrd.open_workbook(u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xls')
+    # table = data.sheet_by_name(u"登录")
+    # username = table.row(1)[0].value
+    # password = table.col(1)[1].value
+
     username = textdata.excel_table_byname(
             file=u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xls',
-            clonameindex = 0,
-            by_name=u'登录'
-    )
+            by_name=u'登录',
+            colname = 0,
+            )
+
     password = textdata.excel_table_byname(
             file=u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xls',
-            clonameindex = 1,
-            by_name=u'登录'
-    )
-
+            by_name=u'登录',
+            colname = 1,
+            )
 
     def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
         Page.__init__(self, driver, base_url)
@@ -61,6 +63,13 @@ class LoginPage(Page):
         print u"点击 登陆 按钮"
         self.click(self.login_btn)
         sleep(5)
+
+    def log_out(self):
+        print u"注销，退出系统"
+        self.driver.switch_to.frame('topFrame')
+        self.click(self.logout_btn)
+        sleep(1)
+        self.driver.switch_to.alert().accept()
 
 
 

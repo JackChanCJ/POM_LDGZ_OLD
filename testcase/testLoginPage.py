@@ -31,9 +31,11 @@ class TestloginPage(unittest.TestCase):
         login_Page.input_password()
 
         login_Page.click_login_btn()
-        time.sleep(5)
+
         print u"验证标题"
         self.assertEqual(login_Page.driver.title, assert_title)
+
+        login_Page.log_out()
     def tearDown(self):
         self.driver.quit()
 
