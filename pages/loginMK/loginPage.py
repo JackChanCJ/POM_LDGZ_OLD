@@ -8,7 +8,6 @@ from openpyxl import load_workbook
 from time import sleep
 from pages.basePage import Page
 
-
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
