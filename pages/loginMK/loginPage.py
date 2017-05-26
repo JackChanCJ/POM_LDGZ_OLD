@@ -20,12 +20,12 @@ class LoginPage(Page):
 
     filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
     username = textdata.excel_table_by_cellname(
-            xlsx=filename,
+            filename,
             sheet_name=u'登录',
             cell_value=u'A2'
             )
     password = textdata.excel_table_by_cellname(
-            xlsx=filename,
+            filename,
             sheet_name=u'登录',
             cell_value=u'B2'
             )

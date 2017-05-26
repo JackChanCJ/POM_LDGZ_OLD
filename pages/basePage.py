@@ -12,7 +12,7 @@ sys.setdefaultencoding("utf-8")
 # Page基类
 class Page(object):
     # 所有的page都应该集成该类
-    def __init__(self, driver, base_url=u"http://localhost:7001"):
+    def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
         self.driver = driver
         self.base_url = base_url
         self.timeout = 30
