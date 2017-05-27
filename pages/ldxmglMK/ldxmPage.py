@@ -173,7 +173,7 @@ class LdxmPage(Page):
             u'A2'
     )
     xmtze_input = u"//input[@name='lgXmXmzr.xmje']"                # 项目投资额   文本输入框
-    trldlrs = textdata.excel_table_by_cellname(
+    xmtze = textdata.excel_table_by_cellname(
             filename,
             u'项目基本资料',
             u'B2'
@@ -260,7 +260,7 @@ class LdxmPage(Page):
 
     def enter_ldxm_page(self):
         print u"进入 劳动项目与计划管理-->劳动项目 页面"
-        self.enter_page(self, self.mkmc, self.ymmc)
+        self.enter_page(self.mkmc, self.ymmc)
 
     def click_create_xm_btn(self):
         print u"点击 新增劳动项目，跳转至劳动项目页面"
@@ -268,14 +268,15 @@ class LdxmPage(Page):
         self.driver.switch_to.frame("right_mainFrame")
         self.click(self.xm_btn)
 
-    def write_xm(self,
-                 xmlx, xmmc, dwmc, xmfzr, xmfzrlxdh,
-                 hzfdwmc, fzr, dz, yyzzzch, khlxdh, czhm, zczj,
-                 cpxh, sl, dj, zje, scdw, khfs, wcrq, fktj, tbr, tbrlxdh, htfj,
+    def write_xm(
+            self,
+            xmlx, xmmc, dwmc, xmfzr, xmfzrlxdh,
+            hzfdwmc, fzr, dz, yyzzzch, khlxdh, czhm, zczj,
+            cpxh, sl, dj, zje, scdw, khfs, wcrq, fktj, tbr, tbrlxdh, htfj,
 
-                 trldlrs, xmtze, sbs, qyzysb, khtrsb, xmnsr,
-                 yrjsr, sdfzcb, lr, fxdj, fxpgfj, xmpg, pgry, bz
-                 ):
+            trldlrs, xmtze, sbs, qyzysb, khtrsb, xmnsr,
+            yrjsr, sdfzcb, lr, fxdj, fxpgfj, xmpg, pgry, bz
+            ):
 
         #  生产单位信息
         print u"填写 劳动项目各字段"

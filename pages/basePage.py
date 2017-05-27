@@ -31,15 +31,12 @@ class Page(object):
         self.driver.title
 
     def enter_page(self, mkmc, ymmc):
-        """
-
-        :rtype: object
-        """
-        self.driver.switch_to.default_content()
+        print mkmc, ymmc
+        self.driver.switch_to.parent_frame()
         self.driver.switch_to.frame("menuFrame")
         # 方法1
-        mk_loc = u"//span[text()='\"+ mkmc +\"']"
-        ym_loc = u"//span[@sjmc='\"+ mkmc +\"' and text()='\"+ ymmc +\"']"
+        mk_loc = "//span[text()='%s']" %mkmc
+        ym_loc = "//span[@sjmc='%s' and text()='%s']" %(mkmc, ymmc)
         self.driver.find_element_by_xpath(mk_loc).click()
         self.driver.find_element_by_xpath(ym_loc).click()
         # 方法2
