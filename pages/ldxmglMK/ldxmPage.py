@@ -280,86 +280,86 @@ class LdxmPage(Page):
 
         #  生产单位信息
         print u"填写 劳动项目各字段"
-        print u"选择 项目类型：", xmlx
-        self.select_box(self.xmlx_selection_box, xmlx)
-        print u"选择 项目名称：", xmmc
-        self.select_box(self.xmmc_selection_box, xmmc)
-        print u"输入 单位名称: ", dwmc
-        self.input_text(self.dwmc_input, dwmc)
-        print u"输入 项目负责人: ", dwmc
-        self.input_text(self.xmfzr_input, xmfzr)
-        print u"输入 项目负责人联系电话: ", xmfzrlxdh
-        self.input_text(self.xmfzrlxdh_input, xmfzrlxdh)
+        print u"选择 项目类型：", self.xmlx
+        self.select_box(self.xmlx_selection_box, self.xmlx)
+        print u"选择 项目名称：", self.xmmc
+        self.select_box(self.xmmc_selection_box, self.xmmc)
+        print u"输入 单位名称: ", self.dwmc
+        self.input_text(self.dwmc_input, self.dwmc)
+        print u"输入 项目负责人: ", self.dwmc
+        self.input_text(self.xmfzr_input, self.xmfzr)
+        print u"输入 项目负责人联系电话: ", self.xmfzrlxdh
+        self.input_text(self.xmfzrlxdh_input, self.xmfzrlxdh)
 
-        #  客户单位信息
-        print u"输入 合作方单位名称: ", hzfdwmc
-        self.input_text(self.hzfdwmc_input, hzfdwmc)
-        print u"输入 负责人: ", fzr
-        self.input_text(self.dz_input, dz)
-        print u"输入 地址: ", dz
-        self.input_text(self.fzr_input, fzr)
-        print u"输入 营业执照注册号: ", yyzzzch
-        self.input_text(self.yyzzzch_input, yyzzzch)
-        print u"输入 客户联系电话: ", khlxdh
-        self.input_text(self.khlxdh_input, khlxdh)
-        print u"输入 传真号: ", czhm
-        self.input_text(self.czhm_input, czhm)
-        print u"输入 注册资金: ", zczj
-        self.input_text(self.zczj_input, zczj)
+        #  客户信息
+        print u"输入 合作方单位名称: ", self.hzfdwmc
+        self.input_text(self.hzfdwmc_input, self.hzfdwmc)
+        print u"输入 负责人: ", self.fzr
+        self.input_text(self.dz_input, self.fzr)
+        print u"输入 地址: ", self.dz
+        self.input_text(self.fzr_input, self.dz)
+        print u"输入 营业执照注册号: ", self.yyzzzch
+        self.input_text(self.yyzzzch_input, self.yyzzzch)
+        print u"输入 客户联系电话: ", self.khlxdh
+        self.input_text(self.khlxdh_input, self.khlxdh)
+        print u"输入 传真号: ", self.czhm
+        self.input_text(self.czhm_input, self.czhm)
+        print u"输入 注册资金: ", self.zczj
+        self.input_text(self.zczj_input, self.zczj)
 
         #  合同信息
-        print u"输入 产品型号: ", cpxh
-        self.input_text(self.cpxh_input, cpxh)
-        print u"输入 数量: ", sl
-        self.input_text(self.sl_input, sl)
-        print u"输入 单价: ", dj
-        self.input_text(self.dj_input, dj)
-        print u"输入 总金额: ", zje
-        self.input_text(self.zje_input, zje)
-        print u"输入 生产单位: ", scdw
-        self.select_box(self.scdw_selection_box, scdw)
-        print u"输入 考核方式: ", khfs
-        self.select_box(self.khfs_selection_box, khfs)
-        print u"输入 完成日期: ", wcrq
-        self.input_text(self.wcrq_input, wcrq)
-        print u"输入 付款条件: ", fktj
-        self.input_text(self.fktj_input, fktj)
-        print u"输入 填报人: ", tbr
-        self.input_text(self.tbr_input, tbr)
-        print u"输入 填报人联系电话: ", tbrlxdh
-        self.input_text(self.tbrlxdh_input, tbrlxdh)
-        print u"输入 合同附件: ", htfj
-        self.input_text(self.htfj_input, htfj)
+        print u"输入 产品型号: ", self.cpxh
+        self.input_text(self.cpxh_input, self.cpxh)
+        print u"输入 数量: ", self.sl
+        self.input_text(self.sl_input, self.sl)
+        print u"输入 单价: ", self.dj
+        self.input_text(self.dj_input, self.dj)
+        print u"输入 总金额: ", self.zje
+        self.input_text(self.zje_input, self.zje)
+        print u"输入 生产单位: ", self.scdw
+        self.select_box(self.scdw_selection_box, self.scdw)
+        print u"输入 考核方式: ", self.khfs
+        self.select_box(self.khfs_selection_box, self.khfs)
+        print u"输入 完成日期: ", self.wcrq
+        self.input_text(self.wcrq_input, self.wcrq)
+        print u"输入 付款条件: ", self.fktj
+        self.input_text(self.fktj_input, self.fktj)
+        print u"输入 填报人: ", self.tbr
+        self.input_text(self.tbr_input, self.tbr)
+        print u"输入 填报人联系电话: ", self.tbrlxdh
+        self.input_text(self.tbrlxdh_input, self.tbrlxdh)
+        print u"输入 合同附件: ", self.htfj
+        self.input_text(self.htfj_input, self.htfj)
 
         #  项目基本资料
-        print u"输入 投入劳动力人数: ", trldlrs
-        self.input_text(self.trldlrs_input, trldlrs)
-        print u"输入 项目投资额: ", xmtze
-        self.input_text(self.xmtze_input, xmtze)
-        print u"输入 设备台（套）: ", sbs
-        self.input_text(self.sbs_input, sbs)
-        print u"输入 企业自有设备: ", qyzysb
-        self.input_text(self.qyzysb_input, qyzysb)
-        print u"输入 客户投入设备: ", khtrsb
-        self.input_text(self.khtrsb_input, khtrsb)
-        print u"输入 项目年收入: ", xmnsr
-        self.input_text(self.xmnsr_input, xmnsr)
-        print u"输入 月人均收入: ", yrjsr
-        self.input_text(self.yrjsr_input, yrjsr)
-        print u"输入 利润: ", lr
-        self.input_text(self.sdfzcb_input, sdfzcb)
-        print u"输入 水电、房租成本费用: ", sdfzcb
-        self.input_text(self.lr_input, lr)
-        print u"输入 风险等级: ", fxdj
-        self.select_box(self.fxdj_selection_box, fxdj)
-        print u"输入 风险评估附件: ", fxpgfj
-        self.input_text(self.fxpgfj_input, fxpgfj)
-        print u"输入 项目评估: ", xmpg
-        self.input_text(self.xmpg_textarea, xmpg)
-        print u"输入 评估人员: ", pgry
-        self.input_text(self.pgry_textarea, pgry)
-        print u"输入 备注: ", bz
-        self.input_text(self.bz_textarea, bz)
+        print u"输入 投入劳动力人数: ", self.trldlrs
+        self.input_text(self.trldlrs_input, self.trldlrs)
+        print u"输入 项目投资额: ", self.xmtze
+        self.input_text(self.xmtze_input, self.xmtze)
+        print u"输入 设备台（套）: ", self.sbs
+        self.input_text(self.sbs_input, self.sbs)
+        print u"输入 企业自有设备: ", self.qyzysb
+        self.input_text(self.qyzysb_input, self.qyzysb)
+        print u"输入 客户投入设备: ", self.khtrsb
+        self.input_text(self.khtrsb_input, self.khtrsb)
+        print u"输入 项目年收入: ", self.xmnsr
+        self.input_text(self.xmnsr_input, self.xmnsr)
+        print u"输入 月人均收入: ", self.yrjsr
+        self.input_text(self.yrjsr_input, self.yrjsr)
+        print u"输入 利润: ", self.lr
+        self.input_text(self.sdfzcb_input, self.sdfzcb)
+        print u"输入 水电、房租成本费用: ", self.sdfzcb
+        self.input_text(self.lr_input, self.lr)
+        print u"输入 风险等级: ", self.fxdj
+        self.select_box(self.fxdj_selection_box, self.fxdj)
+        print u"输入 风险评估附件: ", self.fxpgfj
+        self.input_text(self.fxpgfj_input, self.fxpgfj)
+        print u"输入 项目评估: ", self.xmpg
+        self.input_text(self.xmpg_textarea, self.xmpg)
+        print u"输入 评估人员: ", self.pgry
+        self.input_text(self.pgry_textarea, self.pgry)
+        print u"输入 备注: ", self.bz
+        self.input_text(self.bz_textarea, self.bz)
 
         # 新增项目页面按钮
         print u"点击 保存 按钮: "
