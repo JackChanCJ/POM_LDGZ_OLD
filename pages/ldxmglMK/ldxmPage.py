@@ -259,8 +259,9 @@ class LdxmPage(Page):
         Page.__init__(self, driver, base_url)
 
     def enter_ldxm_page(self):
-        print u"进入 劳动项目与计划管理-->劳动项目 页面"
-        self.enter_page(self.mkmc, self.ymmc)
+        self.enter_sub_menu(self.mkmc, self.ymmc)
+        print u"进入  %s-->%s  页面" %(self.mkmc, self.ymmc)
+
 
     def click_create_xm_btn(self):
         print u"点击 新增劳动项目，跳转至劳动项目页面"

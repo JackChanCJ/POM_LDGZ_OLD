@@ -30,26 +30,14 @@ class Page(object):
     def get_title(self):
         self.driver.title
 
-    def enter_page(self, mkmc, ymmc):
-        print mkmc, ymmc
+    def enter_sub_menu(self, mkmc, ymmc):
         self.driver.switch_to.parent_frame()
         self.driver.switch_to.frame("menuFrame")
-        # 方法1
         mk_loc = "//span[text()='%s']" %mkmc
         ym_loc = "//span[@sjmc='%s' and text()='%s']" %(mkmc, ymmc)
         self.driver.find_element_by_xpath(mk_loc).click()
+        sleep(1)
         self.driver.find_element_by_xpath(ym_loc).click()
-        # 方法2
-        # mks = u"html/body/ul/li[@onmouseout='topMosOut(this)' and @onmouseover='topMosOver(this)']/span"
-        # mk_elements = self.driver.find_elements_by_xpath(mks)
-        # for mk_element in mk_elements:
-        #     if mk_element.text == mkmc:
-        #         mk_element.click()
-        #         yms = u"//li[@sjmc='\" + mkmc +\" ']"
-        #         ym_elements = self.driver.find_elements_by_xpath(yms)
-        #         for ym_element in ym_elements:
-        #             if ym_element.text == ymmc:
-        #                 ym_element.click()
 
     def random_select_box(self, loc):
         # c_ele下拉框元素
