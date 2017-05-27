@@ -21,24 +21,25 @@ class LdxmPage(Page):
     # 劳动项目
     # 生产单位信息
     filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
+
     xmlx_selection_box = u"//select[@id='xmlx']"                   # 项目类型   下拉选择框
     xmlx = textdata.excel_table_by_cellname(
             filename,
             u'劳动项目',
             u'B2'
-    )
+            )
     xmmc_selection_box = u"//select[@id='selectXmmc']"             # 项目名称   下拉选择框
     xmmc = textdata.excel_table_by_cellname(
             filename,
             u'劳动项目',
             u'C2'
-    )
+            )
     dwmc_input = u"//input[@name='lgXmXmzr.xmscdwmc']"             # 单位名称   文本输入框
     dwmc = textdata.excel_table_by_cellname(
             filename,
             u'劳动项目',
             u'D2'
-    )
+            )
     xmfzr_input = u"//input[@name='lgXmXmzr.xmfzr']"               # 项目负责人   文本输入框
     xmfzr = textdata.excel_table_by_cellname(
             filename,
@@ -269,15 +270,13 @@ class LdxmPage(Page):
         self.driver.switch_to.frame("right_mainFrame")
         self.click(self.xm_btn)
 
-    def write_xm(
-            self,
-            xmlx, xmmc, dwmc, xmfzr, xmfzrlxdh,
-            hzfdwmc, fzr, dz, yyzzzch, khlxdh, czhm, zczj,
-            cpxh, sl, dj, zje, scdw, khfs, wcrq, fktj, tbr, tbrlxdh, htfj,
-
-            trldlrs, xmtze, sbs, qyzysb, khtrsb, xmnsr,
-            yrjsr, sdfzcb, lr, fxdj, fxpgfj, xmpg, pgry, bz
-            ):
+    def create_xm(self):
+        # xmlx, xmmc, dwmc, xmfzr, xmfzrlxdh,                                     # 劳动项目
+        # hzfdwmc, fzr, dz, yyzzzch, khlxdh, czhm, zczj,                          # 客户信息
+        # cpxh, sl, dj, zje, scdw, khfs, wcrq, fktj, tbr, tbrlxdh, htfj,          # 合同信息
+        #
+        # trldlrs, xmtze, sbs, qyzysb, khtrsb, xmnsr,                             # 项目基本资料
+        # yrjsr, sdfzcb, lr, fxdj, fxpgfj, xmpg, pgry, bz
 
         #  生产单位信息
         print u"填写 劳动项目各字段"

@@ -32,7 +32,7 @@ class TestCreateLdxm(unittest.TestCase):
         ldxm_Page.click_create_xm_btn()
         sleep(2)
 
-        ldxm_Page.write_xm()
+        ldxm_Page.create_xm()
 
         print u"alldone"
 
