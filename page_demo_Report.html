@@ -189,8 +189,8 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-05-27 16:35:09</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:18.570000</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-05-31 17:14:39</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:12.758000</p>
 <p class='attribute'><strong>Status:</strong> Error 1</p>
 
 <p class='description'>系统测试</p>
@@ -245,17 +245,23 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-ft1.1: 打开劳动改造首页:   http://192.168.10.201:7001
+ft1.1: 登录并进入首页
+打开劳动改造首页:   http://192.168.10.201:7001
 选择  劳动改造系统图标
 输入  用户名 999999
 输入  用户密码 000000
 点击  登陆  按钮
-进入  劳动项目与计划管理--&gt;劳动项目  页面
-点击 新增劳动项目，跳转至劳动项目页面
+验证标题
 Traceback (most recent call last):
-  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 35, in testCreateLdxm
-    ldxm_Page.write_xm()
-TypeError: write_xm() takes exactly 38 arguments (1 given)
+  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 21, in testCreateLdxm
+    login_Page.log_in()
+  File "D:\Test\POM_LDGZ_OLD\pages\loginMK\loginPage.py", line 95, in log_in
+    self.assertEqual(fst, sec)
+  File "C:\Python27\lib\unittest\case.py", line 512, in assertEqual
+    assertion_func = self._getAssertEqualityFunc(first, second)
+  File "C:\Python27\lib\unittest\case.py", line 493, in _getAssertEqualityFunc
+    asserter = self._type_equality_funcs.get(type(first))
+AttributeError: 'LoginPage' object has no attribute '_type_equality_funcs'
 
 
         </pre>

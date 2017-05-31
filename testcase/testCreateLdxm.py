@@ -18,11 +18,7 @@ class TestCreateLdxm(unittest.TestCase):
     def testCreateLdxm(self):
         driver = self.driver
         login_Page = LoginPage(driver)
-        login_Page.openLDGZHomePage()
-        login_Page.choose_mokuai_icon()
-        login_Page.input_username()
-        login_Page.input_password()
-        login_Page.click_login_btn()
+        login_Page.log_in()
 
         ldxm_Page = LdxmPage(driver)
 

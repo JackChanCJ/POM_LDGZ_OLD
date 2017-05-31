@@ -3,15 +3,17 @@ __author__ = 'JACK_CHAN'
 
 import sys
 import textdata
+import unittest
 from openpyxl import Workbook
 from openpyxl import load_workbook
 from time import sleep
 from pages.basePage import Page
 
+
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-class LoginPage(Page):
+class LoginPage(Page, unittest.TestCase):
     ldgz_icon = u"//img[@src='images/ldgz.png']"     # 劳动改造   图标
     username_input = u"//*[@id='user']"     # 用户名   输入框
     password_input = u"//*[@id='password']"     # 用户密码   输入框
@@ -58,6 +60,8 @@ class LoginPage(Page):
         self.click(self.login_btn)
         sleep(5)
 
+    # 注销并退出
+
     def log_out(self):
         print u"注销  退出系统"
         self.driver.switch_to.frame('topFrame')
@@ -67,6 +71,28 @@ class LoginPage(Page):
         print u"弹出框:  ", al.text
         al.accept()
         print u"确定"
+
+    # 登录并进入首页
+    def log_in(self):
+        print u"登录并进入首页"
+        # 启动浏览器，访问劳动改造地址
+        self.openLDGZHomePage()
+
+        self.choose_mokuai_icon()
+
+        self.input_username()
+
+        self.input_password()
+
+        self.click_login_btn()
+        # 全屏
+        self.driver.maximize_window()
+
+        print u"验证标题"
+        sec = u"全国监狱信息化管理平台V3.0"
+        fst = self.driver.title
+        self.assertEqual(fst, sec)
+
 
 
 

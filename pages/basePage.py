@@ -4,9 +4,9 @@ __author__ = 'JACK_CHAN'
 import sys
 import random
 from time import sleep
-reload(sys)
 from selenium.webdriver.support.select import Select
 
+reload(sys)
 sys.setdefaultencoding("utf-8")
 
 # Page基类
@@ -16,6 +16,7 @@ class Page(object):
         self.driver = driver
         self.base_url = base_url
         self.timeout = 30
+
 
     def input_text(self, loc, text):
         self.driver.find_element_by_xpath(loc).send_keys(text)
