@@ -472,17 +472,22 @@ class LdxmPage(Page):
         )
 
 
-
-
-
-
-
-
     def click_create_ht_btn(self):
         print u"点击 新增劳动合同,跳转至劳动合同页面"
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
         self.click(self.ht_btn)
+
+    def create_ht(self):
+        print u"填写 项目合同的各字段"
+
+
+
+        # print u"选择 项目名称：", self.xmmc
+        # self.select_box(self.xmmc_selection_box, self.xmmc)
+        # print u"输入 单位名称: ", self.dwmc
+
+
 
 
 
