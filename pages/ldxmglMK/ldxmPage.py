@@ -256,8 +256,8 @@ class LdxmPage(Page):
     bc_btn = u"//input[@value='保 存']"                # 保存    按钮
     qx_btn = u"//input[@value='取 消 ']"               # 取消    按钮
 
-    def __init__(self, driver, base_url):
-        Page.__init__(self, driver, base_url)
+    def __init__(self, driver):
+        Page.__init__(self, driver)
 
     def enter_ldxm_page(self):
         self.enter_sub_menu(self.mkmc, self.ymmc)
@@ -366,19 +366,116 @@ class LdxmPage(Page):
         sleep(3)
 
     # 劳动项目——合同备案
-    xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            # 项目编号    下拉选择框
+    xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            # 合同项目编号    下拉选择框
     xmbh = textdata.excel_table_by_cellname(
         filename,
         u"劳动合同",
         u"A2"
-    )
-    fxpgfj_input = u"//input[@id='fileFJ']"                         # 合同编号    文本输入框
-    htbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"
+        )
+    htbh_input = u"//select[@name='lgXmHtgl.htbh']"                 # 合同编号    文本输入框
     htbh = textdata.excel_table_by_cellname(
         filename,
         u"劳动合同",
         u"B2"
-    )
+        )
+    htmc_input = u"//input[@name='lgXmHtgl.htmc']"                  # 合同名称    文本输入框
+    htmc = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"C2"
+        )
+    htzje_input = u"//input[@name='lgXmHtgl.je']"                   # 合同总金额    文本输入框
+    htzje = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"D2"
+        )
+    htqdrq_input = u"//input[@name='lgXmHtgl.qdrq']"                # 合同签订日期    文本输入框
+    htqdrq = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"E2"
+        )
+    htwcrq_input = u"//input[@name='lgXmHtgl.wcrq']"                # 合同完成日期    文本输入框
+    htwcrq = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"F2"
+        )
+    htscdw_select_box = u"//select[@id='bm']"                       # 合同生产单位    下拉选择框
+    htscdw = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"G2"
+        )
+    htkhfs_select_box = u"//select[@id='khfs']"                     # 合同考核方式    下拉选择框
+    htkhfs = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"H2"
+        )
+    khmc_input = u"//input[@name='lgXmHtgl.khmc']"                  # 客户名称    文本输入框
+    khmc = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"I2"
+        )
+    htnr_textarea = u"//input[@name='lgXmHtgl.khmc']"               # 合同内容    文本输入框
+    htnr = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"J2"
+        )
+    fj_input = u"//input[@name='lgXmHtgl.khmc']"                    # 附件    文本输入框
+    fj = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"K2"
+        )
+
+    # 合同明细
+    ssxh_input = u"//input[@name='cpkh10']"                         # 手输型号    文本输入框
+    ssxh = textdata.excel_table_by_cellname(
+        filename,
+        u"合同明细",
+        u"A2"
+        )
+    ks_input = u"//input[@name='cpks0']"                            # 款式    文本输入框
+    ks = textdata.excel_table_by_cellname(
+        filename,
+        u"合同明细",
+        u"B2"
+        )
+    gg_input = u"//input[@name='ggxh0']"                            # 规格    文本输入框
+    gg = textdata.excel_table_by_cellname(
+        filename,
+        u"合同明细",
+        u"C2"
+        )
+    pp_input = u"//input[@name='ppmc0']"                            # 品牌    文本输入框
+    pp = textdata.excel_table_by_cellname(
+        filename,
+        u"合同明细",
+        u"D2"
+        )
+    sssl_input = u"//input[@name='sl0']"                          # 数量    文本输入框
+    sssl = textdata.excel_table_by_cellname(
+        filename,
+        u"合同明细",
+        u"E2"
+        )
+    ssdj_input = u"//input[@name='dj0']"                          # 单价    文本输入框
+    ssdj = textdata.excel_table_by_cellname(
+        filename,
+        u"合同明细",
+        u"F2"
+        )
+
+
+
+
+
+
 
 
     def click_create_ht_btn(self):

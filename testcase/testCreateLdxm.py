@@ -18,6 +18,7 @@ class TestCreateLdxm(unittest.TestCase):
     def testCreateLdxm(self):
         driver = self.driver
         login_Page = LoginPage(driver)
+
         login_Page.log_in()
 
         ldxm_Page = LdxmPage(driver)
@@ -30,7 +31,6 @@ class TestCreateLdxm(unittest.TestCase):
 
         ldxm_Page.create_xm()
 
-        print u"alldone"
 
     def tearDown(self):
         pass

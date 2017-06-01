@@ -24,12 +24,12 @@ class LoginPage(Page, unittest.TestCase):
     username = textdata.excel_table_by_cellname(
             filename,
             sheet_name=u'登录',
-            cell_value=u'A2'
+            col_num=u'A2'
             )
     password = textdata.excel_table_by_cellname(
             filename,
             sheet_name=u'登录',
-            cell_value=u'B2'
+            col_num=u'B2'
             )
 
     def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
