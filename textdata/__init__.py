@@ -11,11 +11,11 @@ sys.setdefaultencoding("utf-8")
 def excel_table_by_cellname(
         filename,
         sheet_name,
-        cell_value
+        col_num
         ):
     wb = load_workbook(filename)
     ws = wb.get_sheet_by_name(sheet_name)
-    value = ws[cell_value].value
+    value = ws[col_num].value
     return value
 
 

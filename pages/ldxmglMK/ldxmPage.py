@@ -256,7 +256,7 @@ class LdxmPage(Page):
     bc_btn = u"//input[@value='保 存']"                # 保存    按钮
     qx_btn = u"//input[@value='取 消 ']"               # 取消    按钮
 
-    def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
+    def __init__(self, driver, base_url):
         Page.__init__(self, driver, base_url)
 
     def enter_ldxm_page(self):
@@ -265,7 +265,7 @@ class LdxmPage(Page):
 
 
     def click_create_xm_btn(self):
-        print u"点击 新增劳动项目，跳转至劳动项目页面"
+        print u"点击 新增劳动项目按钮，跳转至劳动项目页面"
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
         self.click(self.xm_btn)
@@ -365,13 +365,27 @@ class LdxmPage(Page):
         # self.click(self.bc_btn)
         sleep(3)
 
+    # 劳动项目——合同备案
+    xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            #项目编号    下拉选择框
+    xmbh = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"A2"
+    )
+    fxpgfj_input = u"//input[@id='fileFJ']"                        # 合同编号    文本输入框
+    htbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"
+    htbh = textdata.excel_table_by_cellname(
+        filename,
+        u"劳动合同",
+        u"B2"
+    )
+
 
     def click_create_ht_btn(self):
         print u"点击 新增劳动合同,跳转至劳动合同页面"
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
         self.click(self.ht_btn)
-
 
 
 
