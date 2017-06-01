@@ -12,6 +12,7 @@ sys.setdefaultencoding("utf-8")
 # Page基类
 class Page(object):
     # 所有的page都应该集成该类
+    # 所有的操作最少需停留一秒
     def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
         self.driver = driver
         self.base_url = base_url
@@ -20,9 +21,11 @@ class Page(object):
 
     def input_text(self, loc, text):
         self.driver.find_element_by_xpath(loc).send_keys(text)
+        sleep(1)
 
     def choose_xt(self, loc):
         self.driver.find_element_by_xpath(loc).click()
+        sleep(1)
 
     def click(self, loc):
         self.driver.find_element_by_xpath(loc).click()
@@ -30,6 +33,7 @@ class Page(object):
     # driver.title不需要括号
     def get_title(self):
         self.driver.title
+        sleep(1)
 
     def enter_sub_menu(self, mkmc, ymmc):
         self.driver.switch_to.parent_frame()
@@ -39,6 +43,7 @@ class Page(object):
         self.driver.find_element_by_xpath(mk_loc).click()
         sleep(1)
         self.driver.find_element_by_xpath(ym_loc).click()
+        sleep(1)
 
     def random_select_box(self, loc):
         # c_ele下拉框元素
@@ -48,8 +53,10 @@ class Page(object):
         ret = Select(c_ele).optins
         srand = random.Random().choice(ret)
         Select(c_ele).select_by_value(srand.get_attribute("value"))
+        sleep(1)
 
     def select_box(self, loc, text):
         self.driver.find_element_by_xpath(loc).click()
         Select(self.driver.find_element_by_xpath(loc)).select_by_visible_text(text)
+        sleep(1)
 

@@ -33,7 +33,8 @@ class TestloginPage(unittest.TestCase):
         print u"验证标题"
         self.assertEqual(login_Page.driver.title, assert_title)
 
-        # login_Page.log_out()
+        login_Page.log_out()
+
     def tearDown(self):
         self.driver.quit()
 

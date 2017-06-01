@@ -88,10 +88,10 @@ class LoginPage(Page, unittest.TestCase):
         # 全屏
         self.driver.maximize_window()
 
-        print u"验证标题"
-        sec = u"全国监狱信息化管理平台V3.0"
-        fst = self.driver.title
-        self.assertEqual(fst, sec)
+        # print u"验证标题"
+        # sec = u"全国监狱信息化管理平台V3.0"
+        # fst = self.driver.title
+        # self.assertEqual(fst, sec)
 
 
 

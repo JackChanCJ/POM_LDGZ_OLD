@@ -84,7 +84,7 @@ class LdxmPage(Page):
             u'客户信息',
             u'E2'
     )
-    czhm_input = u"//input[@name='lgXmXmzr.czhm']"                 # 传真号码   文本输入框
+    czhm_input = u"//input[@name='lgXmXmzr.czh']"                 # 传真号码   文本输入框
     czhm = textdata.excel_table_by_cellname(
             filename,
             u'客户信息',
@@ -360,12 +360,11 @@ class LdxmPage(Page):
         self.input_text(self.pgry_textarea, self.pgry)
         print u"输入 备注: ", self.bz
         self.input_text(self.bz_textarea, self.bz)
-
         # 新增项目页面按钮
         print u"点击 保存 按钮: "
-        self.click(self.bc_btn)
-        print u"保存后，等待5秒！"
-        sleep(5)
+        # self.click(self.bc_btn)
+        sleep(3)
+
 
     def click_create_ht_btn(self):
         print u"点击 新增劳动合同,跳转至劳动合同页面"
