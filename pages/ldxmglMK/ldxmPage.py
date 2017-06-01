@@ -366,13 +366,13 @@ class LdxmPage(Page):
         sleep(3)
 
     # 劳动项目——合同备案
-    xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            #项目编号    下拉选择框
+    xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            # 项目编号    下拉选择框
     xmbh = textdata.excel_table_by_cellname(
         filename,
         u"劳动合同",
         u"A2"
     )
-    fxpgfj_input = u"//input[@id='fileFJ']"                        # 合同编号    文本输入框
+    fxpgfj_input = u"//input[@id='fileFJ']"                         # 合同编号    文本输入框
     htbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"
     htbh = textdata.excel_table_by_cellname(
         filename,
