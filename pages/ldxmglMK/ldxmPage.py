@@ -402,7 +402,7 @@ class LdxmPage(Page):
         u"劳动合同",
         u"F2"
         )
-    htscdw_select_box = u"//select[@id='bm']"                       # 合同生产单位    下拉选择框
+    htscdw_select_box = u"//select[@id='bm']"                       # 合同单位    下拉选择框
     htscdw = textdata.excel_table_by_cellname(
         filename,
         u"劳动合同",
@@ -480,6 +480,46 @@ class LdxmPage(Page):
 
     def create_ht(self):
         print u"填写 项目合同的各字段"
+        print u"选择 合同项目编号: ", self.xmbh
+        self.select_box(self.xmbh_select_box, self.xmbh)
+        print u"填写 合同编号: ", self.htbh
+        self.input_text(self.htbh_input, self.htbh)
+        print u"填写 合同名称: ", self.htmc
+        self.input_text(self.htmc_input, self.htmc)
+        print u"填写 合同总金额: ", self.htzje
+        self.input_text(self.htzje_input, self.htzje)
+        print u"填写 合同签订日期: ", self.htqdrq
+        self.input_text(self.htqdrq_input, self.htqdrq)
+        print u"填写 合同完成日期: ", self.htwcrq
+        self.input_text(self.htwcrq_input, self.htwcrq)
+        print u"选择 合同生产单位: ", self.htscdw
+        self.select_box(self.htscdw_select_box, self.htscdw)
+        print u"选择 合同考核方式: ", self.htkhfs
+        self.select_box(self.htkhfs_select_box, self.htkhfs)
+        print u"填写 客户名称: ", self.khmc
+        self.input_text(self.khmc_input, self.khmc)
+        print u"填写 合同内容: ", self.htnr
+        self.input_text(self.htnr_textarea, self.htnr)
+        print u"上传 附件: ", self.fj
+        self.input_text(self.fj_input, self.fj)
+
+    def create_htmx(self):
+        print u"填写 项目合同明细的各字段"
+        print u"填写 手输型号: ", self.ssxh
+        self.input_text(self.ssxh_input, self.ssxh)
+        print u"填写 款式: ", self.ks
+        self.input_text(self.ks_input, self.ks)
+        print u"填写 规格: ", self.gg
+        self.input_text(self.gg_input, self.gg)
+        print u"填写 品牌: ", self.pp
+        self.input_text(self.pp_input, self.pp)
+        print u"填写 数量: ", self.sssl
+        self.input_text(self.sssl_input, self.sssl)
+        print u"填写 单价: ", self.ssdj
+        self.input_text(self.ssdj_input, self.ssdj)
+
+
+
 
 
 

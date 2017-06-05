@@ -22,7 +22,6 @@ if __name__ == '__main__':
     testunit.addTest(TestCreateLdxm('testCreateLdxm'))
     sleep(8)
 
-
     # 定义报告输出路径
     htmlPath = u"page_demo_Report.html"
     fp = file(htmlPath, "wb")
