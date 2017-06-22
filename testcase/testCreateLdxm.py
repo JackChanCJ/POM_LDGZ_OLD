@@ -31,7 +31,6 @@ class TestCreateLdxm(unittest.TestCase):
 
         ldxm_Page.create_xm()
 
-
     def tearDown(self):
         pass
 
