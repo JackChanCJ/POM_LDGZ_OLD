@@ -18,7 +18,6 @@ class Page(object):
         self.base_url = base_url
         self.timeout = 30
 
-
     def input_text(self, loc, text):
         self.driver.find_element_by_xpath(loc).send_keys(text)
         sleep(1)
