@@ -61,7 +61,6 @@ class LoginPage(Page, unittest.TestCase):
         sleep(5)
 
     # 注销并退出
-
     def log_out(self):
         print u"注销  退出系统"
         self.driver.switch_to.frame('topFrame')
