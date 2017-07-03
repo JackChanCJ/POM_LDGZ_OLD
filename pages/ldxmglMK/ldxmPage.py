@@ -286,7 +286,7 @@ class LdxmPage(Page):
         self.select_box(self.xmmc_selection_box, self.xmmc)
         print u"输入 单位名称: ", self.dwmc
         self.input_text(self.dwmc_input, self.dwmc)
-        print u"输入 项目负责人: ", self.dwmc
+        print u"输入 项目负责人: ", self.xmfzr
         self.input_text(self.xmfzr_input, self.xmfzr)
         print u"输入 项目负责人联系电话: ", self.xmfzrlxdh
         self.input_text(self.xmfzrlxdh_input, self.xmfzrlxdh)
@@ -295,9 +295,9 @@ class LdxmPage(Page):
         print u"输入 合作方单位名称: ", self.hzfdwmc
         self.input_text(self.hzfdwmc_input, self.hzfdwmc)
         print u"输入 负责人: ", self.fzr
-        self.input_text(self.dz_input, self.fzr)
+        self.input_text(self.fzr_input, self.fzr)
         print u"输入 地址: ", self.dz
-        self.input_text(self.fzr_input, self.dz)
+        self.input_text(self.dz_input, self.dz)
         print u"输入 营业执照注册号: ", self.yyzzzch
         self.input_text(self.yyzzzch_input, self.yyzzzch)
         print u"输入 客户联系电话: ", self.khlxdh

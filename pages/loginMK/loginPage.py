@@ -85,8 +85,6 @@ class LoginPage(Page, unittest.TestCase):
         self.input_password()
 
         self.click_login_btn()
-        # 全屏
-        self.driver.maximize_window()
 
         # print u"验证标题"
         # sec = u"全国监狱信息化管理平台V3.0"
