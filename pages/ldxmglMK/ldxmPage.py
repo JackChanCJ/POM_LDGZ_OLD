@@ -263,7 +263,6 @@ class LdxmPage(Page):
         self.enter_sub_menu(self.mkmc, self.ymmc)
         print u"进入  %s-->%s  页面" %(self.mkmc, self.ymmc)
 
-
     def click_create_xm_btn(self):
         print u"点击 新增劳动项目按钮，跳转至劳动项目页面"
         self.driver.switch_to.default_content()
@@ -470,7 +469,6 @@ class LdxmPage(Page):
         u"合同明细",
         u"F2"
         )
-
 
     def click_create_ht_btn(self):
         print u"点击 新增劳动合同,跳转至劳动合同页面"
