@@ -22,13 +22,21 @@ class LdxmPage(Page):
     # 生产单位信息
     filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
 
-    xmlx_selection_box = u"//select[@id='xmlx']"                   # 项目类型   下拉选择框
+    xmbh_input_box = u"//input[@name='lgXmXmzr.xmbh']"          # 项目编号   文本框获取
+
+    xmbh = textdata.excel_table_by_cellname(
+            filename,
+            u'劳动项目',
+            u'B2'
+            )
+
+    xmlx_select_box = u"//select[@id='xmlx']"                   # 项目类型   下拉选择框
     xmlx = textdata.excel_table_by_cellname(
             filename,
             u'劳动项目',
             u'B2'
             )
-    xmmc_selection_box = u"//select[@id='selectXmmc']"             # 项目名称   下拉选择框
+    xmmc_select_box = u"//select[@id='selectXmmc']"             # 项目名称   下拉选择框
     xmmc = textdata.excel_table_by_cellname(
             filename,
             u'劳动项目',
@@ -122,13 +130,13 @@ class LdxmPage(Page):
             u'合同信息',
             u'D2'
     )
-    scdw_selection_box = u"//select[@id='bm']"                     # 生产单位   下拉选择框
+    scdw_select_box = u"//select[@id='bm']"                     # 生产单位   下拉选择框
     scdw = textdata.excel_table_by_cellname(
             filename,
             u'合同信息',
             u'E2'
     )
-    khfs_selection_box = u"//select[@id='khfs']"                   # 考核方式   下拉选择框
+    khfs_select_box = u"//select[@id='khfs']"                   # 考核方式   下拉选择框
     khfs = textdata.excel_table_by_cellname(
             filename,
             u'合同信息',
@@ -221,7 +229,7 @@ class LdxmPage(Page):
             u'项目基本资料',
             u'I2'
     )
-    fxdj_selection_box = u"//select[@id='fxdj']"                   # 风险等级    下拉选择框
+    fxdj_select_box = u"//select[@id='fxdj']"                   # 风险等级    下拉选择框
     fxdj = textdata.excel_table_by_cellname(
             filename,
             u'项目基本资料',
@@ -279,10 +287,12 @@ class LdxmPage(Page):
 
         #  生产单位信息
         print u"填写 劳动项目各字段"
+        write_xls_xmbh = self.select_box()
+        print write_xls_xmbh
         print u"选择 项目类型：", self.xmlx
-        self.select_box(self.xmlx_selection_box, self.xmlx)
+        self.select_box(self.xmlx_select_box, self.xmlx)
         print u"选择 项目名称：", self.xmmc
-        self.select_box(self.xmmc_selection_box, self.xmmc)
+        self.select_box(self.xmmc_select_box, self.xmmc)
         print u"输入 单位名称: ", self.dwmc
         self.input_text(self.dwmc_input, self.dwmc)
         print u"输入 项目负责人: ", self.xmfzr
@@ -316,9 +326,9 @@ class LdxmPage(Page):
         print u"输入 总金额: ", self.zje
         self.input_text(self.zje_input, self.zje)
         print u"输入 生产单位: ", self.scdw
-        self.select_box(self.scdw_selection_box, self.scdw)
+        self.select_box(self.scdw_select_box, self.scdw)
         print u"输入 考核方式: ", self.khfs
-        self.select_box(self.khfs_selection_box, self.khfs)
+        self.select_box(self.khfs_select_box, self.khfs)
         print u"输入 完成日期: ", self.wcrq
         self.input_text(self.wcrq_input, self.wcrq)
         print u"输入 付款条件: ", self.fktj
@@ -350,7 +360,7 @@ class LdxmPage(Page):
         print u"输入 水电、房租成本费用: ", self.sdfzcb
         self.input_text(self.lr_input, self.lr)
         print u"输入 风险等级: ", self.fxdj
-        self.select_box(self.fxdj_selection_box, self.fxdj)
+        self.select_box(self.fxdj_select_box, self.fxdj)
         print u"输入 风险评估附件: ", self.fxpgfj
         self.input_text(self.fxpgfj_input, self.fxpgfj)
         print u"输入 项目评估: ", self.xmpg
@@ -360,7 +370,7 @@ class LdxmPage(Page):
         print u"输入 备注: ", self.bz
         self.input_text(self.bz_textarea, self.bz)
         # 新增项目页面按钮
-        print u"点击 保存 按钮: "
+        # print u"点击 '保存' 按钮"
         # self.click(self.bc_btn)
         sleep(3)
 
@@ -522,7 +532,7 @@ class LdxmPage(Page):
 
 
         # print u"选择 项目名称：", self.xmmc
-        # self.select_box(self.xmmc_selection_box, self.xmmc)
+        # self.select_box(self.xmmc_select_box, self.xmmc)
         # print u"输入 单位名称: ", self.dwmc
 
 

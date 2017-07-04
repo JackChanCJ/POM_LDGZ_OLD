@@ -189,8 +189,8 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-03 17:26:38</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:40.095000</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-04 16:28:45</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:41.478000</p>
 <p class='attribute'><strong>Status:</strong> Pass 1 Error 1</p>
 
 <p class='description'>系统测试</p>
@@ -264,7 +264,7 @@ pt1.1: 打开劳动改造首页:   http://192.168.10.201:7001
 </tr>
 
 <tr class='errorClass'>
-    <td>testcase.testCreateLdht.TestCreateLdht</td>
+    <td>testcase.testCreateLdxm.TestCreateLdxm</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
@@ -273,7 +273,7 @@ pt1.1: 打开劳动改造首页:   http://192.168.10.201:7001
 </tr>
 
 <tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>testCreateLdht</div></td>
+    <td class='errorCase'><div class='testcase'>testCreateLdxm</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -294,21 +294,19 @@ ft2.1: 登录并进入首页
 输入  用户密码 000000
 点击  登陆  按钮
 进入  劳动项目与计划管理--&gt;劳动项目  页面
-点击 新增劳动合同,跳转至劳动合同页面
-填写 项目合同的各字段
-选择 合同项目编号:  None
+点击 新增劳动项目按钮，跳转至劳动项目页面
+填写 劳动项目各字段
 Traceback (most recent call last):
-  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdht.py", line 31, in testCreateLdht
-    ldht_Page.create_ht()
-  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 482, in create_ht
-    self.select_box(self.xmbh_select_box, self.xmbh)
-  File "D:\Test\POM_LDGZ_OLD\pages\basePage.py", line 61, in select_box
-    Select(self.driver.find_element_by_xpath(loc)).select_by_visible_text(text)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\support\select.py", line 115, in select_by_visible_text
-    xpath = ".//option[normalize-space(.) = %s]" % self._escapeString(text)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\support\select.py", line 218, in _escapeString
-    if '"' in value and "'" in value:
-TypeError: argument of type 'NoneType' is not iterable
+  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 32, in testCreateLdxm
+    ldxm_Page.create_xm()
+  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 282, in create_xm
+    write_xls_xmbh = self.driver.find_element_by_xpath(self.xmbh).value()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 730, in find_element
+    raise InvalidSelectorException("Invalid locator values passed in")
+InvalidSelectorException: Message: Invalid locator values passed in
+
 
 
         </pre>

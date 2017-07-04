@@ -19,8 +19,8 @@ if __name__ == '__main__':
     # testunit.addTest(tests)
 
     # 测试登陆
-    testunit.addTest(TestloginPage('testLogin'))
-    sleep(8)
+    # testunit.addTest(TestloginPage('testLogin'))
+    # sleep(8)
 
     # 测试新增劳动项目
     testunit.addTest(TestCreateLdxm('testCreateLdxm'))
