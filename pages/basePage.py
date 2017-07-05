@@ -51,7 +51,7 @@ class Page(object):
         c_ele = self.driver.find_element_by_xpath(loc)
         c_ele.click()
         sleep(1)
-        ret = Select(c_ele).optins
+        ret = Select(c_ele).options
         srand = random.Random().choice(ret)
         Select(c_ele).select_by_value(srand.get_attribute("value"))
         sleep(1)
