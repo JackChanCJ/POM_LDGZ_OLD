@@ -3,10 +3,9 @@ __author__ = 'JACK_CHAN'
 
 import sys
 import textdata
+import re
 from pages.basePage import Page
 from time import sleep
-from openpyxl import Workbook
-from openpyxl import load_workbook
 
 
 reload(sys)
@@ -379,7 +378,10 @@ class LdxmPage(Page):
         # self.click(self.bc_btn)
         sleep(3)
 
-    # 劳动项目——合同备案
+
+    """
+        劳动项目——合同备案
+    """
     xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            # 合同项目编号    下拉选择框
     xmbh = textdata.read_excel_by_cellname(
         filename,
@@ -494,6 +496,7 @@ class LdxmPage(Page):
     def create_ht(self):
         print u"填写 项目合同的各字段"
         print u"选择 合同项目编号: ", self.xmbh
+
         self.select_box(self.xmbh_select_box, self.xmbh)
         print u"填写 合同编号: ", self.htbh
         self.input_text(self.htbh_input, self.htbh)
