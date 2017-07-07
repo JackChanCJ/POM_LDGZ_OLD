@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-04 16:28:45</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:41.478000</p>
-<p class='attribute'><strong>Status:</strong> Pass 1 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-07 15:17:12</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:08.296000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
 
 <p class='description'>系统测试</p>
 </div>
@@ -222,7 +222,7 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='passClass'>
-    <td>testcase.testLoginPage.TestloginPage</td>
+    <td>testcase.testCreateLdxm.TestCreateLdxm</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -231,7 +231,7 @@ function showOutput(id, name) {
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>testLogin</div></td>
+    <td class='none'><div class='testcase'>testCreateLdxm</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -245,49 +245,7 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.1: 打开劳动改造首页:   http://192.168.10.201:7001
-选择  劳动改造系统图标
-输入  用户名 999999
-输入  用户密码 000000
-点击  登陆  按钮
-验证标题
-注销  退出系统
-弹出框:   您确定要注销吗？
-确定
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='errorClass'>
-    <td>testcase.testCreateLdxm.TestCreateLdxm</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
-
-<tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>testCreateLdxm</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
-
-    <div id='div_ft2.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft2.1: 登录并进入首页
+pt1.1: 登录并进入首页
 打开劳动改造首页:   http://192.168.10.201:7001
 选择  劳动改造系统图标
 输入  用户名 999999
@@ -296,17 +254,50 @@ ft2.1: 登录并进入首页
 进入  劳动项目与计划管理--&gt;劳动项目  页面
 点击 新增劳动项目按钮，跳转至劳动项目页面
 填写 劳动项目各字段
-Traceback (most recent call last):
-  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 32, in testCreateLdxm
-    ldxm_Page.create_xm()
-  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 282, in create_xm
-    write_xls_xmbh = self.driver.find_element_by_xpath(self.xmbh).value()
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 290, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 730, in find_element
-    raise InvalidSelectorException("Invalid locator values passed in")
-InvalidSelectorException: Message: Invalid locator values passed in
-
+获取的项目编号的值:  43040004
+选择 项目类型： 自主生产
+选择 项目名称： 出监教育
+输入 单位名称:  湖北省武汉市洪山体育
+输入 项目负责人:  管理员（admin）
+输入 项目负责人联系电话:  027-99999999
+输入 合作方单位名称:  武汉市锦辉兄弟服装加工有限公司
+输入 负责人:  张辉（法定代表人）
+输入 地址:  武汉市黄陂区佳海都市工业基地第A12幢2A号房
+输入 营业执照注册号:  420116000062378
+输入 客户联系电话:  027-88888888
+输入 传真号:  027-77777777
+输入 注册资金:  30000.000000
+输入 产品型号:  XXL180/185
+输入 数量:  500
+输入 单价:  80
+输入 总金额:  40000
+输入 生产单位:  三监区
+输入 考核方式:  个人
+输入 完成日期:  2017-06-10
+输入 付款条件:  第一次交货根据质量标准，经仓库及跟单员验收确认后，交付总货款的:  60%
+输入 填报人:  管理员（admin）
+输入 填报人联系电话:  027-66666666
+输入 合同附件:  C:\Users\Administrator\Desktop\关于武昌监狱现场实施相关事宜.doc
+输入 投入劳动力人数:  50
+输入 项目投资额:  40000
+输入 设备台（套）:  50
+输入 企业自有设备:  0
+输入 客户投入设备:  50
+输入 项目年收入:  40000
+输入 月人均收入:  800
+输入 利润:  20000
+输入 水电、房租成本费用:  2000
+输入 风险等级:  较高
+输入 风险评估附件:  C:\Users\Administrator\Desktop\武昌监狱软件平台以及硬件相关需求.docx
+输入 项目评估:  abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+~!@#$%^&amp;*()_+{}|:"&gt;?&lt;+-*/...
+项目评估
+输入 评估人员:  管理员（admin）
+输入 备注:  abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+~!@#$%^&amp;*()_+{}|:"&gt;?&lt;+-*/...
+备注
 
 
         </pre>
@@ -318,10 +309,10 @@ InvalidSelectorException: Message: Invalid locator values passed in
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>2</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>

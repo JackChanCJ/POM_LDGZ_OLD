@@ -22,40 +22,34 @@ class LdxmPage(Page):
     # 生产单位信息
     filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
 
-    xmbh_input_box = u"//input[@name='lgXmXmzr.xmbh']"          # 项目编号   文本框获取
-
-    xmbh = textdata.excel_table_by_cellname(
-            filename,
-            u'劳动项目',
-            u'B2'
-            )
+    xmbh_input = u"//input[@name='lgXmXmzr.xmbh']"          # 项目编号   文本框获取
 
     xmlx_select_box = u"//select[@id='xmlx']"                   # 项目类型   下拉选择框
-    xmlx = textdata.excel_table_by_cellname(
+    xmlx = textdata.read_excel_by_cellname(
             filename,
             u'劳动项目',
             u'B2'
             )
     xmmc_select_box = u"//select[@id='selectXmmc']"             # 项目名称   下拉选择框
-    xmmc = textdata.excel_table_by_cellname(
+    xmmc = textdata.read_excel_by_cellname(
             filename,
             u'劳动项目',
             u'C2'
             )
     dwmc_input = u"//input[@name='lgXmXmzr.xmscdwmc']"             # 单位名称   文本输入框
-    dwmc = textdata.excel_table_by_cellname(
+    dwmc = textdata.read_excel_by_cellname(
             filename,
             u'劳动项目',
             u'D2'
             )
     xmfzr_input = u"//input[@name='lgXmXmzr.xmfzr']"               # 项目负责人   文本输入框
-    xmfzr = textdata.excel_table_by_cellname(
+    xmfzr = textdata.read_excel_by_cellname(
             filename,
             u'劳动项目',
             u'E2'
     )
     xmfzrlxdh_input = u"//input[@name='lgXmXmzr.xmfzrlxdh']"       # 项目负责人联系电话   文本输入框
-    xmfzrlxdh = textdata.excel_table_by_cellname(
+    xmfzrlxdh = textdata.read_excel_by_cellname(
             filename,
             u'劳动项目',
             u'F2'
@@ -63,43 +57,43 @@ class LdxmPage(Page):
 
     # 客户单位信息
     hzfdwmc_input = u"//input[@name='lgXmXmzr.khdwmc']"            # 合作方单位名称   文本输入框
-    hzfdwmc = textdata.excel_table_by_cellname(
+    hzfdwmc = textdata.read_excel_by_cellname(
             filename,
             u'客户信息',
             u'A2'
     )
     fzr_input = u"//input[@name='lgXmXmzr.khfzr']"                 # 负责人   文本输入框
-    fzr = textdata.excel_table_by_cellname(
+    fzr = textdata.read_excel_by_cellname(
             filename,
             u'客户信息',
             u'B2'
     )
     dz_input = u"//input[@name='lgXmXmzr.khdz']"                   # 地址   文本输入框
-    dz = textdata.excel_table_by_cellname(
+    dz = textdata.read_excel_by_cellname(
             filename,
             u'客户信息',
             u'C2'
     )
     yyzzzch_input = u"//input[@name='lgXmXmzr.yyzzzch']"           # 营业执照注册号   文本输入框
-    yyzzzch = textdata.excel_table_by_cellname(
+    yyzzzch = textdata.read_excel_by_cellname(
             filename,
             u'客户信息',
             u'D2'
     )
     khlxdh_input = u"//input[@name='lgXmXmzr.khfzrlxdh']"          # 客户联系电话   文本输入框
-    khlxdh = textdata.excel_table_by_cellname(
+    khlxdh = textdata.read_excel_by_cellname(
             filename,
             u'客户信息',
             u'E2'
     )
     czhm_input = u"//input[@name='lgXmXmzr.czh']"                 # 传真号码   文本输入框
-    czhm = textdata.excel_table_by_cellname(
+    czhm = textdata.read_excel_by_cellname(
             filename,
             u'客户信息',
             u'F2'
     )
     zczj_input = u"//input[@name='lgXmXmzr.zczj']"                 # 注册资金   文本输入框
-    zczj = textdata.excel_table_by_cellname(
+    zczj = textdata.read_excel_by_cellname(
             filename,
             u'客户信息',
             u'G2'
@@ -107,68 +101,68 @@ class LdxmPage(Page):
 
     # 合同信息
     cpxh_input = u"//input[@name='lgXmHtmx.kh']"                   # 产品型号   文本输入框
-    cpxh = textdata.excel_table_by_cellname(
+    cpxh = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'A2'
     )
     sl_input = u"//input[@name='lgXmHtmx.sl']"                     # 数量   文本输入框
-    sl = textdata.excel_table_by_cellname(
+    sl = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'B2'
     )
     dj_input = u"//input[@name='lgXmHtmx.dj']"                     # 单价   文本输入框
-    dj = textdata.excel_table_by_cellname(
+    dj = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'C2'
     )
     zje_input = u"//input[@name='lgXmHtgl.je']"                    # 总金额   文本输入框
-    zje = textdata.excel_table_by_cellname(
+    zje = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'D2'
     )
     scdw_select_box = u"//select[@id='bm']"                     # 生产单位   下拉选择框
-    scdw = textdata.excel_table_by_cellname(
+    scdw = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'E2'
     )
     khfs_select_box = u"//select[@id='khfs']"                   # 考核方式   下拉选择框
-    khfs = textdata.excel_table_by_cellname(
+    khfs = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'F2'
     )
     # htbh_input = u"//input[@name='lgXmHtgl.htbh']"               # 合同编号   文本输入框
     wcrq_input = u"//input[@name='lgXmHtgl.wcrq']"                 # 完成日期   文本输入框
-    wcrq = textdata.excel_table_by_cellname(
+    wcrq = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'H2'
     )
     fktj_input = u"//input[@name='lgXmXmzr.fktj']"                 # 付款条件   文本输入框
-    fktj = textdata.excel_table_by_cellname(
+    fktj = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'I2'
     )
     tbr_input = u"//input[@name='lgXmXmzr.tbr']"                   # 填报人   文本输入框
-    tbr = textdata.excel_table_by_cellname(
+    tbr = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'J2'
     )
     tbrlxdh_input = u"//input[@name='lgXmXmzr.tbrlxdh']"           # 填报人联系电话   文本输入框
-    tbrlxdh = textdata.excel_table_by_cellname(
+    tbrlxdh = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'K2'
     )
     htfj_input = u"//input[@id='fileHTFJ']"                        # 合同附件   文本输入框
-    htfj = textdata.excel_table_by_cellname(
+    htfj = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'L2'
@@ -176,85 +170,85 @@ class LdxmPage(Page):
 
     # 项目基本资料
     trldlrs_input = u"//input[@name='lgXmXmzr.xmrs']"              # 投入劳动力人数   文本输入框
-    trldlrs = textdata.excel_table_by_cellname(
+    trldlrs = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'A2'
     )
     xmtze_input = u"//input[@name='lgXmXmzr.xmje']"                # 项目投资额   文本输入框
-    xmtze = textdata.excel_table_by_cellname(
+    xmtze = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'B2'
     )
     sbs_input = u"//input[@name='lgXmXmzr.sbs']"                   # 设备台（套）   文本输入框
-    sbs = textdata.excel_table_by_cellname(
+    sbs = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'C2'
     )
     qyzysb_input = u"//input[@name='lgXmXmzr.zysbs']"              # 企业自有设备   文本输入框
-    qyzysb = textdata.excel_table_by_cellname(
+    qyzysb = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'D2'
     )
     khtrsb_input = u"//input[@name='lgXmXmzr.khtrsbs']"            # 客户投入设备   文本输入框
-    khtrsb = textdata.excel_table_by_cellname(
+    khtrsb = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'E2'
     )
     xmnsr_input = u"//input[@name='lgXmXmzr.yqnsr']"               # 项目年收入   文本输入框
-    xmnsr = textdata.excel_table_by_cellname(
+    xmnsr = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'F2'
     )
     yrjsr_input = u"//input[@name='lgXmXmzr.yqrjysr']"             # 月人均收入   文本输入框
-    yrjsr = textdata.excel_table_by_cellname(
+    yrjsr = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'G2'
     )
     sdfzcb_input = u"//input[@name='lgXmXmzr.sdfzcb']"             # 水电、房租成本费用   文本输入框
-    sdfzcb = textdata.excel_table_by_cellname(
+    sdfzcb = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'H2'
     )
     lr_input = u"//input[@name='lgXmXmzr.lr']"                     # 利润   文本输入框
-    lr = textdata.excel_table_by_cellname(
+    lr = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'I2'
     )
     fxdj_select_box = u"//select[@id='fxdj']"                   # 风险等级    下拉选择框
-    fxdj = textdata.excel_table_by_cellname(
+    fxdj = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'J2'
     )
     fxpgfj_input = u"//input[@id='fileFJ']"                        # 风险评估附件    文本输入框
-    fxpgfj = textdata.excel_table_by_cellname(
+    fxpgfj = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'K2'
     )
     xmpg_textarea = u"//textarea[@name='lgXmXmzr.xmpg']"           # 项目评估    文本区域
-    xmpg = textdata.excel_table_by_cellname(
+    xmpg = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'L2'
     )
     pgry_textarea = u"//textarea[@name='lgXmXmzr.pgr']"            # 评估人员    文本区域
-    pgry = textdata.excel_table_by_cellname(
+    pgry = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'M2'
     )
     bz_textarea = u"//textarea[@name='lgXmXmzr.bz']"               # 备注    文本区域
-    bz = textdata.excel_table_by_cellname(
+    bz = textdata.read_excel_by_cellname(
             filename,
             u'项目基本资料',
             u'N2'
@@ -285,10 +279,21 @@ class LdxmPage(Page):
         # trldlrs, xmtze, sbs, qyzysb, khtrsb, xmnsr,                             # 项目基本资料
         # yrjsr, sdfzcb, lr, fxdj, fxpgfj, xmpg, pgry, bz
 
-        #  生产单位信息
+        # 生产单位信息
         print u"填写 劳动项目各字段"
-        write_xls_xmbh = self.select_box()
-        print write_xls_xmbh
+        # 获取劳动项目页面中项目编号的值并填写入excle中
+        xmbh_value = self.get_input_text(self.xmbh_input, attribute = "value")
+        print u"获取的项目编号的值: ", xmbh_value
+        textdata.write_excel_by_cellname(c_value = xmbh_value,
+                                         filename = self.filename,
+                                         sheet_index = 0,
+                                         cell_num = 'A2'
+                                         )
+        textdata.write_excel_by_cellname(c_value = xmbh_value,
+                                         filename = self.filename,
+                                         sheet_index = 4,
+                                         cell_num = 'A2'
+                                         )
         print u"选择 项目类型：", self.xmlx
         self.select_box(self.xmlx_select_box, self.xmlx)
         print u"选择 项目名称：", self.xmmc
@@ -376,67 +381,67 @@ class LdxmPage(Page):
 
     # 劳动项目——合同备案
     xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            # 合同项目编号    下拉选择框
-    xmbh = textdata.excel_table_by_cellname(
+    xmbh = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"A2"
         )
     htbh_input = u"//select[@name='lgXmHtgl.htbh']"                 # 合同编号    文本输入框
-    htbh = textdata.excel_table_by_cellname(
+    htbh = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"B2"
         )
     htmc_input = u"//input[@name='lgXmHtgl.htmc']"                  # 合同名称    文本输入框
-    htmc = textdata.excel_table_by_cellname(
+    htmc = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"C2"
         )
     htzje_input = u"//input[@name='lgXmHtgl.je']"                   # 合同总金额    文本输入框
-    htzje = textdata.excel_table_by_cellname(
+    htzje = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"D2"
         )
     htqdrq_input = u"//input[@name='lgXmHtgl.qdrq']"                # 合同签订日期    文本输入框
-    htqdrq = textdata.excel_table_by_cellname(
+    htqdrq = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"E2"
         )
     htwcrq_input = u"//input[@name='lgXmHtgl.wcrq']"                # 合同完成日期    文本输入框
-    htwcrq = textdata.excel_table_by_cellname(
+    htwcrq = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"F2"
         )
     htscdw_select_box = u"//select[@id='bm']"                       # 合同单位    下拉选择框
-    htscdw = textdata.excel_table_by_cellname(
+    htscdw = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"G2"
         )
     htkhfs_select_box = u"//select[@id='khfs']"                     # 合同考核方式    下拉选择框
-    htkhfs = textdata.excel_table_by_cellname(
+    htkhfs = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"H2"
         )
     khmc_input = u"//input[@name='lgXmHtgl.khmc']"                  # 客户名称    文本输入框
-    khmc = textdata.excel_table_by_cellname(
+    khmc = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"I2"
         )
     htnr_textarea = u"//input[@name='lgXmHtgl.khmc']"               # 合同内容    文本输入框
-    htnr = textdata.excel_table_by_cellname(
+    htnr = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"J2"
         )
     fj_input = u"//input[@name='lgXmHtgl.khmc']"                    # 附件    文本输入框
-    fj = textdata.excel_table_by_cellname(
+    fj = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"K2"
@@ -444,37 +449,37 @@ class LdxmPage(Page):
 
     # 合同明细
     ssxh_input = u"//input[@name='cpkh10']"                         # 手输型号    文本输入框
-    ssxh = textdata.excel_table_by_cellname(
+    ssxh = textdata.read_excel_by_cellname(
         filename,
         u"合同明细",
         u"A2"
         )
     ks_input = u"//input[@name='cpks0']"                            # 款式    文本输入框
-    ks = textdata.excel_table_by_cellname(
+    ks = textdata.read_excel_by_cellname(
         filename,
         u"合同明细",
         u"B2"
         )
     gg_input = u"//input[@name='ggxh0']"                            # 规格    文本输入框
-    gg = textdata.excel_table_by_cellname(
+    gg = textdata.read_excel_by_cellname(
         filename,
         u"合同明细",
         u"C2"
         )
     pp_input = u"//input[@name='ppmc0']"                            # 品牌    文本输入框
-    pp = textdata.excel_table_by_cellname(
+    pp = textdata.read_excel_by_cellname(
         filename,
         u"合同明细",
         u"D2"
         )
     sssl_input = u"//input[@name='sl0']"                          # 数量    文本输入框
-    sssl = textdata.excel_table_by_cellname(
+    sssl = textdata.read_excel_by_cellname(
         filename,
         u"合同明细",
         u"E2"
         )
     ssdj_input = u"//input[@name='dj0']"                          # 单价    文本输入框
-    ssdj = textdata.excel_table_by_cellname(
+    ssdj = textdata.read_excel_by_cellname(
         filename,
         u"合同明细",
         u"F2"

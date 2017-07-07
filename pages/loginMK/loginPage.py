@@ -21,15 +21,15 @@ class LoginPage(Page, unittest.TestCase):
     logout_btn = u"html/body/div[3]/div[1]"                #注销    按钮
 
     filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
-    username = textdata.excel_table_by_cellname(
+    username = textdata.read_excel_by_cellname(
             filename,
             sheet_name=u'登录',
-            col_num=u'A2'
+            cell_num=u'A2'
             )
-    password = textdata.excel_table_by_cellname(
+    password = textdata.read_excel_by_cellname(
             filename,
             sheet_name=u'登录',
-            col_num=u'B2'
+            cell_num=u'B2'
             )
 
     def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):

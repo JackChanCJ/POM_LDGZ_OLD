@@ -61,3 +61,7 @@ class Page(object):
         Select(self.driver.find_element_by_xpath(loc)).select_by_visible_text(text)
         sleep(1)
 
+    # 获取文本框的值
+    def get_input_text(self, loc, attribute):
+        attribute_value = self.driver.find_element_by_xpath(loc).get_attribute(attribute)
+        return attribute_value
