@@ -23,12 +23,12 @@ if __name__ == '__main__':
     # sleep(8)
 
     # 测试新增劳动项目
-    testunit.addTest(TestCreateLdxm('testCreateLdxm'))
-    sleep(8)
+    # testunit.addTest(TestCreateLdxm('testCreateLdxm'))
+    # sleep(8)
 
     # 测试新增劳动合同
-    # testunit.addTest(TestCreateLdht('testCreateLdht'))
-    # sleep(8)
+    testunit.addTest(TestCreateLdht('testCreateLdht'))
+    sleep(8)
 
     # 定义报告输出路径
     htmlPath = u"page_demo_Report.html"

@@ -31,6 +31,8 @@ class TestCreateLdxm(unittest.TestCase):
 
         ldxm_Page.create_xm()
 
+        login_Page.log_out()
+
     def tearDown(self):
         pass
 

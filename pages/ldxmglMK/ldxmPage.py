@@ -6,6 +6,7 @@ import textdata
 import re
 from pages.basePage import Page
 from time import sleep
+from selenium.webdriver.support.select import Select
 
 
 reload(sys)
@@ -123,13 +124,13 @@ class LdxmPage(Page):
             u'合同信息',
             u'D2'
     )
-    scdw_select_box = u"//select[@id='bm']"                     # 生产单位   下拉选择框
+    scdw_select_box = u"//select[@id='bm']"                        # 生产单位   下拉选择框
     scdw = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
             u'E2'
     )
-    khfs_select_box = u"//select[@id='khfs']"                   # 考核方式   下拉选择框
+    khfs_select_box = u"//select[@id='khfs']"                      # 考核方式   下拉选择框
     khfs = textdata.read_excel_by_cellname(
             filename,
             u'合同信息',
@@ -374,21 +375,23 @@ class LdxmPage(Page):
         print u"输入 备注: ", self.bz
         self.input_text(self.bz_textarea, self.bz)
         # 新增项目页面按钮
-        # print u"点击 '保存' 按钮"
-        # self.click(self.bc_btn)
+        print u"点击 '保存' 按钮"
+        self.click(self.bc_btn)
         sleep(3)
 
 
     """
         劳动项目——合同备案
     """
+    xmbh_select_ele = u"//select[@name='lgXmHtgl.xmbh']/option"     # 合同项目编号    下拉选择框option元素
     xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            # 合同项目编号    下拉选择框
     xmbh = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"A2"
         )
-    htbh_input = u"//select[@name='lgXmHtgl.htbh']"                 # 合同编号    文本输入框
+    # xmbh = re.search(re_obj, re_xmbh)
+    htbh_input = u"//input[@name='lgXmHtgl.htbh']"                 # 合同编号    文本输入框
     htbh = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
@@ -495,9 +498,13 @@ class LdxmPage(Page):
 
     def create_ht(self):
         print u"填写 项目合同的各字段"
-        print u"选择 合同项目编号: ", self.xmbh
-
-        self.select_box(self.xmbh_select_box, self.xmbh)
+        xmbhs_ele = self.driver.find_elements_by_xpath(self.xmbh_select_ele)
+        for xmbh_ele in xmbhs_ele:
+            xmbh_value = xmbh_ele.get_attribute('value')
+            if xmbh_value == self.xmbh:
+                Select(self.driver.find_element_by_xpath(self.xmbh_select_box))\
+                    .select_by_value(self.xmbh)
+                print u"选择 合同项目编号: ", xmbh_value
         print u"填写 合同编号: ", self.htbh
         self.input_text(self.htbh_input, self.htbh)
         print u"填写 合同名称: ", self.htmc
