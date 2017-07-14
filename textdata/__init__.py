@@ -18,7 +18,7 @@ def read_excel_by_cellname(filename,
     value = ws[cell_num].value
     return value
 
-def write_excel_by_cellname(c_value,
+def write_excel_by_cellname(w_value,
                             filename,
                             sheet_index,
                             cell_num
@@ -26,7 +26,7 @@ def write_excel_by_cellname(c_value,
     wb = load_workbook(filename)
     wb._active_sheet_index = sheet_index
     ws = wb.active
-    ws[cell_num] = c_value
+    ws[cell_num] = w_value
     wb.save(filename)
     return wb
 

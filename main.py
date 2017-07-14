@@ -14,21 +14,26 @@ sys.setdefaultencoding("utf-8")
 
 if __name__ == '__main__':
     testunit = unittest.TestSuite()
-    # 添加多个测试集
-    # tests = ['testLogin1','testLogin2','testLogin3']
+    # """
+    #     把需要运行的用例加进来即可
+    # """
+    # tests = [TestloginPage('testLogin'),
+    #          TestCreateLdxm('testCreateLdxm'),
+    #          TestCreateLdht('testCreateLdht')
+    #          ]
     # testunit.addTest(tests)
 
     # 测试登陆
-    # testunit.addTest(TestloginPage('testLogin'))
-    # sleep(8)
+    testunit.addTest(TestloginPage('testLogin'))
+    sleep(5)
 
     # 测试新增劳动项目
-    # testunit.addTest(TestCreateLdxm('testCreateLdxm'))
-    # sleep(8)
+    testunit.addTest(TestCreateLdxm('testCreateLdxm'))
+    sleep(5)
 
     # 测试新增劳动合同
     testunit.addTest(TestCreateLdht('testCreateLdht'))
-    sleep(8)
+    sleep(5)
 
     # 定义报告输出路径
     htmlPath = u"page_demo_Report.html"

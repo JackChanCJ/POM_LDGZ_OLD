@@ -7,6 +7,7 @@ import re
 from pages.basePage import Page
 from time import sleep
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.keys import Keys
 
 
 reload(sys)
@@ -284,12 +285,12 @@ class LdxmPage(Page):
         # 获取劳动项目页面中项目编号的值并填写入excle中
         xmbh_value = self.get_input_text(self.xmbh_input, attribute = "value")
         print u"获取的项目编号的值: ", xmbh_value
-        textdata.write_excel_by_cellname(c_value = xmbh_value,
+        textdata.write_excel_by_cellname(w_value= xmbh_value,
                                          filename = self.filename,
                                          sheet_index = 0,
                                          cell_num = 'A2'
                                          )
-        textdata.write_excel_by_cellname(c_value = xmbh_value,
+        textdata.write_excel_by_cellname(w_value= xmbh_value,
                                          filename = self.filename,
                                          sheet_index = 4,
                                          cell_num = 'A2'
@@ -383,6 +384,9 @@ class LdxmPage(Page):
     """
         劳动项目——合同备案
     """
+    # 合同备案新增页面按钮
+    ht_save = u"//input[@value='保存' and @type='button']"            # 保存按钮
+    ht_cancel = u"//input[@value='保存' and @type='button']"          # 取消按钮
     xmbh_select_ele = u"//select[@name='lgXmHtgl.xmbh']/option"     # 合同项目编号    下拉选择框option元素
     xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            # 合同项目编号    下拉选择框
     xmbh = textdata.read_excel_by_cellname(
@@ -433,19 +437,21 @@ class LdxmPage(Page):
         u"劳动合同",
         u"H2"
         )
-    khmc_input = u"//input[@name='lgXmHtgl.khmc']"                  # 客户名称    文本输入框
+    htkhfs_add_btn = u"//input[@id='addScdwBtn']"                   # 合同考核方式    添加按钮
+
+    khmc_input = u"//input[@name='lgXmHtgl.khmc']"                  # 客户名称        文本输入框
     khmc = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"I2"
         )
-    htnr_textarea = u"//input[@name='lgXmHtgl.khmc']"               # 合同内容    文本输入框
+    htnr_textarea = u"//textarea[@name='lgXmHtgl.htnr']"            # 合同内容    文本输入框
     htnr = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
         u"J2"
         )
-    fj_input = u"//input[@name='lgXmHtgl.khmc']"                    # 附件    文本输入框
+    fj_input = u"//input[@name='upload' and @id = 'fileFJ']"        # 附件    文本输入框
     fj = textdata.read_excel_by_cellname(
         filename,
         u"劳动合同",
@@ -453,7 +459,7 @@ class LdxmPage(Page):
         )
 
     # 合同明细
-    ssxh_input = u"//input[@name='cpkh10']"                         # 手输型号    文本输入框
+    ssxh_input = u"//input[@id='cpkh10']"                         # 手输型号    文本输入框
     ssxh = textdata.read_excel_by_cellname(
         filename,
         u"合同明细",
@@ -490,6 +496,7 @@ class LdxmPage(Page):
         u"F2"
         )
 
+
     def click_create_ht_btn(self):
         print u"点击 新增劳动合同,跳转至劳动合同页面"
         self.driver.switch_to.default_content()
@@ -505,28 +512,39 @@ class LdxmPage(Page):
                 Select(self.driver.find_element_by_xpath(self.xmbh_select_box))\
                     .select_by_value(self.xmbh)
                 print u"选择 合同项目编号: ", xmbh_value
-        print u"填写 合同编号: ", self.htbh
-        self.input_text(self.htbh_input, self.htbh)
+        # 获取合同编号的值，写入excel
+        htbh_value = self.driver.find_element_by_xpath(self.htbh_input).get_attribute('value')
+        textdata.write_excel_by_cellname(w_value=htbh_value,
+                                         filename=self.filename,
+                                         sheet_index=4,
+                                         cell_num='B2'
+                                         )
+        print u"填写 合同编号: ", htbh_value
+
         print u"填写 合同名称: ", self.htmc
         self.input_text(self.htmc_input, self.htmc)
         print u"填写 合同总金额: ", self.htzje
         self.input_text(self.htzje_input, self.htzje)
         print u"填写 合同签订日期: ", self.htqdrq
         self.input_text(self.htqdrq_input, self.htqdrq)
+        self.driver.find_element_by_xpath(self.htqdrq_input).send_keys(Keys.ESCAPE)
         print u"填写 合同完成日期: ", self.htwcrq
         self.input_text(self.htwcrq_input, self.htwcrq)
+        self.driver.find_element_by_xpath(self.htqdrq_input).send_keys(Keys.ESCAPE)
         print u"选择 合同生产单位: ", self.htscdw
         self.select_box(self.htscdw_select_box, self.htscdw)
         print u"选择 合同考核方式: ", self.htkhfs
         self.select_box(self.htkhfs_select_box, self.htkhfs)
+        print u"点击 考核方式“添加”按钮: ", self.htkhfs
+        self.click(self.htkhfs_add_btn)
         print u"填写 客户名称: ", self.khmc
         self.input_text(self.khmc_input, self.khmc)
         print u"填写 合同内容: ", self.htnr
         self.input_text(self.htnr_textarea, self.htnr)
         print u"上传 附件: ", self.fj
         self.input_text(self.fj_input, self.fj)
-
-    def create_htmx(self):
+        # 填写项目合同各字段
+        print
         print u"填写 项目合同明细的各字段"
         print u"填写 手输型号: ", self.ssxh
         self.input_text(self.ssxh_input, self.ssxh)
@@ -540,7 +558,8 @@ class LdxmPage(Page):
         self.input_text(self.sssl_input, self.sssl)
         print u"填写 单价: ", self.ssdj
         self.input_text(self.ssdj_input, self.ssdj)
-
+        print u"点击 '保存' 按钮"
+        self.click(self.ht_save)
 
 
 
