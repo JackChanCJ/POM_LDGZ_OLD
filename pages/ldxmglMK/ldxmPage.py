@@ -337,6 +337,7 @@ class LdxmPage(Page):
         self.select_box(self.khfs_select_box, self.khfs)
         print u"输入 完成日期: ", self.wcrq
         self.input_text(self.wcrq_input, self.wcrq)
+        self.driver.find_element_by_xpath(self.wcrq_input).send_keys(Keys.ESCAPE)
         print u"输入 付款条件: ", self.fktj
         self.input_text(self.fktj_input, self.fktj)
         print u"输入 填报人: ", self.tbr
@@ -385,7 +386,7 @@ class LdxmPage(Page):
         劳动项目——合同备案
     """
     # 合同备案新增页面按钮
-    ht_save = u"//input[@value='保存' and @type='button']"            # 保存按钮
+    ht_save = u"//input[@type='button' and @value='保 存']"            # 保存按钮
     ht_cancel = u"//input[@value='保存' and @type='button']"          # 取消按钮
     xmbh_select_ele = u"//select[@name='lgXmHtgl.xmbh']/option"     # 合同项目编号    下拉选择框option元素
     xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            # 合同项目编号    下拉选择框
@@ -496,7 +497,6 @@ class LdxmPage(Page):
         u"F2"
         )
 
-
     def click_create_ht_btn(self):
         print u"点击 新增劳动合同,跳转至劳动合同页面"
         self.driver.switch_to.default_content()
@@ -563,13 +563,6 @@ class LdxmPage(Page):
 
 
 
-
-
         # print u"选择 项目名称：", self.xmmc
         # self.select_box(self.xmmc_select_box, self.xmmc)
         # print u"输入 单位名称: ", self.dwmc
-
-
-
-
-

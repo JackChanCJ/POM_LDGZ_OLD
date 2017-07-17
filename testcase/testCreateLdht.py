@@ -30,6 +30,8 @@ class TestCreateLdht(unittest.TestCase):
 
         ldht_Page.create_ht()
 
+        login_Page.log_out()
+
     def tearDown(self):
-        pass
+        self.driver.quit()
 

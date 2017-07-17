@@ -34,5 +34,5 @@ class TestCreateLdxm(unittest.TestCase):
         login_Page.log_out()
 
     def tearDown(self):
-        pass
+        self.driver.quit()
 

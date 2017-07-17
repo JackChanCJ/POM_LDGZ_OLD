@@ -189,8 +189,8 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-14 17:29:40</p>
-<p class='attribute'><strong>Duration:</strong> 0:02:06.934000</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-17 16:47:24</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:47.990000</p>
 <p class='attribute'><strong>Status:</strong> Pass 1 Error 2</p>
 
 <p class='description'>系统测试</p>
@@ -251,6 +251,7 @@ pt1.1: 打开劳动改造首页:   http://192.168.10.201:7001
 输入  用户密码 000000
 点击  登陆  按钮
 验证标题
+
 注销  退出系统
 弹出框:   您确定要注销吗？
 确定
@@ -296,7 +297,7 @@ ft2.1: 登录并进入首页
 进入  劳动项目与计划管理--&gt;劳动项目  页面
 点击 新增劳动项目按钮，跳转至劳动项目页面
 填写 劳动项目各字段
-获取的项目编号的值:  43040004
+获取的项目编号的值:  43040005
 选择 项目类型： 自主生产
 选择 项目名称： 出监教育
 输入 单位名称:  湖北省武汉市洪山体育
@@ -341,19 +342,21 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ~!@#$%^&amp;*()_+{}|:"&gt;?&lt;+-*/...
 备注
 点击 '保存' 按钮
+
 注销  退出系统
 Traceback (most recent call last):
   File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 34, in testCreateLdxm
     login_Page.log_out()
-  File "D:\Test\POM_LDGZ_OLD\pages\loginMK\loginPage.py", line 66, in log_out
-    self.driver.switch_to.frame('topFrame')
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\switch_to.py", line 67, in frame
-    self._driver.execute(Command.SWITCH_TO_FRAME, {'id': frame_reference})
+  File "D:\Test\POM_LDGZ_OLD\pages\loginMK\loginPage.py", line 67, in log_out
+    self.driver.switch_to.default_content()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\switch_to.py", line 52, in default_content
+    self._driver.execute(Command.SWITCH_TO_FRAME, {'id': None})
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 233, in execute
     self.error_handler.check_response(response)
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
     raise exception_class(message, screen, stacktrace)
-NoSuchFrameException: Message: no such frame
+UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : è¯¥é¡¹ç®å·²å­å¨}
   (Session info: chrome=49.0.2623.75)
   (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.1 SP1 x86_64)
 
@@ -396,51 +399,20 @@ ft3.1: 登录并进入首页
 输入  用户名 999999
 输入  用户密码 000000
 点击  登陆  按钮
-进入  劳动项目与计划管理--&gt;劳动项目  页面
-点击 新增劳动合同,跳转至劳动合同页面
-填写 项目合同的各字段
-选择 合同项目编号:  43040004
-填写 合同编号:  29
-填写 合同名称:  第二监区的合同
-填写 合同总金额:  225000
-填写 合同签订日期:  2017-05-01
-填写 合同完成日期:  2017-08-18
-选择 合同生产单位:  二监区
-选择 合同考核方式:  个人
-点击 考核方式“添加”按钮:  个人
-填写 客户名称:  武汉市锦辉兄弟服装加工有限公司
-填写 合同内容:  合同内容
-合同内容
-合同内容
-合同内容
-合同内容
-合同内容
-上传 附件:  C:\Users\Administrator\Desktop\关于武昌监狱现场实施相关事宜.doc
-
-填写 项目合同明细的各字段
-填写 手输型号:  XXL_180/185
-填写 款式:  运动系列
-填写 规格:  加大
-填写 品牌:  JEANS
-填写 数量:  5000
-填写 单价:  45
-点击 '保存' 按钮
 Traceback (most recent call last):
-  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdht.py", line 31, in testCreateLdht
-    ldht_Page.create_ht()
-  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 562, in create_ht
-    self.click(self.ht_save)
-  File "D:\Test\POM_LDGZ_OLD\pages\basePage.py", line 32, in click
-    self.driver.find_element_by_xpath(loc).click()
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 290, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 744, in find_element
-    {'using': by, 'value': value})['value']
+  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdht.py", line 25, in testCreateLdht
+    ldht_Page.enter_ldxm_page()
+  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 266, in enter_ldxm_page
+    self.enter_sub_menu(self.mkmc, self.ymmc)
+  File "D:\Test\POM_LDGZ_OLD\pages\basePage.py", line 40, in enter_sub_menu
+    self.driver.switch_to.parent_frame()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\switch_to.py", line 77, in parent_frame
+    self._driver.execute(Command.SWITCH_TO_PARENT_FRAME)
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 233, in execute
     self.error_handler.check_response(response)
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
     raise exception_class(message, screen, stacktrace)
-NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@value='ä¿å­' and @type='button']"}
+WebDriverException: Message: chrome not reachable
   (Session info: chrome=49.0.2623.75)
   (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.1 SP1 x86_64)
 
