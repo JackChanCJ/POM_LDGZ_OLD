@@ -14,10 +14,10 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 class LdxmPage(Page):
+    sub_menu = u"劳动项目"
     mkmc = u"劳动项目与计划管理"
-    ymmc = u"劳动项目"
-    xm_btn = u"//a[text()='新增项目']"              # 新增项目    按钮
-    ht_btn = u"//a[text()='新增合同']"              # 新增合同    按钮
+    add_xm_btn = u"//a[text()='新增项目']"              # 新增项目    按钮
+    add_ht_btn = u"//a[text()='新增合同']"              # 新增合同    按钮
 
     # 劳动项目
     # 生产单位信息
@@ -263,14 +263,14 @@ class LdxmPage(Page):
         Page.__init__(self, driver)
 
     def enter_ldxm_page(self):
-        self.enter_sub_menu(self.mkmc, self.ymmc)
-        print u"进入  %s-->%s  页面" %(self.mkmc, self.ymmc)
+        self.enter_sub_menu(self.sub_menu, self.mkmc)
+        print u"进入  %s-->%s  页面" %(self.sub_menu, self.mkmc)
 
     def click_create_xm_btn(self):
         print u"点击 新增劳动项目按钮，跳转至劳动项目页面"
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
-        self.click(self.xm_btn)
+        self.click(self.add_xm_btn)
 
     def create_xm(self):
         # xmlx, xmmc, dwmc, xmfzr, xmfzrlxdh,                                     # 劳动项目
@@ -501,7 +501,7 @@ class LdxmPage(Page):
         print u"点击 新增劳动合同,跳转至劳动合同页面"
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
-        self.click(self.ht_btn)
+        self.click(self.add_ht_btn)
 
     def create_ht(self):
         print u"填写 项目合同的各字段"
@@ -560,6 +560,7 @@ class LdxmPage(Page):
         self.input_text(self.ssdj_input, self.ssdj)
         print u"点击 '保存' 按钮"
         self.click(self.ht_save)
+        sleep(3)
 
 
 

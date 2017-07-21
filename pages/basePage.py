@@ -36,11 +36,11 @@ class Page(object):
         self.driver.title
         sleep(1)
 
-    def enter_sub_menu(self, mkmc, ymmc):
+    def enter_sub_menu(self, sub_menu, mkmc):
         self.driver.switch_to.parent_frame()
         self.driver.switch_to.frame("menuFrame")
-        mk_loc = "//span[text()='%s']" %mkmc
-        ym_loc = "//span[@sjmc='%s' and text()='%s']" %(mkmc, ymmc)
+        mk_loc = "//span[text()='%s']" % sub_menu
+        ym_loc = "//span[@sjmc='%s' and text()='%s']" %(sub_menu, mkmc)
         self.driver.find_element_by_xpath(mk_loc).click()
         sleep(1)
         self.driver.find_element_by_xpath(ym_loc).click()
