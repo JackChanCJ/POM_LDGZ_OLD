@@ -8,6 +8,7 @@ from time import sleep
 from testcase.testLoginPage import TestloginPage
 from testcase.testCreateLdxm import TestCreateLdxm
 from testcase.testCreateLdht import TestCreateLdht
+from testcase.testCreateScjh import TestCreateScjh
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -34,6 +35,8 @@ if __name__ == '__main__':
     # 测试新增劳动合同
     # testunit.addTest(TestCreateLdht('testCreateLdht'))
     # sleep(5)
+    testunit.addTest(TestCreateScjh('testCreateScjh'))
+    sleep(5)
 
     # 定义报告输出路径
     htmlPath = u"page_demo_Report.html"
