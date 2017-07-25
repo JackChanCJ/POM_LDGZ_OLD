@@ -37,6 +37,7 @@ class Page(object):
         sleep(1)
 
     def enter_sub_menu(self, sub_menu, mkmc):
+        # 从子菜单进入各模块
         self.driver.switch_to.parent_frame()
         self.driver.switch_to.frame("menuFrame")
         mk_loc = "//span[text()='%s']" % sub_menu
@@ -47,7 +48,7 @@ class Page(object):
         sleep(1)
 
     def random_select_box(self, loc):
-        # c_ele下拉框元素
+        # 随机选择下拉框元素 c_ele下拉框元素
         c_ele = self.driver.find_element_by_xpath(loc)
         c_ele.click()
         sleep(1)
@@ -57,11 +58,12 @@ class Page(object):
         sleep(1)
 
     def select_box(self, loc, text):
+
         self.driver.find_element_by_xpath(loc).click()
         Select(self.driver.find_element_by_xpath(loc)).select_by_visible_text(text)
         sleep(1)
 
-    # 获取文本框的值
     def get_input_text(self, loc, attribute):
+        # 获取文本框的值
         attribute_value = self.driver.find_element_by_xpath(loc).get_attribute(attribute)
         return attribute_value
