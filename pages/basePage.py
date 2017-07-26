@@ -4,6 +4,7 @@ __author__ = 'JACK_CHAN'
 import sys
 import random
 from time import sleep
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 
 reload(sys)
@@ -30,6 +31,7 @@ class Page(object):
 
     def click(self, loc):
         self.driver.find_element_by_xpath(loc).click()
+        sleep(1)
 
     # driver.title不需要括号
     def get_title(self):
@@ -55,12 +57,14 @@ class Page(object):
         ret = Select(c_ele).options
         srand = random.Random().choice(ret)
         Select(c_ele).select_by_value(srand.get_attribute("value"))
+        c_ele.send_keys(Keys.ESCAPE)
         sleep(1)
 
     def select_box(self, loc, text):
-
-        self.driver.find_element_by_xpath(loc).click()
-        Select(self.driver.find_element_by_xpath(loc)).select_by_visible_text(text)
+        s_ele = self.driver.find_element_by_xpath(loc)
+        s_ele.click()
+        Select(s_ele).select_by_visible_text(text)
+        s_ele.send_keys(Keys.ESCAPE)
         sleep(1)
 
     def get_input_text(self, loc, attribute):
