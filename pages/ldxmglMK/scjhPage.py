@@ -110,6 +110,3 @@ class ScjhPage(Page):
         print "输入   备注：%s" %self.bz_value
         self.click(self.save_btn)
         print "点击   保存  按钮"
-
-
-
