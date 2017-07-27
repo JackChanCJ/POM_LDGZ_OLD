@@ -100,6 +100,7 @@ class ScjhPage(Page):
         # 取前面加的   产品型号
         self.select_box(self.cpxh_select, self.cpxh_value)
         print "选择   产品型号：%s" %self.cpxh_value
+        self.click(self.jhsl_input)
         # 取前面加的   完成单位
         self.select_box(self.scdw_select, self.scdw_value)
         print "选择   完成单位：%s" %self.scdw_value
