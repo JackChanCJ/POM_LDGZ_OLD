@@ -32,7 +32,7 @@ class LoginPage(Page, unittest.TestCase):
             cell_num=u'B2'
             )
 
-    def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
+    def __init__(self, driver, base_url=u"http://192.168.10.52:7001"):
         Page.__init__(self, driver, base_url)
 
     def openLDGZHomePage(self):

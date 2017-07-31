@@ -25,16 +25,16 @@ if __name__ == '__main__':
     # testunit.addTest(tests)
 
     # 测试登陆
-    # testunit.addTest(TestloginPage('testLogin'))
-    # sleep(5)
+    testunit.addTest(TestloginPage('testLogin'))
+    sleep(5)
 
     # 测试新增劳动项目
-    # testunit.addTest(TestCreateLdxm('testCreateLdxm'))
-    # sleep(5)
+    testunit.addTest(TestCreateLdxm('testCreateLdxm'))
+    sleep(5)
 
     # 测试新增劳动合同
-    # testunit.addTest(TestCreateLdht('testCreateLdht'))
-    # sleep(5)
+    testunit.addTest(TestCreateLdht('testCreateLdht'))
+    sleep(5)
     testunit.addTest(TestCreateScjh('testCreateScjh'))
     sleep(5)
 

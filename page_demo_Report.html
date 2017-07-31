@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-27 13:16:34</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:36.451000</p>
-<p class='attribute'><strong>Status:</strong> Pass 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-31 13:53:05</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:28.198000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 Error 3</p>
 
 <p class='description'>系统测试</p>
 </div>
@@ -222,7 +222,7 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='passClass'>
-    <td>testcase.testCreateScjh.TestCreateScjh</td>
+    <td>testcase.testLoginPage.TestloginPage</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -231,7 +231,7 @@ function showOutput(id, name) {
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>testCreateScjh</div></td>
+    <td class='none'><div class='testcase'>testLogin</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -245,29 +245,194 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.1: 登录并进入首页
-打开劳动改造首页:   http://192.168.10.201:7001
+pt1.1: 打开劳动改造首页:   http://192.168.10.52:7001
+选择  劳动改造系统图标
+输入  用户名 999999
+输入  用户密码 000000
+点击  登陆  按钮
+验证标题
+
+注销  退出系统
+弹出框:   您确定要注销吗？
+确定
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>testcase.testCreateLdxm.TestCreateLdxm</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>testCreateLdxm</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: 登录并进入首页
+打开劳动改造首页:   http://192.168.10.52:7001
+选择  劳动改造系统图标
+输入  用户名 999999
+输入  用户密码 000000
+点击  登陆  按钮
+Traceback (most recent call last):
+  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 26, in testCreateLdxm
+    ldxm_Page.enter_ldxm_page()
+  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 266, in enter_ldxm_page
+    self.enter_sub_menu(self.sub_menu, self.mkmc)
+  File "D:\Test\POM_LDGZ_OLD\pages\basePage.py", line 47, in enter_sub_menu
+    self.driver.find_element_by_xpath(mk_loc).click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 74, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 457, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=49.0.2623.75)
+  (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.1 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>testcase.testCreateLdht.TestCreateLdht</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>testCreateLdht</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: 登录并进入首页
+打开劳动改造首页:   http://192.168.10.52:7001
+选择  劳动改造系统图标
+输入  用户名 999999
+输入  用户密码 000000
+点击  登陆  按钮
+Traceback (most recent call last):
+  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdht.py", line 25, in testCreateLdht
+    ldht_Page.enter_ldxm_page()
+  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 266, in enter_ldxm_page
+    self.enter_sub_menu(self.sub_menu, self.mkmc)
+  File "D:\Test\POM_LDGZ_OLD\pages\basePage.py", line 47, in enter_sub_menu
+    self.driver.find_element_by_xpath(mk_loc).click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 74, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 457, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=49.0.2623.75)
+  (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.1 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>testcase.testCreateScjh.TestCreateScjh</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>testCreateScjh</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: 登录并进入首页
+打开劳动改造首页:   http://192.168.10.52:7001
 选择  劳动改造系统图标
 输入  用户名 999999
 输入  用户密码 000000
 点击  登陆  按钮
 进入  劳动项目与计划管理--&gt;监狱劳动生产计划  页面
 点击  计划制定 按钮，跳转至计划制定页面
-获取   "计划代号"的值：22，写入excel
-选择   项目名称：43040004【出监教育】
+获取   "计划代号"的值：87，写入excel
 第二监区的合同
-选择   合同名称：第二监区的合同
-选择   产品型号：XXL_180/185
-选择   完成单位：二监区
-输入   计划内容：abcdefghijklmnopqrstuvwxyz
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-~!@#$%^&amp;*()_+{}|:"&gt;?&lt;+-*/...
-计划内容
-输入   备注：abcdefghijklmnopqrstuvwxyz
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-~!@#$%^&amp;*()_+{}|:"&gt;?&lt;+-*/...
-备注
-点击   保存  按钮
+Traceback (most recent call last):
+  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateScjh.py", line 29, in testCreateScjh
+    scjh_page.add_jh()
+  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\scjhPage.py", line 98, in add_jh
+    self.select_box(self.htmc_select, self.htmc_value)
+  File "D:\Test\POM_LDGZ_OLD\pages\basePage.py", line 64, in select_box
+    s_ele = self.driver.find_element_by_xpath(loc)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@id='htbh']"}
+  (Session info: chrome=49.0.2623.75)
+  (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.1 SP1 x86_64)
+
 
 
         </pre>
@@ -279,10 +444,10 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>1</td>
+    <td>4</td>
     <td>1</td>
     <td>0</td>
-    <td>0</td>
+    <td>3</td>
     <td>&nbsp;</td>
 </tr>
 </table>
