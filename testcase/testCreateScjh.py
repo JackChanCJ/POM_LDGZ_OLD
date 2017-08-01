@@ -17,8 +17,8 @@ class TestCreateScjh(unittest.TestCase):
         self.driver = webdriver.Chrome()
     def testCreateScjh(self):
         driver = self.driver
-        login_page = LoginPage(driver)
-        scjh_page = ScjhPage(driver)
+        login_page = LoginPage()
+        scjh_page = ScjhPage()
 
         login_page.log_in()
 

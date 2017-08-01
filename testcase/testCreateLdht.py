@@ -15,12 +15,12 @@ class TestCreateLdht(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
     def testCreateLdht(self):
-        driver = self.driver
-        login_Page = LoginPage(driver)
+
+        login_Page = LoginPage()
 
         login_Page.log_in()
 
-        ldht_Page = LdxmPage(driver)
+        ldht_Page = LdxmPage()
 
         ldht_Page.enter_ldxm_page()
         sleep(2)

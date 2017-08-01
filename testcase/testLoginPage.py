@@ -18,7 +18,7 @@ class TestloginPage(unittest.TestCase):
         # 期望验证的标题
         assert_title = u"全国监狱信息化管理平台V3.0"
         # print assert_title
-        login_Page = LoginPage(driver)
+        login_Page = LoginPage()
         # 启动浏览器，访问劳动改造地址
         login_Page.openLDGZHomePage()
 

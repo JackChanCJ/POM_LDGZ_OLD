@@ -16,12 +16,12 @@ class TestCreateLdxm(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
     def testCreateLdxm(self):
-        driver = self.driver
-        login_Page = LoginPage(driver)
+
+        login_Page = LoginPage()
 
         login_Page.log_in()
 
-        ldxm_Page = LdxmPage(driver)
+        ldxm_Page = LdxmPage()
 
         ldxm_Page.enter_ldxm_page()
         sleep(2)
