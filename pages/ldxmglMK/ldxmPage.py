@@ -260,7 +260,7 @@ class LdxmPage(Page):
     qx_btn = u"//input[@value='取 消 ']"               # 取消    按钮
 
     def __init__(self):
-        Page.__init__()
+        Page.__init__(self)
 
     def enter_ldxm_page(self):
         self.enter_sub_menu(self.sub_menu, self.mkmc)

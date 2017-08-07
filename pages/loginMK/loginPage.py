@@ -33,7 +33,7 @@ class LoginPage(Page, unittest.TestCase):
             )
 
     def __init__(self):
-        Page.__init__()
+        Page.__init__(self)
 
     def openLDGZHomePage(self):
         print u"打开劳动改造首页:  ", self.base_url

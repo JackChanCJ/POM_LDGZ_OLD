@@ -60,7 +60,7 @@ class ScjhPage(Page):
 
 
     def __init__(self):
-        Page.__init__()
+        Page.__init__(self)
     # 进入生产计划页面
     def enter_scjh_page(self):
         self.enter_sub_menu(self.sub_menu, self.mkmc)
