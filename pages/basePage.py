@@ -13,12 +13,13 @@ sys.setdefaultencoding("utf-8")
 
 # Page基类
 class Page(object):
-    # 所有的page都应该继承该类
-    # 所有的操作最少需停留一秒
-    def __init__(self):
-        self.driver = webdriver.Chrome()
-        self.base_url = u"http://192.168.10.201:7001"
-        self.driver.get(self.base_url)
+    """
+        所有的page都应该继承该类
+        所有的操作最少需停留一秒
+    """
+    def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
+        self.driver = driver
+        self.base_url = base_url
         self.timeout = 30
         # 全屏
         self.driver.maximize_window()
