@@ -21,7 +21,8 @@ class LdxmPage(Page):
 
     # 劳动项目
     # 生产单位信息
-    filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
+    # filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
+    filename = u'D:\\01____WorkStation\\PYTHON\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx'
 
     xmbh_input = u"//input[@name='lgXmXmzr.xmbh']"          # 项目编号   文本框获取
 

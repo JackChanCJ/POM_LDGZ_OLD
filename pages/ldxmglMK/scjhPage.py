@@ -15,7 +15,8 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 class ScjhPage(Page):
-    filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
+    # filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
+    filename = u'D:\\01____WorkStation\\PYTHON\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx'
     sub_menu = u'劳动项目与计划管理'
     mkmc = u'监狱劳动生产计划'
 

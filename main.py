@@ -29,14 +29,14 @@ if __name__ == '__main__':
     sleep(5)
 
     # 测试新增劳动项目
-    testunit.addTest(TestCreateLdxm('testCreateLdxm'))
-    sleep(5)
+    # testunit.addTest(TestCreateLdxm('testCreateLdxm'))
+    # sleep(5)
 
     # 测试新增劳动合同
-    testunit.addTest(TestCreateLdht('testCreateLdht'))
-    sleep(5)
-    testunit.addTest(TestCreateScjh('testCreateScjh'))
-    sleep(5)
+    # testunit.addTest(TestCreateLdht('testCreateLdht'))
+    # sleep(5)
+    # testunit.addTest(TestCreateScjh('testCreateScjh'))
+    # sleep(5)
 
     # 定义报告输出路径
     htmlPath = u"page_demo_Report.html"

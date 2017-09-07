@@ -18,22 +18,22 @@ class TestloginPage(unittest.TestCase):
         # 期望验证的标题
         assert_title = u"全国监狱信息化管理平台V3.0"
         # print assert_title
-        login_Page = LoginPage()
+        loginPage = LoginPage(self.driver)
         # 启动浏览器，访问劳动改造地址
-        login_Page.openLDGZHomePage()
+        loginPage.openLDGZHomePage()
 
-        login_Page.choose_mokuai_icon()
+        loginPage.chooseModuleIcon()
 
-        login_Page.input_username()
+        loginPage.inputUsername()
 
-        login_Page.input_password()
+        loginPage.inputPassword()
 
-        login_Page.click_login_btn()
+        loginPage.clickLoginBtn()
 
         print u"验证标题"
-        self.assertEqual(login_Page.driver.title, assert_title)
+        self.assertEqual(loginPage.driver.title, assert_title)
 
-        login_Page.log_out()
+        loginPage.logOut()
 
     def tearDown(self):
         self.driver.quit()
