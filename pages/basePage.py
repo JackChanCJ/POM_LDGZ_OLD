@@ -21,7 +21,6 @@ class Page(object):
         self.driver = driver
         self.base_url = base_url
         self.timeout = 30
-        # 全屏
         self.driver.maximize_window()
 
     def input_text(self, loc, text):
