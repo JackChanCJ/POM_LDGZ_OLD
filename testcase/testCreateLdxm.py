@@ -16,22 +16,21 @@ class TestCreateLdxm(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
     def testCreateLdxm(self):
+        login_page = LoginPage(self.driver)
 
-        login_Page = LoginPage()
+        login_page.log_in()
 
-        login_Page.log_in()
+        ldxm_page = LdxmPage(self.driver)
 
-        ldxm_Page = LdxmPage()
-
-        ldxm_Page.enter_ldxm_page()
+        ldxm_page.enter_ldxm_sub_page()
         sleep(2)
 
-        ldxm_Page.click_create_xm_btn()
+        ldxm_page.click_create_xm_btn()
         sleep(2)
 
-        ldxm_Page.create_xm()
+        ldxm_page.create_xm()
 
-        login_Page.log_out()
+        login_page.log_out()
 
     def tearDown(self):
         self.driver.quit()

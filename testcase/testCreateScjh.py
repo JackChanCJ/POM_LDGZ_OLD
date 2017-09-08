@@ -22,7 +22,7 @@ class TestCreateScjh(unittest.TestCase):
 
         login_page.log_in()
 
-        scjh_page.enter_scjh_page()
+        scjh_page.enter_scjh_sub_page()
 
         scjh_page.enter_jhzd_page()
 

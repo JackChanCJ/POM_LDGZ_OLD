@@ -15,10 +15,9 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 class ScjhPage(Page):
-    # filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
-    filename = u'D:\\01____WorkStation\\PYTHON\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx'
+    filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
     sub_menu = u'劳动项目与计划管理'
-    mkmc = u'监狱劳动生产计划'
+    sub_page = u'监狱劳动生产计划'
 
     jhzd_btn = u"//a[text()='计划制定']"
 
@@ -58,14 +57,12 @@ class ScjhPage(Page):
     save_btn = u"//input[@value='保存']"
     cancel_btn = u"//input[@value='取消']"
 
-
-
-    def __init__(self):
-        Page.__init__(self)
+    def __init__(self, driver):
+        Page.__init__(self, driver)
     # 进入生产计划页面
-    def enter_scjh_page(self):
-        self.enter_sub_menu(self.sub_menu, self.mkmc)
-        print u"进入  %s-->%s  页面" %(self.sub_menu, self.mkmc)
+    def enter_scjh_sub_page(self):
+        self.enter_sub_menu(self.sub_menu, self.sub_page)
+        print u"进入  %s-->%s  页面" % (self.sub_menu, self.sub_page)
 
     # 进入计划制定页面
     def enter_jhzd_page(self):

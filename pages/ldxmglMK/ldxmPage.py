@@ -14,15 +14,14 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 class LdxmPage(Page):
-    sub_menu = u"劳动项目"
-    mkmc = u"劳动项目与计划管理"
+    sub_menu = u"劳动项目与计划管理"
+    sub_page = u"劳动项目"
     add_xm_btn = u"//a[text()='新增项目']"              # 新增项目    按钮
     add_ht_btn = u"//a[text()='新增合同']"              # 新增合同    按钮
 
     # 劳动项目
     # 生产单位信息
-    # filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
-    filename = u'D:\\01____WorkStation\\PYTHON\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx'
+    filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
 
     xmbh_input = u"//input[@name='lgXmXmzr.xmbh']"          # 项目编号   文本框获取
 
@@ -260,12 +259,12 @@ class LdxmPage(Page):
     bc_btn = u"//input[@value='保 存']"                # 保存    按钮
     qx_btn = u"//input[@value='取 消 ']"               # 取消    按钮
 
-    def __init__(self):
-        Page.__init__(self)
+    def __init__(self, driver):
+        Page.__init__(self, driver)
 
-    def enter_ldxm_page(self):
-        self.enter_sub_menu(self.sub_menu, self.mkmc)
-        print u"进入  %s-->%s  页面" %(self.sub_menu, self.mkmc)
+    def enter_ldxm_sub_page(self):
+        self.enter_sub_menu(self.sub_menu, self.sub_page)
+        print u"进入  %s-->%s  页面" % (self.sub_menu, self.sub_page)
 
     def click_create_xm_btn(self):
         print u"点击 新增劳动项目按钮，跳转至劳动项目页面"
@@ -379,7 +378,7 @@ class LdxmPage(Page):
         self.input_text(self.bz_textarea, self.bz)
         # 新增项目页面按钮
         print u"点击 '保存' 按钮"
-        self.click(self.bc_btn)
+        # self.click(self.bc_btn)
         sleep(3)
 
 

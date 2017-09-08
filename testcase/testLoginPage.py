@@ -14,26 +14,25 @@ class TestloginPage(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
     def testLogin(self):
-        driver = self.driver
         # 期望验证的标题
         assert_title = u"全国监狱信息化管理平台V3.0"
         # print assert_title
-        loginPage = LoginPage(self.driver)
+        login_page = LoginPage(self.driver)
         # 启动浏览器，访问劳动改造地址
-        loginPage.openLDGZHomePage()
+        login_page.openLDGZHomePage()
 
-        loginPage.chooseModuleIcon()
+        login_page.choose_module_icon()
 
-        loginPage.inputUsername()
+        login_page.input_username()
 
-        loginPage.inputPassword()
+        login_page.input_password()
 
-        loginPage.clickLoginBtn()
+        login_page.click_login_btn()
 
         print u"验证标题"
-        self.assertEqual(loginPage.driver.title, assert_title)
+        self.assertEqual(login_page.driver.title, assert_title)
 
-        loginPage.logOut()
+        login_page.log_out()
 
     def tearDown(self):
         self.driver.quit()
