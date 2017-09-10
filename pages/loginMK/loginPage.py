@@ -20,7 +20,8 @@ class LoginPage(Page, unittest.TestCase):
     login_btn = u"//*[@class='login_btn_login']"      # 登录   按钮
     logout_btn = u"html/body/div[3]/div[1]"                #注销    按钮
 
-    filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
+    # filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
+    filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
     username = textdata.read_excel_by_cellname(
             filename,
             sheet_name=u'登录',
