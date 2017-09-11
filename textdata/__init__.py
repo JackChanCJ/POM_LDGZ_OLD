@@ -27,4 +27,3 @@ def write_excel_by_cellname(w_value,
     ws[cell_num] = w_value
     wb.save(filename)
     return wb
-

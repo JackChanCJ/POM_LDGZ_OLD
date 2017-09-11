@@ -29,8 +29,8 @@ if __name__ == '__main__':
     sleep(5)
 
     # 测试新增劳动项目
-    testunit.addTest(TestCreateLdxm('testCreateLdxm'))
-    sleep(5)
+    # testunit.addTest(TestCreateLdxm('testCreateLdxm'))
+    # sleep(5)
 
     # 测试新增劳动合同
     # testunit.addTest(TestCreateLdht('testCreateLdht'))

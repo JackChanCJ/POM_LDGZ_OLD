@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-09-11 00:58:48</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:50.735000</p>
-<p class='attribute'><strong>Status:</strong> Pass 1 Error 1</p>
+    <p class='attribute'><strong>Start Time:</strong> 2017-09-11 12:19:02</p>
+    <p class='attribute'><strong>Duration:</strong> 0:00:21.636000</p>
+    <p class='attribute'><strong>Status:</strong> Pass 1</p>
 
 <p class='description'>系统测试</p>
 </div>
@@ -245,9 +245,9 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.1: 打开劳动改造首页:   http://localhost:7001
+pt1.1: 打开劳动改造首页:   http://192.168.10.201:7001
 选择  劳动改造系统图标
-输入  用户名 5300001
+输入  用户名 999999
 输入  用户密码 000000
 点击  登陆  按钮
 验证标题
@@ -264,68 +264,12 @@ pt1.1: 打开劳动改造首页:   http://localhost:7001
     </td>
 </tr>
 
-<tr class='errorClass'>
-    <td>testcase.testCreateLdxm.TestCreateLdxm</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
-
-<tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>testCreateLdxm</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
-
-    <div id='div_ft2.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft2.1: 登录并进入首页
-打开劳动改造首页:   http://localhost:7001
-选择  劳动改造系统图标
-输入  用户名 5300001
-输入  用户密码 000000
-点击  登陆  按钮
-进入  劳动项目与计划管理--&gt;劳动项目  页面
-点击 新增劳动项目按钮，跳转至劳动项目页面
-填写 劳动项目各字段
-获取的项目编号的值:  53290024
-选择 项目类型： 自主生产
-选择 项目名称： 出监教育
-Traceback (most recent call last):
-  File "D:\01____WorkStation\PYTHON\POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 31, in testCreateLdxm
-    ldxm_page.create_xm()
-  File "D:\01____WorkStation\PYTHON\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 302, in create_xm
-    self.select_box(self.xmmc_select_box, self.xmmc)
-  File "D:\01____WorkStation\PYTHON\POM_LDGZ_OLD\pages\basePage.py", line 69, in select_box
-    Select(s_ele).select_by_visible_text(text)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\support\select.py", line 139, in select_by_visible_text
-    raise NoSuchElementException("Could not locate element with visible text: %s" % text)
-NoSuchElementException: Message: Could not locate element with visible text: åºçæè²
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
 <tr id='total_row'>
     <td>Total</td>
-    <td>2</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>

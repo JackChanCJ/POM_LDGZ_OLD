@@ -20,8 +20,8 @@ class LoginPage(Page, unittest.TestCase):
     login_btn = u"//*[@class='login_btn_login']"      # 登录   按钮
     logout_btn = u"html/body/div[3]/div[1]"                #注销    按钮
 
-    # filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
-    filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
+    filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
+    # filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
     username = textdata.read_excel_by_cellname(
             filename,
             sheet_name=u'登录',
@@ -51,6 +51,20 @@ class LoginPage(Page, unittest.TestCase):
         sleep(2)
 
     def input_password(self):
+        password = self.password
+        print u"输入  用户密码", password
+        self.input_text(self.password_input, password)
+        sleep(2)
+
+    def input_username_parameter(self, data):
+        self.data = data
+        username = self.username
+        print u"输入  用户名", username
+        self.input_text(self.username_input, username)
+        sleep(2)
+
+    def input_password_parameter(self, data):
+        self.data = data
         password = self.password
         print u"输入  用户密码", password
         self.input_text(self.password_input, password)
