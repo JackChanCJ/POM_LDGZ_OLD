@@ -7,6 +7,7 @@ import unittest
 from openpyxl import Workbook
 from openpyxl import load_workbook
 from time import sleep
+from selenium.webdriver.common.keys import Keys
 from pages.basePage import Page
 
 
@@ -22,16 +23,6 @@ class LoginPage(Page, unittest.TestCase):
 
     filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
     # filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
-    username = textdata.read_excel_by_cellname(
-            filename,
-            sheet_name=u'登录',
-            cell_num=u'A2'
-            )
-    password = textdata.read_excel_by_cellname(
-            filename,
-            sheet_name=u'登录',
-            cell_num=u'B2'
-            )
 
     def __init__(self, driver):
         Page.__init__(self, driver)
@@ -44,16 +35,16 @@ class LoginPage(Page, unittest.TestCase):
         print u"选择  劳动改造系统图标"
         self.choose_xt(self.ldgz_icon)
 
-    def input_username(self):
-        username = self.username
+    def input_username(self, username):
+        self.username = username
+        self.input_text(self.username_input).send_keys(username)
         print u"输入  用户名", username
-        self.input_text(self.username_input, username)
         sleep(2)
 
-    def input_password(self):
-        password = self.password
+    def input_password(self, password):
+        self.password = password
+        self.input_text(self.password_input).send_keys(password)
         print u"输入  用户密码", password
-        self.input_text(self.password_input, password)
         sleep(2)
 
     def input_username_parameter(self, data):

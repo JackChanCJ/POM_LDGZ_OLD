@@ -5,6 +5,7 @@ import unittest
 import sys
 import time
 from selenium import webdriver
+from common.Excel import Excel
 from pages.loginMK.loginPage import LoginPage
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -23,9 +24,9 @@ class TestloginPage(unittest.TestCase):
 
         login_page.choose_module_icon()
 
-        login_page.input_username()
+        login_page.input_username(Excel.get_cell_value('登录', 'username'))
 
-        login_page.input_password()
+        login_page.input_password(Excel.get_cell_value('登录', 'password'))
 
         login_page.click_login_btn()
 

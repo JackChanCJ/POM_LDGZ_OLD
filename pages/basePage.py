@@ -25,9 +25,9 @@ class Page(object):
         self.timeout = 30
         self.driver.maximize_window()
 
-    def input_text(self, loc, text):
-        self.driver.find_element_by_xpath(loc).send_keys(text)
+    def input_text(self, loc):
         sleep(1)
+        return self.driver.find_element_by_xpath(loc)
 
     def choose_xt(self, loc):
         self.driver.find_element_by_xpath(loc).click()
