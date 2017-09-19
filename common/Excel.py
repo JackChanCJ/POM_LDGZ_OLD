@@ -11,14 +11,21 @@ sys.setdefaultencoding("utf-8")
 
 
 class Excel():
-    # 默认返回当前列名的第一个值
-    def get_cell_value(self, sheetname, columnname, which_row=1,
-                       filename=u"D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"):
-        self.sheetname = sheetname
-        self.columnname = columnname
+    """
+        filename  excel文件绝对路径
+        sheetname 表名
+    """
+    def __init__(self, filename, sheetname):
         self.filename = filename
-        wb = load_workbook(filename)
-        ws = wb[sheetname]
+        self.sheetname = sheetname
+
+    def __str__(self):
+        return self.filename
+
+    def get_cell_value(self, columnname, which_row=2):
+        self.columnname = columnname
+        wb = load_workbook(self.filename)
+        ws = wb[self.sheetname]
         rows = ws.rows
         cols = ws.columns
         row_value = []
@@ -37,9 +44,11 @@ class Excel():
 
 
 def main():
-    e = Excel()
-    print e.get_cell_value('登录', 'password')
-
+    # filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
+    filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
+    e = Excel(filename, '登录')
+    print e
+    print e.get_cell_value('username')
 
 if __name__ == '__main__':
     main()

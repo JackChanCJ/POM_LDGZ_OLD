@@ -19,14 +19,17 @@ class TestloginPage(unittest.TestCase):
         assert_title = u"全国监狱信息化管理平台V3.0"
         # print assert_title
         login_page = LoginPage(self.driver)
+        # filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
+        filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
+        login_sheet = Excel(filename, '登录')
         # 启动浏览器，访问劳动改造地址
         login_page.openLDGZHomePage()
 
         login_page.choose_module_icon()
 
-        login_page.input_username(Excel.get_cell_value('登录', 'username'))
+        login_page.input_username(login_sheet.get_cell_value('用户名'))
 
-        login_page.input_password(Excel.get_cell_value('登录', 'password'))
+        login_page.input_password(login_sheet.get_cell_value('密码'))
 
         login_page.click_login_btn()
 
