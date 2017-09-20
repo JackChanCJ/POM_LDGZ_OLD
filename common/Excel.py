@@ -22,7 +22,7 @@ class Excel():
     def __str__(self):
         return self.filename
 
-    def get_cell_value(self, columnname, which_row=2):
+    def get_cell_value(self, columnname, which_row=1):
         self.columnname = columnname
         wb = load_workbook(self.filename)
         ws = wb[self.sheetname]
