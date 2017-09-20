@@ -16,8 +16,8 @@ sys.setdefaultencoding("utf-8")
 
 class LoginPage(Page, unittest.TestCase):
     ldgz_icon = u"//img[@src='images/ldgz.png']"     # 劳动改造   图标
-    username_input = u"//*[@id='user']"     # 用户名   输入框
-    password_input = u"//*[@id='password']"     # 用户密码   输入框
+    username_xp = u"//*[@id='user']"     # 用户名   输入框
+    password_xp = u"//*[@id='password']"     # 用户密码   输入框
     login_btn = u"//*[@class='login_btn_login']"      # 登录   按钮
     logout_btn = u"html/body/div[3]/div[1]"                #注销    按钮
 
@@ -37,13 +37,13 @@ class LoginPage(Page, unittest.TestCase):
 
     def input_username(self, username):
         self.username = username
-        self.input_text(self.username_input).send_keys(username)
+        self.input_text(self.username_xp).send_keys(username)
         print u"输入  用户名", username
         sleep(2)
 
     def input_password(self, password):
         self.password = password
-        self.input_text(self.password_input).send_keys(password)
+        self.input_text(self.password_xp).send_keys(password)
         print u"输入  用户密码", password
         sleep(2)
 
@@ -51,14 +51,14 @@ class LoginPage(Page, unittest.TestCase):
         self.data = data
         username = self.username
         print u"输入  用户名", username
-        self.input_text(self.username_input, username)
+        self.input_text(self.username_xp, username)
         sleep(2)
 
     def input_password_parameter(self, data):
         self.data = data
         password = self.password
         print u"输入  用户密码", password
-        self.input_text(self.password_input, password)
+        self.input_text(self.password_xp, password)
         sleep(2)
 
     def click_login_btn(self):
