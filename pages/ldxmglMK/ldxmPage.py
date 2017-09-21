@@ -8,6 +8,8 @@ from pages.basePage import Page
 from time import sleep
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
+
+
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
@@ -22,8 +24,12 @@ class LdxmPage(Page):
     add_ht_xp = u"//a[text()='新增合同']"  # 新增合同    按钮
 
     # 劳动项目详情页按钮
-    xm_bc_xp = u"//input[@value='保 存']"  # 保存    按钮
-    xm_qx_xp = u"//input[@value='取 消 ']"  # 取消    按钮
+    xmbc_xp = u"//input[@value='保 存']"  # 保存    按钮
+    xmqx_xp = u"//input[@value='取 消 ']"  # 取消    按钮
+
+    # 合同备案新增页面按钮
+    ht_bc_xp = u"//input[@type='button' and @value='保 存']"  # 保存按钮
+    ht_qx_xp = u"//input[@value='保存' and @type='button']"  # 取消按钮
 
     def __init__(self, driver):
         Page.__init__(self, driver)
@@ -36,7 +42,7 @@ class LdxmPage(Page):
         print u"点击 新增劳动项目按钮，跳转至劳动项目页面"
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
-        self.click_btn(self.add_xm_xp)
+        self.click(self.add_xm_btn)
 
     # xmlx, xmmc, dwmc, xmfzr, xmfzrlxdh,                                     # 劳动项目
     # hzfdwmc, fzr, dz, yyzzzch, khlxdh, czhm, zczj,                          # 客户信息
@@ -178,7 +184,8 @@ class LdxmPage(Page):
         self.input_text(htfj_xp).send_keys(htfj)
         print u"输入 合同附件: ", htfj
 
-    # 项目基本资料
+        # 项目基本资料
+
     def input_xm_trldlrs(self, trldlrs):
         trldlrs_xp = u"//input[@name='lgXmXmzr.xmrs']"
         self.input_text(trldlrs_xp).send_keys(trldlrs)
@@ -250,13 +257,101 @@ class LdxmPage(Page):
         self.input_text(bz_xp).send_keys(bz)
         print u"输入 备注: ", bz
 
-    """-----------------劳动合同--合同备案---------------------------------------------------------"""
 
-    # 合同备案新增页面按钮
-    ht_bc_xp = u"//input[@type='button' and @value='保 存']"         # 保存按钮
-    ht_qx_xp = u"//input[@value='保存' and @type='button']"          # 取消按钮
-    xmbh_select_ele = u"//select[@name='lgXmHtgl.xmbh']/option"     # 合同项目编号    下拉选择框option元素
-    xmbh_select_box = u"//select[@name='lgXmHtgl.xmbh']"            # 合同项目编号    下拉选择框
+    """
+        劳动项目——合同备案
+    """
+
+    def select_ht_xmmc(self, xmmc):
+        xmmc_xp = u"//select[@name='lgXmHtgl.xmbh']"
+        sel = self.driver.find_element_by_xpath(xmmc_xp)
+        Select(sel).select_by_visible_text(xmmc)
+        print "选择  项目名称：", xmmc
+
+    def get_ht_htbh(self):
+        htbh_xp = u"//input[@name='lgXmHtgl.htbh']"  # 合同编号    文本输入框
+        htbh_value = self.input_text(htbh_xp).get_attribute('合同编号')
+        print "获取  合同编号：", htbh_value
+
+    def input_ht_htmc(self, htmc):
+        htmc_xp = u"//input[@name='lgXmHtgl.htmc']"  # 合同名称    文本输入框
+        self.input_text(htmc_xp).send_keys(htmc)
+        print "输入  合同名称", htmc
+
+    def input_ht_zje(self, zje):
+        htzje_xp = u"//input[@name='lgXmHtgl.je']"  # 合同总金额    文本输入框
+        self.input_text(htzje_xp).send_keys(zje)
+        print "输入  总金额：", zje
+
+    def input_ht_qdrq(self, qdrq):
+        htqdrq_xp = u"//input[@name='lgXmHtgl.qdrq']"  # 合同签订日期    文本输入框
+        self.input_text(htqdrq_xp).send_keys(qdrq)
+        print "输入  签订日期：", qdrq
+
+    def input_ht_wcrq(self, wcrq):
+        htwcrq_xp = u"//input[@name='lgXmHtgl.wcrq']"  # 合同完成日期    文本输入框
+        self.input_text(htwcrq_xp).send_keys(wcrq)
+        print "输入  完成日期：", wcrq
+
+    def select_ht_scdw(self, scdw):
+        htscdw_xp = u"//select[@id='bm']"  # 合同单位    下拉选择框
+        sel = self.driver.find_element_by_xpath(htscdw_xp)
+        Select(sel).select_by_visible_text(scdw)
+        print "选择  生产单位：", scdw
+
+    def select_ht_khfs(self, khfs):
+        htkhfs_xp = u"//select[@id='khfs']"  # 合同考核方式    下拉选择框
+        sel = self.driver.find_element_by_xpath(htkhfs_xp)
+        Select(sel).select_by_visible_text(khfs)
+        print "选择  考核方式：", khfs
+
+    def input_ht_khmc(self, khmc):
+        khmc_xp = u"//input[@name='lgXmHtgl.khmc']"  # 客户名称        文本输入框
+        self.input_text(khmc_xp).send_keys(khmc)
+        print "输入  客户名称：", khmc
+
+    def input_ht_htnr(self, htnr):
+        htnr_xp = u"//textarea[@name='lgXmHtgl.htnr']"  # 合同内容    文本输入框
+        self.input_text(htnr_xp).send_keys(htnr)
+        print "输入  合同内容：", htnr
+
+    def input_ht_fj(self, fj):
+        fj_xp = u"//input[@name='upload' and @id = 'fileFJ']"  # 附件    文本输入框
+        self.input_text(fj_xp).send_keys(fj)
+        print "上传  文件路径：", fj
+
+
+
+    # 合同明细
+    def input_ht_xh(self, xh):
+        ssxh_xp = u"//input[@id='cpkh10']"  # 手输型号    文本输入框
+        self.input_text(ssxh_xp).send_keys(xh)
+        print "输入  型号：", xh
+
+    def input_ht_ks(self, ks):
+        ks_xp = u"//input[@name='cpks0']"  # 款式    文本输入框
+        self.input_text(ks_xp).send_keys(ks)
+        print "输入  款式：", ks
+
+    def input_ht_gg(self, gg):
+        gg_xp = u"//input[@name='ggxh0']"  # 规格    文本输入框
+        self.input_text(gg_xp).send_keys(gg)
+        print "输入  规格：", gg
+
+    def input_ht_pp(self, pp):
+        pp_xp = u"//input[@name='ppmc0']"  # 品牌    文本输入框
+        self.input_text(pp_xp).send_keys(pp)
+        print "输入  品牌：", pp
+
+    def input_ht_sl(self, sl):
+        sssl_xp = u"//input[@name='sl0']"  # 数量    文本输入框
+        self.input_text(sssl_xp).send_keys(sl)
+        print "输入  数量：", sl
+
+    def input_ht_dj(self, dj):
+        ssdj_xp = u"//input[@name='dj0']"  # 单价    文本输入框
+        self.input_text(ssdj_xp).send_keys(dj)
+        print "输入  单价：", dj
 
     def click_create_ht_btn(self):
         print u"点击 新增劳动合同,跳转至劳动合同页面"
@@ -264,100 +359,3 @@ class LdxmPage(Page):
         self.driver.switch_to.frame("right_mainFrame")
         # self.click(self.add_ht_xp)
 
-    def select_ht_xmmc(self, xmmc):
-        htbh_xp = u"//input[@name='lgXmHtgl.htbh']"                 # 合同编号    文本输入框
-        sel = self.select_box(htbh_xp)
-        Select(sel).select_by_visible_text(xmmc)
-        print "选择  项目名称：", xmmc
-
-    def input_ht_htbh(self, htbh):
-        htbh_xp = u"//input[@name='lgXmHtgl.htbh']"                 # 合同编号    文本输入框
-        self.input_text(htbh_xp).send_keys(htbh)
-        print "输入  合同编号：", htbh
-
-    def input_ht_htmc(self, htmc):
-        htmc_xp = u"//input[@name='lgXmHtgl.htmc']"                  # 合同名称    文本输入框
-        self.input_text(htmc_xp).send_keys(htmc)
-        print "输入  合同名称：", htmc
-
-    def input_ht_zje(self, zje):
-        htzje_xp = u"//input[@name='lgXmHtgl.je']"                   # 合同总金额    文本输入框
-        self.input_text(htzje_xp).send_keys(zje)
-        print "输入  合同总金额：", zje
-
-    def select_ht_qdrq(self, qdrq):
-        htqdrq_xp = u"//input[@name='lgXmHtgl.qdrq']"                # 合同签订日期    文本输入框
-        sel = self.select_box(htqdrq_xp)
-        Select(sel).select_by_visible_text(qdrq)
-        print "选择  签订日期：", qdrq
-
-    def select_ht_wcrq(self, wcrq):
-        htwcrq_xp = u"//input[@name='lgXmHtgl.wcrq']"                # 合同完成日期    文本输入框
-        sel = self.select_box(htwcrq_xp)
-        Select(sel).select_by_visible_text(wcrq)
-        print "选择  完成日期：", wcrq
-
-    def select_ht_scdw(self, scdw):
-        htscdw_xp = u"//select[@id='bm']"                       # 合同单位    下拉选择框
-        sel = self.select_box(htscdw_xp)
-        Select(sel).select_by_visible_text(scdw)
-        print "选择  生产单位：", scdw
-
-    def select_ht_khfs(self, khfs):
-        htkhfs_xp = u"//select[@id='khfs']"                     # 合同考核方式    下拉选择框
-        sel = self.select_box(htkhfs_xp)
-        Select(sel).select_by_visible_text(khfs)
-        print "选择  考核方式：", khfs
-
-    def input_ht_khmc(self, khmc):
-        khmc_xp = u"//input[@name='lgXmHtgl.khmc']"                  # 客户名称        文本输入框
-        self.input_text(khmc_xp).send_keys(khmc)
-        print "输入  客户名称：", khmc
-
-    def input_ht_htnr(self, htnr):
-        htnr_xp = u"//textarea[@name='lgXmHtgl.htnr']"            # 合同内容    文本输入框
-        self.input_text(htnr_xp).send_keys(htnr)
-        print "输入  文件路径：", htnr
-
-    def input_ht_htfj(self, htfj):
-        fj_xp = u"//input[@name='upload' and @id = 'fileFJ']"        # 附件    文本输入框
-        self.input_text(fj_xp).send_keys(htfj)
-        print "上传合同附件  文件路径：", htfj
-
-    # 合同明细
-    def input_ht_ssxh(self, xh):
-        ssxh_xp = u"//input[@id='cpkh10']"                         # 手输型号    文本输入框
-        self.input_text(ssxh_xp).send_keys(xh)
-        print "输入  手输数量：", xh
-
-    def input_ht_ks(self, ks):
-        ks_xp = u"//input[@name='cpks0']"                            # 款式    文本输入框
-        self.input_text(ks_xp).send_keys(ks)
-        print "输入  款式：", ks
-
-    def input_ht_gg(self, gg):
-        gg_xp = u"//input[@name='ggxh0']"                            # 规格    文本输入框
-        self.input_text(gg_xp).send_keys(gg)
-        print "输入  规格：", gg
-
-    def input_ht_pp(self, pp):
-        pp_xp = u"//input[@name='ppmc0']"                            # 品牌    文本输入框
-        self.input_text(pp_xp).send_keys(pp)
-        print "输入 品牌：", pp
-
-    def input_ht_sssl(self, sl):
-        sssl_xp = u"//input[@name='sl0']"                          # 数量    文本输入框
-        self.input_text(sssl_xp).send_keys(sl)
-        print "输入 数量：", sl
-
-    def input_ht_dj(self, dj):
-        ssdj_xp = u"//input[@name='dj0']"                          # 单价    文本输入框
-        self.input_text(ssdj_xp).send_keys(dj)
-        print "输入 单价", dj
-
-
-def main():
-    pass
-
-if __name__ == "__main__":
-    main()

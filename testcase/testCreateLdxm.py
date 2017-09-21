@@ -5,6 +5,7 @@ import unittest
 import sys
 from time import sleep
 from pages.basePage import Page
+from common import Excel
 from selenium import webdriver
 from pages.ldxmglMK.ldxmPage import LdxmPage
 from pages.loginMK.loginPage import LoginPage
@@ -17,6 +18,8 @@ class TestCreateLdxm(unittest.TestCase):
         self.driver = webdriver.Chrome()
     def testCreateLdxm(self):
         login_page = LoginPage(self.driver)
+        filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx'
+        # filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
 
         login_page.log_in()
 

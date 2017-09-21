@@ -23,9 +23,9 @@ class TestloginPage(unittest.TestCase):
         # filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
         login_sheet = Excel(filename, '登录')
         # 启动浏览器，访问劳动改造地址
-        login_page.openLDGZHomePage()
+        login_page.open_url()
 
-        login_page.choose_module_icon()
+        login_page.choose_module_ldgz()
 
         login_page.input_username(login_sheet.get_cell_value('用户名'))
 
@@ -34,7 +34,7 @@ class TestloginPage(unittest.TestCase):
         login_page.click_login_btn()
 
         print u"验证标题"
-        self.assertEqual(login_page.driver.title, assert_title)
+        self.assertEqual(login_page.get_title(), assert_title)
 
         login_page.log_out()
 
