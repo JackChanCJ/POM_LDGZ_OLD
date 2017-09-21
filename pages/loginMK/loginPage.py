@@ -1,7 +1,6 @@
 # coding=utf-8
 __author__ = 'JACK_CHAN'
 
-import sys
 import textdata
 import unittest
 from openpyxl import Workbook
@@ -12,9 +11,6 @@ from selenium.webdriver.common.keys import Keys
 from pages.basePage import Page
 
 e = Excel()
-reload(sys)
-sys.setdefaultencoding("utf-8")
-
 class LoginPage(Page, unittest.TestCase):
     ldgz_icon_xp = u"//img[@src='images/ldgz.png']"  # 劳动改造   图标
     username_xp = u"//*[@id='user']"  # 用户名   输入框

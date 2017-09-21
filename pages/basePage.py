@@ -1,15 +1,11 @@
 # coding=utf-8
 __author__ = 'JACK_CHAN'
 
-import sys
 import random
 from time import sleep
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 from selenium import webdriver
-
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 # Page基类
 class Page(object):
@@ -52,6 +48,7 @@ class Page(object):
         sleep(1)
         self.driver.find_element_by_xpath(ym_loc).click()
         sleep(1)
+        print "进入：  %s --> %s页面" %(sub_menu, mkmc)
 
     def random_select_box(self, loc):
         # 随机选择下拉框元素 c_ele下拉框元素

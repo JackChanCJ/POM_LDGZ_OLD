@@ -1,7 +1,6 @@
 #  coding=utf-8
 __author__ = 'JACK_CHAN'
 
-import sys
 import textdata
 import re
 from pages.basePage import Page
@@ -9,13 +8,7 @@ from time import sleep
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 
-
-reload(sys)
-sys.setdefaultencoding("utf-8")
-
 class LdxmPage(Page):
-    sub_menu = u"劳动项目与计划管理"
-    sub_page = u"劳动项目"
     filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
     # filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
 
@@ -34,15 +27,17 @@ class LdxmPage(Page):
     def __init__(self, driver):
         Page.__init__(self, driver)
 
-    def enter_ldxm_sub_page(self):
-        self.enter_sub_menu(self.sub_menu, self.sub_page)
-        print u"进入  %s-->%s  页面" % (self.sub_menu, self.sub_page)
-
     def click_create_xm_btn(self):
-        print u"点击 新增劳动项目按钮，跳转至劳动项目页面"
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
-        self.click(self.add_xm_btn)
+        self.click_btn(self.add_xm_xp)
+        print u"点击 新增项目按钮，跳转至项目页面"
+
+    def click_create_ht_btn(self):
+        self.driver.switch_to.default_content()
+        self.driver.switch_to.frame("right_mainFrame")
+        self.click_btn(self.add_xm_xp)
+        print u"点击 新增合同按钮，跳转至合同页面"
 
     # xmlx, xmmc, dwmc, xmfzr, xmfzrlxdh,                                     # 劳动项目
     # hzfdwmc, fzr, dz, yyzzzch, khlxdh, czhm, zczj,                          # 客户信息
