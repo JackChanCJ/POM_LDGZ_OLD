@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-    <p class='attribute'><strong>Start Time:</strong> 2017-09-20 09:08:15</p>
-    <p class='attribute'><strong>Duration:</strong> 0:00:21.717000</p>
-<p class='attribute'><strong>Status:</strong> Pass 1</p>
+    <p class='attribute'><strong>Start Time:</strong> 2017-09-21 09:04:35</p>
+    <p class='attribute'><strong>Duration:</strong> 0:00:16.800000</p>
+    <p class='attribute'><strong>Status:</strong> Error 1</p>
 
 <p class='description'>系统测试</p>
 </div>
@@ -221,40 +221,44 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
+    <tr class='errorClass'>
     <td>testcase.testLoginPage.TestloginPage</td>
     <td>1</td>
-    <td>1</td>
     <td>0</td>
     <td>0</td>
+        <td>1</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>testLogin</div></td>
+    <tr id='ft1.1' class='none'>
+        <td class='errorCase'>
+            <div class='testcase'>testLogin</div>
+        </td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        pass</a>
+        <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')">
+            error</a>
 
-    <div id='div_pt1.1' class="popup_window">
+        <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+            <a onfocus='this.blur();'
+               onclick="document.getElementById('div_ft1.1').style.display = 'none' ">
            [x]</a>
         </div>
         <pre>
         
-pt1.1: 打开劳动改造首页:   http://192.168.10.201:7001
+ft1.1: 打开劳动改造首页:   http://192.168.10.201:7001
 选择  劳动改造系统图标
 输入  用户名 999999
 输入  用户密码 000000
 点击  登陆  按钮
-验证标题
-
-注销  退出系统
-弹出框:   您确定要注销吗？
-确定
+Traceback (most recent call last):
+  File "D:\Test\POM_LDGZ_OLD\testcase\testLoginPage.py", line 34, in testLogin
+    login_page.click_login_btn()
+  File "D:\Test\POM_LDGZ_OLD\pages\loginMK\loginPage.py", line 66, in click_login_btn
+    self.click(self.login_btn)
+AttributeError: 'LoginPage' object has no attribute 'click'
 
 
         </pre>
@@ -267,9 +271,9 @@ pt1.1: 打开劳动改造首页:   http://192.168.10.201:7001
 <tr id='total_row'>
     <td>Total</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
