@@ -25,7 +25,6 @@ class TestCreateLdxm(unittest.TestCase):
         htmx_sheet = Excel(filename, '合同明细')
         scjh_sheet = Excel(filename, '生产计划')
 
-
         login_page.log_in()
 
         ldxm_page.enter_sub_menu('劳动项目与计划管理', '劳动项目')
@@ -34,10 +33,93 @@ class TestCreateLdxm(unittest.TestCase):
         ldxm_page.click_create_xm_btn()
         sleep(2)
 
+        # 劳动项目信息
+
         ldxm_page.select_xm_xmlx(ldxm_sheet.get_cell_value('项目类型'))
+
+        ldxm_page.select_xm_xmmc(ldxm_sheet.get_cell_value('项目名称'))
+
+        ldxm_page.input_xm_dwmc(ldxm_sheet.get_cell_value('单位名称'))
+
+        ldxm_page.input_xm_xmfzr(ldxm_sheet.get_cell_value('项目负责人'))
+
+        ldxm_page.input_xm_lxdh(ldxm_sheet.get_cell_value('联系电话'))
+
+        # 客户信息
+
+        ldxm_page.input_xm_hzfdwmc(khxx_sheet.get_cell_value('合作方单位名称'))
+
+        ldxm_page.input_xm_fzr(khxx_sheet.get_cell_value('负责人'))
+
+        ldxm_page.input_xm_dz(khxx_sheet.get_cell_value('地址'))
+
+        ldxm_page.input_xm_yyzzzch(khxx_sheet.get_cell_value('营业执照注册号'))
+
+        ldxm_page.input_xm_khlxdh(khxx_sheet.get_cell_value('联系电话'))
+
+        ldxm_page.input_xm_czhm(khxx_sheet.get_cell_value('传真号码'))
+
+        # 合同信息
+
+        ldxm_page.input_xm_zczj(khxx_sheet.get_cell_value('注册资金'))
+
+        ldxm_page.input_xm_cpxh(htxx_sheet.get_cell_value('产品型号'))
+
+        ldxm_page.input_xm_sl(htxx_sheet.get_cell_value('数量'))
+
+        ldxm_page.input_xm_dj(htxx_sheet.get_cell_value('单价'))
+
+        ldxm_page.input_xm_zje(htxx_sheet.get_cell_value('总金额'))
+
+        ldxm_page.select_xm_scdw(htxx_sheet.get_cell_value('生产单位'))
+
+        ldxm_page.select_xm_khfs(htxx_sheet.get_cell_value('考核方式'))
+
+        ldxm_page.get_htbh_value()
+
+        ldxm_page.input_xm_wcrq(htxx_sheet.get_cell_value('完成日期'))
+
+        ldxm_page.input_xm_fktj(htxx_sheet.get_cell_value('付款条件'))
+
+        ldxm_page.input_xm_tbr(htxx_sheet.get_cell_value('填报人'))
+
+        ldxm_page.input_xm_tbrlxdh(htxx_sheet.get_cell_value('联系电话'))
+
+        ldxm_page.input_xm_htfj(htxx_sheet.get_cell_value('合同附件'))
+
+        # 项目基本资料
+        ldxm_page.input_xm_trldlrs(xmjbzl_sheet.get_cell_value('投入劳动力人数'))
+
+        ldxm_page.input_xm_xmtze(xmjbzl_sheet.get_cell_value('项目投资额'))
+
+        ldxm_page.input_xm_sbt(xmjbzl_sheet.get_cell_value('设备台（套）'))
+
+        ldxm_page.input_xm_qyzysb(xmjbzl_sheet.get_cell_value('企业自有设备'))
+
+        ldxm_page.input_xm_khtrsb(xmjbzl_sheet.get_cell_value('客户投入设备'))
+
+        ldxm_page.input_xm_xmnsr(xmjbzl_sheet.get_cell_value('项目年收入'))
+
+        ldxm_page.input_xm_yrjsr(xmjbzl_sheet.get_cell_value('月人均收入'))
+
+        ldxm_page.input_xm_sdfzcb(xmjbzl_sheet.get_cell_value('水电、房租等成本费用'))
+
+        ldxm_page.input_xm_lr(xmjbzl_sheet.get_cell_value('利润'))
+
+        ldxm_page.select_xm_fxdj(xmjbzl_sheet.get_cell_value('风险等级'))
+
+        ldxm_page.input_xm_fxpgfj(xmjbzl_sheet.get_cell_value('风险评估附件'))
+
+
+
+
+
+
+
+
+
 
         login_page.log_out()
 
     def tearDown(self):
         self.driver.quit()
-

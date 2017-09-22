@@ -216,15 +216,15 @@ class LdxmPage(Page):
         self.input_text(yrjsr_xp).send_keys(yrjsr)
         print u"输入 月人均收入: ", yrjsr
 
-    def input_xm_sdfzdfy(self, sdfzcb):
+    def input_xm_sdfzcb(self, sdfzcb):
         sdfzcb_xp = u"//input[@name='lgXmXmzr.sdfzcb']"  # 水电、房租成本费用   文本输入框
         self.input_text(sdfzcb_xp).send_keys(sdfzcb)
         print u"输入 水电、房租成本费用: ", sdfzcb
 
-    def input_xm_sdfzcb(self, sdfzcb):
-        sdfzcb_xp = u"//input[@name='lgXmXmzr.lr']"  # 水电、房租成本费用   文本输入框
-        self.input_text(sdfzcb_xp).send_keys(sdfzcb)
-        print u"输入 水电、房租成本费用: ", sdfzcb
+    def input_xm_lr(self, lr):
+        lr_xp = u"//input[@name='lgXmXmzr.lr']"  # 利润   文本输入框
+        self.input_text(lr_xp).send_keys(lr)
+        print u"输入 水电、房租成本费用: ", lr
 
     def select_xm_fxdj(self, fxdj):
         fxdj_xp = u"//select[@id='fxdj']"
