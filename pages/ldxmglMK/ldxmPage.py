@@ -100,15 +100,15 @@ class LdxmPage(Page):
         self.input_text(yyzzzch_xp).send_keys(yyzzzch)
         print u"输入 营业执照注册号: ", yyzzzch
 
-    def input_xm_khlxdh(self, khlxdh):
-        khlxdh_xp = u"//input[@name='lgXmXmzr.khfzrlxdh']"  # 客户联系电话   文本输入框
-        self.input_text(khlxdh_xp).send_keys(khlxdh)
-        print u"输入 客户联系电话: ", khlxdh
+    def input_xm_khfzrlxdh(self, khfzrlxdh):
+        khfzrlxdh_xp = u"//input[@name='lgXmXmzr.khfzrlxdh']"  # 客户联系电话   文本输入框
+        self.input_text(khfzrlxdh_xp).send_keys(khfzrlxdh)
+        print u"输入 客户联系电话: ", khfzrlxdh
 
-    def input_xm_czhm(self, czhm):
-        czhm_xp = u"//input[@name='lgXmXmzr.czh']"  # 传真号码   文本输入框
-        self.input_text(czhm_xp).send_keys(czhm)
-        print u"输入 传真号: ", czhm
+    def input_xm_czh(self, czh):
+        czh_xp = u"//input[@name='lgXmXmzr.czh']"  # 传真号码   文本输入框
+        self.input_text(czh_xp).send_keys(czh)
+        print u"输入 传真号: ", czh
 
     def input_xm_zczj(self, zczj):
         zczj_xp = u"//input[@name='lgXmXmzr.zczj']"  # 注册资金   文本输入框
@@ -149,7 +149,7 @@ class LdxmPage(Page):
         print u"选择 考核方式: ", khfs
 
     def get_htbh_value(self):
-        htbh_xp = u"//input[id()='htbh']"
+        htbh_xp = u"//input[@id()='htbh']"
         htbh_value = self.get_text_value(htbh_xp).get_attribute('合同编号')
         print u"获取'合同编号'的值： ", htbh_value
         return htbh_value

@@ -6,11 +6,8 @@ from time import sleep
 from pages.basePage import Page
 from openpyxl import load_workbook
 
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
-
-class Excel():
+class Excel:
     """
         filename  excel文件绝对路径
         sheetname 表名

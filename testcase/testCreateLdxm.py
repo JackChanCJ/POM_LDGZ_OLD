@@ -25,7 +25,19 @@ class TestCreateLdxm(unittest.TestCase):
         htmx_sheet = Excel(filename, '合同明细')
         scjh_sheet = Excel(filename, '生产计划')
 
-        login_page.log_in()
+        filename1 = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
+        login_sheet = Excel(filename1, '登录')
+
+        login_page.open_url()
+
+        login_page.choose_module_ldgz()
+
+        login_page.input_username(login_sheet.get_cell_value('用户名'))
+
+        login_page.input_password(login_sheet.get_cell_value('密码'))
+
+        login_page.click_login_btn()
+
 
         ldxm_page.enter_sub_menu('劳动项目与计划管理', '劳动项目')
         sleep(2)
@@ -55,9 +67,9 @@ class TestCreateLdxm(unittest.TestCase):
 
         ldxm_page.input_xm_yyzzzch(khxx_sheet.get_cell_value('营业执照注册号'))
 
-        ldxm_page.input_xm_khlxdh(khxx_sheet.get_cell_value('联系电话'))
+        ldxm_page.input_xm_khfzrlxdh(khxx_sheet.get_cell_value('客户负责人联系电话'))
 
-        ldxm_page.input_xm_czhm(khxx_sheet.get_cell_value('传真号码'))
+        ldxm_page.input_xm_czh(khxx_sheet.get_cell_value('传真号'))
 
         # 合同信息
 
@@ -110,13 +122,13 @@ class TestCreateLdxm(unittest.TestCase):
 
         ldxm_page.input_xm_fxpgfj(xmjbzl_sheet.get_cell_value('风险评估附件'))
 
+        ldxm_page.input_text(xmjbzl_sheet.get_cell_value('项目评估'))
 
+        ldxm_page.input_text(xmjbzl_sheet.get_cell_value('评估人员'))
 
+        ldxm_page.input_text(xmjbzl_sheet.get_cell_value('备注'))
 
-
-
-
-
+        ldxm_page.click_btn(LdxmPage.xmqx_xp)
 
 
         login_page.log_out()

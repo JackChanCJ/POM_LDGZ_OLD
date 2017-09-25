@@ -1,14 +1,8 @@
 # coding=utf-8
 __author__ = 'JACK_CHAN'
 
-import sys
-import textdata
 import unittest
-from openpyxl import Workbook
-from openpyxl import load_workbook
-from common.Excel import Excel
 from time import sleep
-from selenium.webdriver.common.keys import Keys
 from pages.basePage import Page
 
 class LoginPage(Page, unittest.TestCase):
@@ -17,11 +11,6 @@ class LoginPage(Page, unittest.TestCase):
     password_xp = u"//*[@id='password']"  # 用户密码   输入框
     login_btn_xp = u"//*[@class='login_btn_login']"  # 登录   按钮
     logout_btn_xp = u"html/body/div[3]/div[1]"  # 注销    按钮
-
-    filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
-    e = Excel()
-
-    # filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
 
     def __init__(self, driver):
         Page.__init__(self, driver)
@@ -62,20 +51,6 @@ class LoginPage(Page, unittest.TestCase):
         al.accept()
         print u"确定"
         sleep(2)
-
-    # 登录并进入首页
-    def log_in(self, username, password):
-        print u"登录并进入首页"
-        # 启动浏览器，访问劳动改造地址
-        self.open_url()
-
-        self.choose_module_ldgz()
-
-        self.input_username(username)
-
-        self.input_password(password)
-
-        self.click_login_btn()
 
 
 

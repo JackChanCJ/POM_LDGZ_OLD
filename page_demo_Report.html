@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-    <p class='attribute'><strong>Start Time:</strong> 2017-09-21 14:44:09</p>
-    <p class='attribute'><strong>Duration:</strong> 0:00:22.977000</p>
-    <p class='attribute'><strong>Status:</strong> Pass 1</p>
+    <p class='attribute'><strong>Start Time:</strong> 2017-09-25 17:25:37</p>
+    <p class='attribute'><strong>Duration:</strong> 0:00:46.430000</p>
+    <p class='attribute'><strong>Status:</strong> Error 1</p>
 
 <p class='description'>系统测试</p>
 </div>
@@ -221,43 +221,78 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-    <tr class='passClass'>
-    <td>testcase.testLoginPage.TestloginPage</td>
+    <tr class='errorClass'>
+        <td>testcase.testCreateLdxm.TestCreateLdxm</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
         <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-    <tr id='pt1.1' class='hiddenRow'>
-        <td class='none'>
-            <div class='testcase'>testLogin</div>
+    <tr id='ft1.1' class='none'>
+        <td class='errorCase'>
+            <div class='testcase'>testCreateLdxm</div>
         </td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-        <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')">
-            pass</a>
+        <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')">
+            error</a>
 
-        <div id='div_pt1.1' class="popup_window">
+        <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
             <a onfocus='this.blur();'
-               onclick="document.getElementById('div_pt1.1').style.display = 'none' ">
+               onclick="document.getElementById('div_ft1.1').style.display = 'none' ">
            [x]</a>
         </div>
         <pre>
         
-pt1.1: 打开劳动改造首页:   http://192.168.10.201:7001
+ft1.1: 打开劳动改造首页:   http://192.168.10.201:7001
 选择  劳动改造系统图标
 输入  用户名 999999
 输入  用户密码 000000
 点击  登陆  按钮
-验证标题
+进入：  劳动项目与计划管理 --&gt; 劳动项目页面
+点击 新增项目按钮，跳转至项目页面
+选择 项目类型： 自主生产
+选择 项目名称： 出监教育
+输入 单位名称:  湖北省武汉市洪山体育
+输入 项目负责人:  管理员（admin）
+输入 项目负责人联系电话:  027-99999999
+输入 合作方单位名称:  武汉市锦辉兄弟服装加工有限公司
+输入 负责人:  张辉（法定代表人）
+输入 地址:  武汉市黄陂区佳海都市工业基地第A12幢2A号房
+输入 营业执照注册号:  420116000062378
+输入 客户联系电话:  027-88888888
+输入 传真号:  027-77777777
+输入 注册资金:  30000.000000
+输入 产品型号:  XXL180/185
+输入 数量:  500
+输入 单价:  80
+输入 总金额:  40000
+选择 生产单位:  二监区
+选择 考核方式:  个人
+Traceback (most recent call last):
+  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 90, in testCreateLdxm
+    ldxm_page.get_htbh_value()
+  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 153, in get_htbh_value
+    htbh_value = self.get_text_value(htbh_xp).get_attribute('ååç¼å·')
+  File "D:\Test\POM_LDGZ_OLD\pages\basePage.py", line 71, in get_text_value
+    return self.driver.find_element_by_xpath(loc)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 290, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 744, in find_element
+    {'using': by, 'value': value})['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 233, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //input[id()='htbh'] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input[id()='htbh']' is not a valid XPath expression.
+  (Session info: chrome=51.0.2704.106)
+  (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.1 SP1 x86_64)
 
-注销  退出系统
-弹出框:   您确定要注销吗？
-确定
 
 
         </pre>
@@ -270,9 +305,9 @@ pt1.1: 打开劳动改造首页:   http://192.168.10.201:7001
 <tr id='total_row'>
     <td>Total</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
