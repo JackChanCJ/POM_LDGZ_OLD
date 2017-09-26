@@ -149,9 +149,9 @@ class LdxmPage(Page):
         print u"选择 考核方式: ", khfs
 
     def get_htbh_value(self):
-        htbh_xp = u"//input[@id()='htbh']"
-        htbh_value = self.get_text_value(htbh_xp).get_attribute('合同编号')
-        print u"获取'合同编号'的值： ", htbh_value
+        htbh_xp = u"//input[@id='htbh']"
+        htbh_value = self.get_text_value(htbh_xp).get_attribute('value')
+        print u"获取 '合同编号'的值： ", htbh_value
         return htbh_value
 
     def input_xm_wcrq(self, wcrq):
@@ -245,7 +245,7 @@ class LdxmPage(Page):
     def input_xm_pgry(self, pgry):
         pgry_xp = u"//textarea[@name='lgXmXmzr.pgr']"
         self.input_text(pgry_xp).send_keys(pgry)
-        print u"输入 风险评估附件: ", pgry
+        print u"输入 评估人员: ", pgry
 
     def input_xm_bz(self, bz):
         bz_xp = u"//textarea[@name='lgXmXmzr.bz']"

@@ -189,8 +189,8 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>劳改登录测试</h1>
-    <p class='attribute'><strong>Start Time:</strong> 2017-09-25 17:25:37</p>
-    <p class='attribute'><strong>Duration:</strong> 0:00:46.430000</p>
+    <p class='attribute'><strong>Start Time:</strong> 2017-09-26 16:21:20</p>
+    <p class='attribute'><strong>Duration:</strong> 0:01:11.184000</p>
     <p class='attribute'><strong>Status:</strong> Error 1</p>
 
 <p class='description'>系统测试</p>
@@ -273,12 +273,27 @@ ft1.1: 打开劳动改造首页:   http://192.168.10.201:7001
 输入 总金额:  40000
 选择 生产单位:  二监区
 选择 考核方式:  个人
+获取 '合同编号'的值：  43040005
+输入 完成日期:  2017-08-10
+输入 付款条件:  第一次交货根据质量标准，经仓库及跟单员验收确认后，交付总货款的:  60%
+输入 填报人:  赵三枪
+输入 填报人联系电话:  027-66666666
+输入 合同附件:  C:\Users\Administrator\Desktop\关于武昌监狱现场实施相关事宜.doc
+输入 投入劳动力人数:  50
+输入 项目投资额:  40000
+输入 设备台（套）:  50
+输入 企业自有设备:  0
+输入 客户投入设备:  50
+输入 项目年收入:  40000
+输入 月人均收入:  800
+输入 水电、房租成本费用:  2000
+输入 水电、房租成本费用:  20000
+选择 风险等级： 较高
+输入 风险评估附件:  C:\Users\Administrator\Desktop\武昌监狱软件平台以及硬件相关需求.docx
 Traceback (most recent call last):
-  File "D:\Test\POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 90, in testCreateLdxm
-    ldxm_page.get_htbh_value()
-  File "D:\Test\POM_LDGZ_OLD\pages\ldxmglMK\ldxmPage.py", line 153, in get_htbh_value
-    htbh_value = self.get_text_value(htbh_xp).get_attribute('ååç¼å·')
-  File "D:\Test\POM_LDGZ_OLD\pages\basePage.py", line 71, in get_text_value
+  File "D:/Test/POM_LDGZ_OLD\testcase\testCreateLdxm.py", line 125, in testCreateLdxm
+    ldxm_page.input_text(xmjbzl_sheet.get_cell_value('é¡¹ç®è¯ä¼°'))
+  File "D:/Test/POM_LDGZ_OLD\pages\basePage.py", line 30, in input_text
     return self.driver.find_element_by_xpath(loc)
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 290, in find_element_by_xpath
     return self.find_element(by=By.XPATH, value=xpath)
@@ -288,8 +303,14 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
     raise exception_class(message, screen, stacktrace)
-InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //input[id()='htbh'] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input[id()='htbh']' is not a valid XPath expression.
+InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+~!@#$%^&amp;*()_+{}|:"&gt;?&lt;+-*/...
+é¡¹ç®è¯ä¼° because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string 'abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+~!@#$%^&amp;*()_+{}|:"&gt;?&lt;+-*/...
+é¡¹ç®è¯ä¼°' is not a valid XPath expression.
   (Session info: chrome=51.0.2704.106)
   (Driver info: chromedriver=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4),platform=Windows NT 6.1 SP1 x86_64)
 

@@ -20,8 +20,7 @@ if __name__ == '__main__':
     # """
     # tests = [TestloginPage('testLogin'),
     #          TestCreateLdxm('testCreateLdxm'),
-    #          TestCreateLdht('testCreateLdht')
-    #          ]
+    #          TestCreateLdht('testCreateLdht')]
     # testunit.addTest(tests)
 
     # 测试登陆
