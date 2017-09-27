@@ -122,14 +122,13 @@ class TestCreateLdxm(unittest.TestCase):
 
         ldxm_page.input_xm_fxpgfj(xmjbzl_sheet.get_cell_value('风险评估附件'))
 
-        ldxm_page.input_text(xmjbzl_sheet.get_cell_value('项目评估'))
+        ldxm_page.input_xm_xmpg(xmjbzl_sheet.get_cell_value('项目评估'))
 
-        ldxm_page.input_text(xmjbzl_sheet.get_cell_value('评估人员'))
+        ldxm_page.input_xm_pgry(xmjbzl_sheet.get_cell_value('评估人员'))
 
-        ldxm_page.input_text(xmjbzl_sheet.get_cell_value('备注'))
+        ldxm_page.input_xm_bz(xmjbzl_sheet.get_cell_value('备注'))
 
         ldxm_page.click_btn(LdxmPage.xmqx_xp)
-
 
         login_page.log_out()
 

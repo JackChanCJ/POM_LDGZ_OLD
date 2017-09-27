@@ -3,6 +3,7 @@ __author__ = 'JACK_CHAN'
 
 import random
 from time import sleep
+from common import Excel
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 from selenium import webdriver
@@ -68,4 +69,4 @@ class Page(object):
 
     def get_text_value(self, loc):
         # 获取文本框的值
-        return self.driver.find_element_by_xpath(loc)
+        self.driver.find_element_by_xpath(loc)
