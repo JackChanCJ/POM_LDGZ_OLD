@@ -39,6 +39,20 @@ class Excel:
             print "columnname参数不在excel中，请重新赋值。"
         return col_value[which_row]
 
+    def write_by_cell(self, columnname, which_row=1):
+        self.columnname = columnname
+        wb = load_workbook(self.filename)
+        ws = wb[self.sheetname]
+
+        pass
+
+
+
+
+
+
+
+
 
 def main():
     # filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'

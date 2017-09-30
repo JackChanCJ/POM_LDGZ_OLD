@@ -5,7 +5,7 @@ import unittest
 import sys
 import time
 from selenium import webdriver
-from common.Excel import Excel
+from common.excel_xlsx import Excel
 from pages.loginMK.loginPage import LoginPage
 reload(sys)
 sys.setdefaultencoding("utf-8")

@@ -3,7 +3,7 @@ __author__ = 'JACK_CHAN'
 
 import random
 from time import sleep
-from common import Excel
+from common import excel_xlsx
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 from selenium import webdriver
