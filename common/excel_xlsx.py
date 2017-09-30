@@ -1,13 +1,11 @@
 # coding=utf-8
 __author__ = 'JACK_CHAN'
-
-import sys
 from time import sleep
 from pages.basePage import Page
 from openpyxl import load_workbook
 
 
-class Excel:
+class Excel(object):
     """
         filename  excel文件绝对路径
         sheetname 表名

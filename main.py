@@ -2,16 +2,12 @@
 __author__ = 'JACK_CHAN'
 
 import unittest
-import sys
 from common import HTMLTestRunner
 from time import sleep
 from testcase.testLoginPage import TestloginPage
 from testcase.testCreateLdxm import TestCreateLdxm
 from testcase.testCreateLdht import TestCreateLdht
 from testcase.testCreateScjh import TestCreateScjh
-
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 if __name__ == '__main__':
     testunit = unittest.TestSuite()
@@ -28,12 +24,13 @@ if __name__ == '__main__':
     # sleep(5)
 
     # 测试新增劳动项目
-    testunit.addTest(TestCreateLdxm('testCreateLdxm'))
-    sleep(5)
+    # testunit.addTest(TestCreateLdxm('testCreateLdxm'))
+    # sleep(5)
 
     # 测试新增劳动合同
-    # testunit.addTest(TestCreateLdht('testCreateLdht'))
-    # sleep(5)
+    testunit.addTest(TestCreateLdht('testCreateLdht'))
+    sleep(5)
+
     # testunit.addTest(TestCreateScjh('testCreateScjh'))
     # sleep(5)
 

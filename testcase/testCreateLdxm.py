@@ -100,6 +100,7 @@ class TestCreateLdxm(unittest.TestCase):
         ldxm_page.input_xm_htfj(htxx_sheet.get_cell_value('合同附件'))
 
         # 项目基本资料
+
         ldxm_page.input_xm_trldlrs(xmjbzl_sheet.get_cell_value('投入劳动力人数'))
 
         ldxm_page.input_xm_xmtze(xmjbzl_sheet.get_cell_value('项目投资额'))

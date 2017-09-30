@@ -36,7 +36,7 @@ class LdxmPage(Page):
     def click_create_ht_btn(self):
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
-        self.click_btn(self.add_xm_xp)
+        self.click_btn(self.add_ht_xp)
         print u"点击 新增合同按钮，跳转至合同页面"
 
     # xmlx, xmmc, dwmc, xmfzr, xmfzrlxdh,                                     # 劳动项目
@@ -315,9 +315,7 @@ class LdxmPage(Page):
         self.input_text(fj_xp).send_keys(fj)
         print "上传  文件路径：", fj
 
-
-
-    # 合同明细
+    # 合同--合同明细
     def input_ht_xh(self, xh):
         ssxh_xp = u"//input[@id='cpkh10']"  # 手输型号    文本输入框
         self.input_text(ssxh_xp).send_keys(xh)
@@ -347,10 +345,3 @@ class LdxmPage(Page):
         ssdj_xp = u"//input[@name='dj0']"  # 单价    文本输入框
         self.input_text(ssdj_xp).send_keys(dj)
         print "输入  单价：", dj
-
-    def click_create_ht_btn(self):
-        print u"点击 新增劳动合同,跳转至劳动合同页面"
-        self.driver.switch_to.default_content()
-        self.driver.switch_to.frame("right_mainFrame")
-        # self.click(self.add_ht_xp)
-
