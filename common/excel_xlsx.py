@@ -1,7 +1,6 @@
 # coding=utf-8
 __author__ = 'JACK_CHAN'
-from time import sleep
-from pages.basePage import Page
+
 from openpyxl import load_workbook
 
 
@@ -45,6 +44,23 @@ class Excel(object):
         pass
 
 
+class read_xlsx(object):
+    def __int__(self, filename):
+        self.filename = filename
+
+    def retrieveNoOfRows
+        wb = load_workbook(self.filename)
+        ws = wb.get_sheet_names
+
+
+
+
+        # 检索 .xlsx 文件 sheets的行数
+
+        # 检索 .xlsx 文件 sheets的列数
+
+        # 读取测试套件和测试用例的 SuiteToRun and CaseToRun 标志
+
 
 
 
@@ -57,7 +73,6 @@ def main():
     filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
     e = Excel(filename, '登录')
     print e
-    print e.get_cell_value('username')
 
 if __name__ == '__main__':
     main()
