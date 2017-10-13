@@ -48,7 +48,7 @@ class read_xlsx(object):
     def __int__(self, filename):
         self.filename = filename
 
-    def retrieveNoOfRows
+    def retrieveNoOfRows(self):
         wb = load_workbook(self.filename)
         ws = wb.get_sheet_names
 
