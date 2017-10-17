@@ -40,6 +40,9 @@ class Excel(object):
         self.columnname = columnname
         wb = load_workbook(self.filename)
         ws = wb[self.sheetname]
+        pass
+
+    def has_next(self):
 
         pass
 
