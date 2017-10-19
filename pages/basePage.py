@@ -14,7 +14,7 @@ class Page(object):
         所有的操作最少需停留一秒
     """
 
-    def __init__(self, driver, base_url=u"http://192.168.10.53:7011"):
+    def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
         self.driver = driver
         self.base_url = base_url
         self.timeout = 30
