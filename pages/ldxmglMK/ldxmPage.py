@@ -5,8 +5,8 @@ import textdata
 import re
 from pages.basePage import Page
 from time import sleep
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.common.keys import Keys
+from SELENIUM.webdriver.support.select import Select
+from SELENIUM.webdriver.common.keys import Keys
 
 class LdxmPage(Page):
     filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"

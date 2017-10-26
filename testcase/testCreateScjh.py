@@ -4,7 +4,7 @@ __author__ = 'JACK_CHAN'
 import sys
 import unittest
 from time import sleep
-from selenium import webdriver
+from SELENIUM import webdriver
 from pages.basePage import Page
 from pages.loginMK.loginPage import LoginPage
 from pages.ldxmglMK.scjhPage import ScjhPage

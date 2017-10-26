@@ -5,7 +5,7 @@ import unittest
 from time import sleep
 from pages.basePage import Page
 from common.excel_xlsx import Excel
-from selenium import webdriver
+from SELENIUM import webdriver
 from pages.ldxmglMK.ldxmPage import LdxmPage
 from pages.loginMK.loginPage import LoginPage
 

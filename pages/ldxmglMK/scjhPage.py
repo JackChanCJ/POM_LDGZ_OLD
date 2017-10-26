@@ -8,7 +8,7 @@ from openpyxl import load_workbook
 from pages.basePage import Page
 from textdata import read_excel_by_cellname
 from textdata import write_excel_by_cellname
-from selenium.webdriver.support.select import Select
+from SELENIUM.webdriver.support.select import Select
 
 reload(sys)
 sys.setdefaultencoding("utf-8")

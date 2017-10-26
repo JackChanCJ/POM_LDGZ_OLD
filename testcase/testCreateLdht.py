@@ -3,7 +3,7 @@ __author__ = 'JACK_CHAN'
 
 import unittest
 from time import sleep
-from selenium import webdriver
+from SELENIUM import webdriver
 from common.excel_xlsx import Excel
 from pages.ldxmglMK.ldxmPage import LdxmPage
 from pages.loginMK.loginPage import LoginPage

@@ -3,9 +3,9 @@ __author__ = 'JACK_CHAN'
 
 import random
 from time import sleep
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.select import Select
-from selenium import webdriver
+from SELENIUM.webdriver.common.keys import Keys
+from SELENIUM.webdriver.support.select import Select
+from SELENIUM import webdriver
 
 # Page基类
 class Page(object):

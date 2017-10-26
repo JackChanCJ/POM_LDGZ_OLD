@@ -4,7 +4,7 @@ __author__ = 'JACK_CHAN'
 import unittest
 import sys
 import time
-from selenium import webdriver
+from SELENIUM import webdriver
 from common.excel_xlsx import Excel
 from pages.loginMK.loginPage import LoginPage
 reload(sys)
