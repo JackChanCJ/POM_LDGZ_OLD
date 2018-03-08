@@ -1,9 +1,10 @@
 # coding=utf-8
 __author__ = 'JACK_CHAN'
 
+import os
 import unittest
 from time import sleep
-from SELENIUM import webdriver
+from selenium import webdriver
 from common.excel_xlsx import Excel
 from pages.ldxmglMK.ldxmPage import LdxmPage
 from pages.loginMK.loginPage import LoginPage
@@ -15,11 +16,15 @@ class TestCreateLdht(unittest.TestCase):
         login_page = LoginPage(self.driver)
         ldht_page = LdxmPage(self.driver)
 
-        filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
-        filename1 = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx'
-        login_sheet = Excel(filename, '登录')
-        ht_htba_sheet = Excel(filename1, '合同_合同备案')
-        ht_htmx_sheet = Excel(filename1, '合同_合同明细')
+        #  获取当前目录
+        cwd = os.path.abspath('.')
+        dlgl_xlsx = unicode(cwd, 'utf-8') + u'\\textdata\\登录管理.xlsx'
+        print dlgl_xlsx
+        ldxmyjhgl_xlsx = unicode(cwd, 'utf-8') + u'\\textdata\\劳动项目与计划管理.xlsx'
+
+        login_sheet = Excel(dlgl_xlsx, '登录')
+        ht_htba_sheet = Excel(ldxmyjhgl_xlsx, '合同_合同备案')
+        ht_htmx_sheet = Excel(ldxmyjhgl_xlsx, '合同_合同明细')
 
         login_page.open_url()
 
@@ -78,3 +83,11 @@ class TestCreateLdht(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
+def main():
+    cwd = os.getcwd()
+    dlgl_xlsx = unicode(cwd, 'utf-8') + u'\\登录管理.xlsx'
+    print dlgl_xlsx
+
+
+if __name__ == "__main__":
+    main()

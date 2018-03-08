@@ -21,7 +21,7 @@ class LoginPage(Page, unittest.TestCase):
 
     def choose_module_ldgz(self):
         self.choose_xt(self.ldgz_icon_xp)
-        print u"选择  劳动改造系统图标"
+        print u"选择图标  劳动改造"
 
     def input_username(self, username):
         self.input_text(self.username_xp).send_keys(username)

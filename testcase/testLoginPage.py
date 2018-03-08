@@ -4,11 +4,9 @@ __author__ = 'JACK_CHAN'
 import unittest
 import sys
 import time
-from SELENIUM import webdriver
+from selenium import webdriver
 from common.excel_xlsx import Excel
 from pages.loginMK.loginPage import LoginPage
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 # 劳改系统登录
 class TestloginPage(unittest.TestCase):

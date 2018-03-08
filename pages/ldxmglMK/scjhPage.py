@@ -8,14 +8,14 @@ from openpyxl import load_workbook
 from pages.basePage import Page
 from textdata import read_excel_by_cellname
 from textdata import write_excel_by_cellname
-from SELENIUM.webdriver.support.select import Select
+from selenium.webdriver.support.select import Select
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
 class ScjhPage(Page):
-    filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
-    # filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
+    # filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
+    filename = u"D:\\01____WORKSTATIONS\\PYTHON\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
     sub_menu = u'劳动项目与计划管理'
     sub_page = u'监狱劳动生产计划'
 

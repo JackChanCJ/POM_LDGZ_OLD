@@ -1,16 +1,19 @@
 #  coding=utf-8
 __author__ = 'JACK_CHAN'
 
-import textdata
 import re
+import os
+import textdata
 from pages.basePage import Page
 from time import sleep
-from SELENIUM.webdriver.support.select import Select
-from SELENIUM.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.keys import Keys
 
 class LdxmPage(Page):
-    filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
-    # filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
+    cwd = os.getcwd()
+    #  祖父级别路径
+    cwd = os.path.abspath(os.path.dirname(cwd) + os.path.sep + "..")
+    filename = unicode(cwd, 'utf-8') + u"\\textdata\\劳动项目与计划管理.xlsx"
 
     # 劳动项目与计划管理-->劳动项目页面
     add_xm_xp = u"//a[text()='新增项目']"  # 新增项目    按钮

@@ -3,9 +3,9 @@ __author__ = 'JACK_CHAN'
 
 import random
 from time import sleep
-from SELENIUM.webdriver.common.keys import Keys
-from SELENIUM.webdriver.support.select import Select
-from SELENIUM import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
+from selenium import webdriver
 
 # Page基类
 class Page(object):
@@ -15,6 +15,7 @@ class Page(object):
     """
 
     def __init__(self, driver, base_url=u"http://192.168.10.201:7001"):
+        # def __init__(self, driver, base_url=u"http://localhost:7001"):
         self.driver = driver
         self.base_url = base_url
         self.timeout = 30

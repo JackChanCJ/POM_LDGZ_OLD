@@ -1,16 +1,12 @@
 # coding=utf-8
 __author__ = 'JACK_CHAN'
 
-import sys
 import unittest
 from time import sleep
-from SELENIUM import webdriver
+from selenium import webdriver
 from pages.basePage import Page
 from pages.loginMK.loginPage import LoginPage
 from pages.ldxmglMK.scjhPage import ScjhPage
-
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 class TestCreateScjh(unittest.TestCase):
     def setUp(self):
