@@ -3,6 +3,7 @@ __author__ = 'JACK_CHAN'
 
 import sys
 import re
+import os
 from time import sleep
 from openpyxl import load_workbook
 from pages.basePage import Page
@@ -10,12 +11,11 @@ from textdata import read_excel_by_cellname
 from textdata import write_excel_by_cellname
 from selenium.webdriver.support.select import Select
 
-reload(sys)
-sys.setdefaultencoding("utf-8")
-
 class ScjhPage(Page):
-    # filename = u"D:\\Test\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
-    filename = u"D:\\01____WORKSTATIONS\\PYTHON\\POM_LDGZ_OLD\\textdata\\劳动项目与计划管理.xlsx"
+    cwd = os.getcwd()
+    cwd = os.path.abspath(os.path.dirname(cwd) + os.path.sep + "..")
+
+    ldxmyjhgl_xlsx = unicode(cwd, 'utf-8') + u'\\textdata\\劳动项目与计划管理.xlsx"'
     sub_menu = u'劳动项目与计划管理'
     sub_page = u'监狱劳动生产计划'
 
@@ -26,32 +26,24 @@ class ScjhPage(Page):
     export_btn = u"//a[text()='导出']"
     return_btn = u"//a[text()='返回']"
 
-    jhdh_input = u"//input[@id='jhdh']"
     jhlx_select = u"//select[@id='jhlx']"
-    xmmc_select = u"//select[@id='xmbh']"
-    jhqr_input = u"//input[@id='jhqr']"
-    htmc_select = u"//select[@id='htbh']"
-    htmc_value = read_excel_by_cellname(filename=filename,
+    htmc_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='劳动合同',
                                         cell_num='C2')
-    jhzr_input = u"//input[@id='jhzr']"
-    cpxh_select = u"//select[@id='kh']"
-    cpxh_value = read_excel_by_cellname(filename=filename,
+    cpxh_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='合同明细',
                                         cell_num='A2')
-    jhsl_input = u"//input[@id='jhscsl']"
-    scdw_select = u"//select[@id='scdw']"
-    scdw_value = read_excel_by_cellname(filename=filename,
+    scdw_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='劳动合同',
                                         cell_num='G2')
     jyhsje_input = u"//input[@id='jyhsje']"
     zrwcsl_input = u"//input[@id='zrwcsl']"
     jhnr_textarea = u"//textarea[@id='jhnr']"
-    jhnr_value = read_excel_by_cellname(filename=filename,
+    jhnr_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='生产计划',
                                         cell_num='L2')
     bz_textarea = u"//textarea[@id='bz']"
-    bz_value = read_excel_by_cellname(filename=filename,
+    bz_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='生产计划',
                                         cell_num='M2')
     save_btn = u"//input[@value='保存']"
@@ -59,6 +51,7 @@ class ScjhPage(Page):
 
     def __init__(self, driver):
         Page.__init__(self, driver)
+
     # 进入生产计划页面
     def enter_scjh_sub_page(self):
         self.enter_sub_menu(self.sub_menu, self.sub_page)
@@ -69,20 +62,75 @@ class ScjhPage(Page):
         print u"点击  计划制定 按钮，跳转至计划制定页面"
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
-        self.click(self.jhzd_btn)
+        self.click_btn(self.jhzd_btn)
+
+    # 进入新增计划页面
+    def enter_jhxz_page(self):
+        print u"点击  新增 按钮，跳转至计划制定新增页面"
+        self.driver.switch_to.default_content()
+        self.driver.switch_to.frame("right_mainFrame")
+        self.click_btn(self.add_jh_btn)
+
+    # 获取计划代号
+    def get_jhdh_value(self):
+        self.driver.switch_to.default_content()
+        self.driver.switch_to.frame("right_mainFrame")
+        jhdh_input = u"//input[@id='jhdh']"
+        jhdh_value = self.driver.get_text_value(jhdh_input)
+        print ("获取  '计划代号'的值%s" % jhdh_value)
+
+    def select_jh_xmmc(self, xmmc):
+        xmmc_xp = u"//select[@id='xmbh']"
+        Select(xmmc_xp).select_by_visible_text(xmmc)
+        print ("选择  '计划——项目名称", xmmc)
+
+    def input_jh_jhqr(self, jhqr):
+        jhqr_input = u"//input[@id='jhqr']"
+        self.input_text(jhqr_input).send_keys(jhqr)
+        print ("输入  计划起日", jhqr)
+
+    def select_jh_htmc(self, htmc):
+        htmc_select = u"//select[@id='htbh']"
+        Select(htmc_select).select_by_visible_text(htmc)
+        print ("选择  '计划——项目名称", htmc)
+
+    def input_jh_jhzr(self, jhzr):
+        jhzr_input = u"//input[@id='jhzr']"
+        self.input_text(jhzr_input).send_keys(jhzr)
+        print ("输入  计划止日", jhzr)
+
+    def select_jh_cpxh(self, cpxh):
+        cpxh_select = u"//select[@id='kh']"
+        Select(cpxh_select).select_by_visible_text(cpxh)
+        print ("选择  '计划——产品型号", cpxh)
+
+    def get_jhsl_input(self, jhsl):
+        jhsl_input = u"//input[@id='jhscsl']"
+        self.driver.get_text_value(jhsl_input)
+        print ("获取  计划——计划数量", jhsl)
+
+    def select_jh_scdw(self, scdw):
+        scdw_select = u"//select[@id='scdw']"
+        Select(scdw_select).select_by_visible_text(scdw)
+        print ("选择  计划——生产单位", scdw)
+
+
+
+
+
 
     # 新增计划
     def add_jh(self):
-        self.click(self.add_jh_btn)
+        self.click_btn(self.add_jh_btn)
         sleep(3)
         jhdh_value = self.get_input_text(self.jhdh_input, "value")
         write_excel_by_cellname(w_value=jhdh_value,
-                                filename=self.filename,
+                                filename=ldxmyjhgl_xlsx,
                                 sheet_index=6,
                                 cell_num='A2')
         print '获取   "计划代号"的值：%s，写入excel' %jhdh_value
         # 用唯一的项目编号来匹配项目名称并进行选择
-        hq_xmmc_value = read_excel_by_cellname(filename=self.filename,
+        hq_xmmc_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                                sheet_name='劳动项目',
                                                cell_num='A2')
         re_xmmc_value = str(hq_xmmc_value + '.*')
@@ -107,4 +155,15 @@ class ScjhPage(Page):
         self.input_text(self.bz_textarea, self.bz_value)
         print "输入   备注：%s" %self.bz_value
         self.click(self.save_btn)
-        print "点击   保存  按钮"
+        # print "点击   保存  按钮"
+
+
+
+
+
+def main():
+    cwd = os.path.abspath('..')
+    print (cwd)
+
+if __name__ == '__main__':
+    main()

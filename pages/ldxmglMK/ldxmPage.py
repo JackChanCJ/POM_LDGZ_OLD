@@ -3,7 +3,6 @@ __author__ = 'JACK_CHAN'
 
 import re
 import os
-import textdata
 from pages.basePage import Page
 from time import sleep
 from selenium.webdriver.support.select import Select

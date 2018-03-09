@@ -5,10 +5,6 @@ import sys, openpyxl
 from openpyxl import Workbook
 from openpyxl import load_workbook
 
-
-reload(sys)
-sys.setdefaultencoding("utf-8")
-
 def read_excel_by_cellname(filename,
                             sheet_name,
                             cell_num):
