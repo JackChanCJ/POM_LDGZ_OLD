@@ -36,8 +36,6 @@ class ScjhPage(Page):
     scdw_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='劳动合同',
                                         cell_num='G2')
-    jyhsje_input = u"//input[@id='jyhsje']"
-    zrwcsl_input = u"//input[@id='zrwcsl']"
     jhnr_textarea = u"//textarea[@id='jhnr']"
     jhnr_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='生产计划',
@@ -72,7 +70,7 @@ class ScjhPage(Page):
         self.click_btn(self.add_jh_btn)
 
     # 获取计划代号
-    def get_jhdh_value(self):
+    def get_jh_jhdh(self):
         self.driver.switch_to.default_content()
         self.driver.switch_to.frame("right_mainFrame")
         jhdh_input = u"//input[@id='jhdh']"
@@ -104,21 +102,28 @@ class ScjhPage(Page):
         Select(cpxh_select).select_by_visible_text(cpxh)
         print ("选择  '计划——产品型号", cpxh)
 
-    def get_jhsl_input(self, jhsl):
+    def get_jh_jysl(self):
         jhsl_input = u"//input[@id='jhscsl']"
-        self.driver.get_text_value(jhsl_input)
-        print ("获取  计划——计划数量", jhsl)
+        jysl_value = self.driver.get_text_value(jhsl_input)
+        print ("获取  计划——计划数量", jysl_value)
 
     def select_jh_scdw(self, scdw):
         scdw_select = u"//select[@id='scdw']"
         Select(scdw_select).select_by_visible_text(scdw)
         print ("选择  计划——生产单位", scdw)
 
+    def get_jy_jyhsje(self):
+        jyhsje_input = u"//input[@id='jyhsje']"
+        jyhsje_value = self.driver.get_text_value(jyhsje_input)
+        print ("获取  计划——监狱核算金额", jyhsje_value)
+
+    def get_jh_zrjhwcsl(self):
+        zrjhwcsl_input = u"//input[@id='zrwcsl']"
+        zrjhwcsl_value = self.driver.get_text_value(zrjhwcsl_input)
+        print ("获取  ijiuh=")
 
 
-
-
-
+'''
     # 新增计划
     def add_jh(self):
         self.click_btn(self.add_jh_btn)
@@ -156,7 +161,7 @@ class ScjhPage(Page):
         print "输入   备注：%s" %self.bz_value
         self.click(self.save_btn)
         # print "点击   保存  按钮"
-
+'''
 
 
 

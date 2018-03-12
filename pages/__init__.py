@@ -10,6 +10,18 @@ __author__ = 'JACK_CHAN'
 
 
 
+page
+1、获取  XX值
+get_子页面_字段名
+
+2、选择  XX选择框
+select_子页面_字段名
+
+3、输入  XX值
+input_子页面_字段名
+
+
+
 
 
 
