@@ -26,8 +26,8 @@ class Page(object):
         sleep(1)
 
     def input_text(self, loc):
+        self.driver.find_element_by_xpath(loc)
         sleep(1)
-        return self.driver.find_element_by_xpath(loc)
 
     def click_btn(self, loc):
         self.driver.find_element_by_xpath(loc).click()
@@ -66,6 +66,16 @@ class Page(object):
         sleep(1)
         return self.driver.find_element_by_xpath(loc)
 
+    def select_by_value(self):
+        #  标签中的一个属性
+        pass
+
+    def select_by_visible_text(self):
+        #  标签中的值
+        pass
+
     def get_text_value(self, loc):
         # 获取文本框的值
         self.driver.find_element_by_xpath(loc)
+        sleep(1)
+        return self.driver.find_element_by_xpath(loc).text

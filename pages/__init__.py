@@ -10,7 +10,7 @@ __author__ = 'JACK_CHAN'
 
 
 
-page
+子页面
 1、获取  XX值
 get_子页面_字段名
 
@@ -19,6 +19,8 @@ select_子页面_字段名
 
 3、输入  XX值
 input_子页面_字段名
+
+
 
 
 

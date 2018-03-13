@@ -36,7 +36,6 @@ class ScjhPage(Page):
     scdw_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='劳动合同',
                                         cell_num='G2')
-    jhnr_textarea = u"//textarea[@id='jhnr']"
     jhnr_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='生产计划',
                                         cell_num='L2')
@@ -44,7 +43,6 @@ class ScjhPage(Page):
     bz_value = read_excel_by_cellname(filename=ldxmyjhgl_xlsx,
                                         sheet_name='生产计划',
                                         cell_num='M2')
-    save_btn = u"//input[@value='保存']"
     cancel_btn = u"//input[@value='取消']"
 
     def __init__(self, driver):
@@ -120,7 +118,16 @@ class ScjhPage(Page):
     def get_jh_zrjhwcsl(self):
         zrjhwcsl_input = u"//input[@id='zrwcsl']"
         zrjhwcsl_value = self.driver.get_text_value(zrjhwcsl_input)
-        print ("获取  ijiuh=")
+        print ("获取  计划——逐日计划完成数量", zrjhwcsl_value)
+
+    def input_jh_jhnr(self, jhnr):
+        jhnr_textarea = u"//textarea[@id='jhnr']"
+        jhnr_value = self.driver.get_text_value(jhnr_textarea)
+        print ("输入  计划——计划内容", jhnr)
+
+    def click_jh_save(self):
+        jh_save = u"//input[@value='保存']"
+        self.driver.click_btn(jh_save)
 
 
 '''
