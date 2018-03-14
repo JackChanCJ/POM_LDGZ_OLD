@@ -4,6 +4,7 @@ __author__ = 'JACK_CHAN'
 import unittest
 import sys
 import time
+import os
 from selenium import webdriver
 from common.excel_xlsx import Excel
 from pages.loginMK.loginPage import LoginPage
@@ -17,9 +18,10 @@ class TestloginPage(unittest.TestCase):
         assert_title = u"全国监狱信息化管理平台V3.0"
         # print assert_title
         login_page = LoginPage(self.driver)
-        filename = u'D:\\Test\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx'
-        # filename = u"D:\\01____WorkStation\PYTHON\\POM_LDGZ_OLD\\textdata\\登录管理.xlsx"
-        login_sheet = Excel(filename, '登录')
+        #  获取当前登录管理.xlsx相对路径
+        cwd = os.path.abspath('.')
+        dlgl_xlsx = unicode(cwd, 'utf-8') + u'\\textdata\\登录管理.xlsx'
+        login_sheet = Excel(dlgl_xlsx, '登录')
         # 启动浏览器，访问劳动改造地址
         login_page.open_url()
 

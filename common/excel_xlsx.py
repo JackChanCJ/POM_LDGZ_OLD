@@ -59,6 +59,21 @@ def main():
     cwd = os.path.abspath('..')
     # 注意：文中只要涉及到中文的地方一律转化为unicode
     filename = unicode(cwd, 'utf-8') + u'\\textdata\\登录管理.xlsx'
+    print (filename)
+    wb = load_workbook(filename)
+    ws = wb[u'登录']
+    rows = ws.rows
+    columns = ws.columns
+    col = []
+    for i in columns:
+        print (i)
+        for cell in i:
+            if cell.value == u'用户名':
+                print ('找到列：用户名')
+                col.append(cell.value)
+                print col
+
+
 
 
 
