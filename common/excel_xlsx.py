@@ -62,16 +62,28 @@ def main():
     print (filename)
     wb = load_workbook(filename)
     ws = wb[u'登录']
-    rows = ws.rows
-    columns = ws.columns
-    col = []
-    for i in columns:
-        print (i)
-        for cell in i:
-            if cell.value == u'用户名':
-                print ('找到列：用户名')
-                col.append(cell.value)
-                print col
+    mr = ws.max_row
+    ml = ws.max_column
+    print '最大行：', mr, '行'
+    print '最大列：', ml, '列'
+    print ws.values
+    row_list = []
+    for row in ws.iter_rows(min_row=2):
+        for dr in row:
+            print dr.value
+    print '-------------------------'
+    col_list = []
+    for col in ws.iter_cols():
+        for dc in col:
+            print dc.value
+
+
+
+
+
+
+
+
 
 
 
