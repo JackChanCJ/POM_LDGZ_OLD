@@ -68,24 +68,23 @@ def main():
     print '最大列：', ml, '列'
     print ws.values
     row_list = []
-    for row in ws.iter_rows(min_row=2):
-        for dr in row:
-            print dr.value
-    print '-------------------------'
+    row_tuple = ()
+    #  把sheet以行的形式搜集起来，并以list的方式存储
+    for row_tuple in ws.iter_rows():
+        row_list.append(row_tuple)
+    print row_list
+    print row_list[0]
+    print row_list[0][0].value
+    print row_list[0][1].value
+
+
+    print '----------------'
+
     col_list = []
-    for col in ws.iter_cols():
-        for dc in col:
-            print dc.value
-
-
-
-
-
-
-
-
-
-
+    col_tuple = ()
+    for col_tuple in ws.iter_cols():
+        col_list.append(col_tuple)
+    print col_list
 
 
 
