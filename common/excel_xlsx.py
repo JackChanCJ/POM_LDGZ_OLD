@@ -83,8 +83,10 @@ def main():
     col_list = []
     col_tuple = ()
     for col_tuple in ws.iter_cols():
-        col_list.append(col_tuple)
-    print col_list
+        print tuple((c.value).encode('GB2312').encode('utf-8') for c in col_tuple)
+
+
+
 
 
 
