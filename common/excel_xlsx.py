@@ -6,6 +6,10 @@ from time import sleep
 from pages.basePage import Page
 from openpyxl import Workbook
 from openpyxl import load_workbook
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 class Excel(object):
@@ -78,12 +82,18 @@ def main():
     print row_list[0][1].value
 
 
-    print '----------------'
+    print '----------------------'
 
-    col_list = []
-    col_tuple = ()
-    for col_tuple in ws.iter_cols():
-        print tuple((c.value).encode('GB2312').encode('utf-8') for c in col_tuple)
+
+
+    print ws.iter_cols()
+    def x(ws_obj):
+        for col_tuple in ws_obj:
+            for c in col_tuple:
+                return c.value
+
+
+
 
 
 
