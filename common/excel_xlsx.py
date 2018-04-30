@@ -4,7 +4,6 @@ __author__ = 'JACK_CHAN'
 import os
 from time import sleep
 from pages.basePage import Page
-from openpyxl import Workbook
 from openpyxl import load_workbook
 import sys
 
